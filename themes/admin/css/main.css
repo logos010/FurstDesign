@@ -1,0 +1,17 @@
+@import "bootstrap.css";
+@import "bootstrap-responsive.css";
+
+body {background-color: #FAFAFA; font-size: 14px}
+div.box {
+/*    background-color: #fff;
+    border-radius:3px;
+    padding: 0;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);
+    -webkit-box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);
+    -moz-box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);*/
+}
+.panel-heading h3 {line-height: 30px; margin: 0; font-size: 20.5px}
+span.error {color: red; font-size: 11px}
+span.required {color: red}

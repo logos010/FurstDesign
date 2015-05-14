@@ -1,0 +1,234 @@
+.grid-view-loading {
+    background: url("../images/loading.gif") no-repeat scroll 0 0 transparent;
+    /*height: 40px;*/
+}
+.grid-view {
+    margin-top: 5px;
+    padding: 0;
+    font-size: 0.9em;
+}
+.grid-view table.items {
+    width: 100%;
+    /*border-collapse: collapse;*/
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.grid-view table.items th, .grid-view table.items td {
+    padding: 0.4em 0;
+    border-top: 1px solid #ddd;
+}
+.grid-view table.items th {
+    padding: 0.5em;
+    color: #222222;
+    text-align: left;
+}
+.grid-view table.items th a {
+    color: #222;
+    font-weight: bold;
+    text-decoration: none;
+}
+.grid-view table.items th a:hover {
+    color: black;
+}
+.grid-view table.items th a.asc {
+    background: url("../images/up.gif") no-repeat scroll right center transparent;
+    padding-right: 10px;
+}
+.grid-view table.items th a.desc {
+    background: url("../images/down.gif") no-repeat scroll right center transparent;
+    padding-right: 10px;
+}
+
+.grid-view table.items tr.even {
+    background: none repeat scroll 0 0 #F8F8F8;
+
+}
+.grid-view table.items tr.odd {
+    background: none repeat scroll 0 0 #ffffff;
+
+}
+.grid-view table.items tr.selected {
+    background: none repeat scroll 0 0 #ffffcc;
+}  
+.grid-view table.items tr:hover {
+}
+.grid-view table.items tr span.stick {display: block; width: 15px; height: 15px; background: url(../images/checkboxes.png); background-position: 0 0}
+.grid-view table.items tr.selected span.stick {background-position: 0 -15px}
+  
+.grid-view .link-column img {
+    border: 0 none;
+}
+.grid-view .button-column {
+    text-align: center;
+    width: 60px;
+}
+.grid-view .button-column img {
+    border: 0 none;
+}
+.grid-view .checkbox-column {
+    width: 15px;
+}
+.grid-view .summary {
+    margin: 0 0 5px;
+    text-align: right;
+}
+.grid-view .pager {
+    margin: 5px 0 0;
+    text-align: right;
+}
+.grid-view .empty {
+    font-style: italic;
+}
+.grid-view .filters td {text-align: center; background: #F8F8F8}
+
+.grid-view .filters input, 
+.grid-view .filters select {
+    padding: 4px;
+    border: 1px solid #CCCCCC;
+    width: 90%;
+    border-radius: 3px;
+}
+
+.grid-view .button-column img {
+    margin: 0 5px
+}
+
+.grid-view .hidden {
+    background: none repeat scroll 0 0 #FFFFCC;
+    border: 2px solid #666666;
+    display: none;
+    padding: 10px;
+    position: absolute;
+    width: 550px;
+}
+.grid-view p {
+    margin: 0 0 0.5em;
+}
+
+.grid-view ul.link {
+    margin: 0;
+    padding: 0;
+}
+.grid-view ul.link li {
+    display: inline-block;
+    padding-right: 10px;
+}
+.grid-view table.items tfoot td {border-bottom: 3px double #ddd}
+.grid-view table.items .button-column {text-align: right; width: 80px}
+.grid-view table.items a {margin-right: 5px}
+
+.grid-view table.items .subitem table {border: none}
+.grid-view table.items .subitem table th {background: none;border-bottom: none;}
+.grid-view table.items .subitem table td {}
+
+
+/**
+ * CSS styles for CLinkPager.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright Copyright &copy; 2008-2010 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ * @version $Id: pager.css 1678 2010-01-07 21:02:00Z qiang.xue $
+ * @since 1.0
+ */
+
+ul.yiiPager
+{
+	font-size:12px;
+	border:0;
+	margin:0;
+	padding:0;
+	line-height:100%;
+	display:inline;
+}
+
+ul.yiiPager li
+{
+	display:inline;
+}
+
+ul.yiiPager a:link,
+ul.yiiPager a:visited
+{
+	border: solid 1px #ddd;
+	font-weight:bold;
+	padding:1px 6px;
+	text-decoration:none;
+}
+
+ul.yiiPager .page a
+{
+	font-weight:normal;
+}
+
+ul.yiiPager a:hover
+{
+}
+
+ul.yiiPager .selected a
+{
+	background:#eee;
+	color:#000;
+	font-weight:bold;
+}
+
+ul.yiiPager .hidden a
+{
+	border:solid 1px #DEDEDE;
+	color:#888888;
+}
+
+/**
+ * Hide first and last buttons by default.
+ */
+ul.yiiPager .first,
+ul.yiiPager .last
+{
+	display:none;
+}
+
+table.detail-view .null
+{
+	color: pink;
+}
+
+table.detail-view
+{
+	background: white;
+	width: 100%;
+	margin: 0;
+	border-top: 1px solid #ddd;
+}
+
+table.detail-view th, table.detail-view td
+{
+	font-size: 0.9em;
+	padding: 0.4em 0.6em;
+	vertical-align: top;
+	border-bottom: 1px solid #ddd;
+}
+
+table.detail-view th
+{
+	text-align: right;
+	width: 160px;
+}
+
+table.detail-view tr.odd
+{
+	background: #FFF;
+}
+
+table.detail-view tr.even
+{
+	background:#F8F8F8;
+}
+
+table.detail-view tr.odd th
+{
+}
+
+table.detail-view tr.even th
+{
+}
