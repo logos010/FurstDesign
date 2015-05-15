@@ -132,27 +132,29 @@ $(document).ready(function () {
 
 
     //show & hide quick view link
-    $('.item-product-img').live("mouseenter", function () {
-        if (this.className.indexOf("view3") >= 0) {
-            $(this).find('.product-img').animate({
-                opacity: 0.1}
-            );
-            $(this).find('.quickview-btn').css('display', 'block');
-            $(this).find('.quickview-btn').css('left', '98.5px');
+    if ($('.item-product-img').length) {
+        $('.item-product-img').live("mouseenter", function () {
+            if (this.className.indexOf("view3") >= 0) {
+                $(this).find('.product-img').animate({
+                    opacity: 0.1}
+                );
+                $(this).find('.quickview-btn').css('display', 'block');
+                $(this).find('.quickview-btn').css('left', '98.5px');
+            }
         }
-    }
-    );
+        );
 
-    $('.item-product-img').live("mouseleave", function () {
-        if (this.className.indexOf("view3") >= 0) {
-            $(this).find('.product-img').animate({
-                opacity: 1.0}
-            );
-            $(this).find('.quickview-btn').css('display', 'none');
+        $('.item-product-img').live("mouseleave", function () {
+            if (this.className.indexOf("view3") >= 0) {
+                $(this).find('.product-img').animate({
+                    opacity: 1.0}
+                );
+                $(this).find('.quickview-btn').css('display', 'none');
+            }
         }
+        );
     }
-    );
-
+    
     /*
      // this script is for product catalog
      $(window).scroll(function () {
@@ -392,48 +394,46 @@ function authentication()
         $("#lOnlineCreditBalanceSpan").css("display", "none");
     }
 
-    smallshoppingbagitems();
+//    smallshoppingbagitems();
 }
 
-function smallshoppingbagitems() {
-    $.cookie("testCookie", null);
-    if ($.cookie("CKAuthenticationID") != null && $.cookie("CKAuthenticationFN") != null && $.cookie("CKAuthenticationLN") != null) {
-
-        SmallShoppingBagController.getSmallBagSize({
-            callback: function (dataFromServer) {
-                $.cookie("testCookie", dataFromServer);
-                var temp = document.getElementById("smallshoppingItems").innerHTML;
-                document.getElementById("smallshoppingItems").innerHTML = temp + $.cookie("testCookie") + ")";
-                //$("#smallshoppingItems").css("padding", "3px 3px");
-                if (dataFromServer == '0') {
-                    document.getElementById("smallshoppingItems").href = "javascript:showTooltipEmptyBag('#emptybag');";
-                }
-            }
-        }
-        );
-    }
-    else {
-        SmallShoppingBagController.getItemQuantity({
-            callback: function (dataFromServer) {
-                $.cookie("testCookie", dataFromServer);
-                var temp = document.getElementById("smallshoppingItems").innerHTML;
-                document.getElementById("smallshoppingItems").innerHTML = temp + dataFromServer + ")";
-                //$("#smallshoppingItems").css("padding", "3px 3px");
-                if (dataFromServer == '0') {
-                    document.getElementById("smallshoppingItems").href = "javascript:showTooltipEmptyBag('#emptybag');";
-                }
-            }
-        }
-        );
-    }
-
-    setInterval(function () {
-        $(".topright-menu").css("display", "inline");
-    }
-    , 900);
-
-
-}
+//function smallshoppingbagitems() {
+//    $.cookie("testCookie", null);
+//    if ($.cookie("CKAuthenticationID") != null && $.cookie("CKAuthenticationFN") != null && $.cookie("CKAuthenticationLN") != null) {
+//
+//        SmallShoppingBagController.getSmallBagSize({
+//            callback: function (dataFromServer) {
+//                $.cookie("testCookie", dataFromServer);
+//                var temp = document.getElementById("smallshoppingItems").innerHTML;
+//                document.getElementById("smallshoppingItems").innerHTML = temp + $.cookie("testCookie") + ")";
+//                //$("#smallshoppingItems").css("padding", "3px 3px");
+//                if (dataFromServer == '0') {
+//                    document.getElementById("smallshoppingItems").href = "javascript:showTooltipEmptyBag('#emptybag');";
+//                }
+//            }
+//        }
+//        );
+//    }
+//    else {
+//        SmallShoppingBagController.getItemQuantity({
+//            callback: function (dataFromServer) {
+//                $.cookie("testCookie", dataFromServer);
+//                var temp = document.getElementById("smallshoppingItems").innerHTML;
+//                document.getElementById("smallshoppingItems").innerHTML = temp + dataFromServer + ")";
+//                //$("#smallshoppingItems").css("padding", "3px 3px");
+//                if (dataFromServer == '0') {
+//                    document.getElementById("smallshoppingItems").href = "javascript:showTooltipEmptyBag('#emptybag');";
+//                }
+//            }
+//        }
+//        );
+//    }
+//
+//    setInterval(function () {
+//        $(".topright-menu").css("display", "inline");
+//    }
+//    , 900);
+//}
 
 function checkOutSubmit(dest) {
     SmallShoppingBagController.checkOutValidation

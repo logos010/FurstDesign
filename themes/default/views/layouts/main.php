@@ -1,39 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core">
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
-    <title>
-        Online Shoes | Women's Shoes | Footwear for Women - CHARLES & KEITH
-    </title>
-    <meta name="description" content="" /> 
-    <meta name="keywords" content="" />    
-    <meta name="robots" content="index,follow" />
-    <link href="<?php echo App()->theme->createUrl; ?>/css/landing-new.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="<?php echo App()->theme->createUrl; ?>/css/supersized.css" rel="stylesheet" type="text/css" media="screen" />    
-    <link href="<?php echo App()->theme->createUrl; ?>/css/dd.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="<?php echo App()->theme->createUrl; ?>/skin2.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="<?php echo App()->theme->createUrl; ?>/css/jScrollPane-new.css" rel="stylesheet" type="text/css" media="screen" />
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js/cufon-yui.js"></script>
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js/Century_Gothic_700.font.js"></script>
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js2/common.js"></script>
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js/jquery.js"></script>    
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js/supersized.3.2.7.js"></script>    
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js/jScrollPane.js"></script>
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js2/browserDetect.js"></script>
-    <script type='text/javascript' src='<?php echo App()->theme->createUrl; ?>/js/jquery.cookie.js'></script>
-    <script type='text/javascript' src='<?php echo App()->theme->createUrl; ?>/js/jquery.dcjqaccordion.2.7.min.js'></script>
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js/jquery.dd.js"></script>    
-    <script src="<?php echo App()->theme->createUrl; ?>/js/jquery-ui-1.8.23.custom.min.js" type="text/javascript"></script>
-    <!-- Smooth Div Scroll 1.3 minified-->
-    <script src="<?php echo App()->theme->createUrl; ?>/js/mainnav-smoothScrolling.js" type="text/javascript"></script>  
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js/ProductController.js"></script>
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js/SmallShoppingBagController.js"></script>
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js/engine.js"></script>
-    <script type="text/javascript" src="<?php echo App()->theme->createUrl; ?>/js/util.js"></script>
-    <script language="JavaScript" src="<?php echo App()->theme->createUrl; ?>/js/script.js"></script>
-    <style>    
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core">    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+        <title>
+            Online Shoes | Women's Shoes | Footwear for Women - FURST DESIGN
+        </title>
+        <meta name="description" content="" /> 
+        <meta name="keywords" content="" />    
+        <meta name="robots" content="index,follow" />
+        <link href="<?php echo App()->theme->baseUrl; ?>/css/landing-new.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="<?php echo App()->theme->baseUrl; ?>/css/supersized.css" rel="stylesheet" type="text/css" media="screen" />    
+        <link href="<?php echo App()->theme->baseUrl; ?>/css/dd.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="<?php echo App()->theme->baseUrl; ?>/skin2.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="<?php echo App()->theme->baseUrl; ?>/css/jScrollPane-new.css" rel="stylesheet" type="text/css" media="screen" />
+
+        <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/jquery.js"></script>    
+    </head>
+    <body>        
+        <style type="text/css">    
         #shoppingbag-box{
             float:right;
             /*position:absolute;
@@ -61,8 +45,6 @@
             height:26px;
         }
     </style>
-    </head>
-    <body>
     <div class="overlay_container">
         <div id="backtobranding" class="overlay_style">
             <div class="ckform_top">
@@ -77,8 +59,8 @@
                 You are about to leave Charleskeith.com online shopping site and will be redirecting to Charleskeith.com branding site.
                 <br/>
                 <br/>
-                <input type="image" src="../../images/buttons/continue.gif" onclick="javascript:window.location = 'http://www.charleskeith.com/';" /> &nbsp;&nbsp;&nbsp;
-                <input type="image" src="../../images/buttons/cancel.gif" onclick="javascript:hideOverlay();" />
+                <input type="image" src="<?php echo App()->theme->baseUrl; ?>/images/buttons/continue.gif" onclick="javascript:window.location = 'http://www.charleskeith.com/';" /> &nbsp;&nbsp;&nbsp;
+                <input type="image" src="<?php echo App()->theme->baseUrl; ?>/images/buttons/cancel.gif" onclick="javascript:hideOverlay();" />
                 <br/>
                 <br/>
             </div>
@@ -105,11 +87,11 @@
                 <h2>
                         Change Country
                     </h2> You will lose the contents of your shopping bag when changing sites.
-                <br>
-                <br>
-                <br>
-                <input name="" type="image" value="SUBMIT" src="<?php echo App()->theme->createUrl; ?>/images/buttons/yes_white_EN.gif" onclick="javascript:window.location = 'http://www.charleskeith.com/INTLStore/CK/landingpage?cid=true';" /> &nbsp;&nbsp;
-                <input name="" type="image" value="CANCEL" src="<?php echo App()->theme->createUrl; ?>/images/buttons/no_white_EN.gif" onclick="javascript:hideOverlay_new();" />
+                <br/>
+                <br/>
+                <br/>
+                <input name="" type="image" value="SUBMIT" src="<?php echo App()->theme->baseUrl; ?>/images/buttons/yes_white_EN.gif" onclick="javascript:window.location = 'http://www.charleskeith.com/INTLStore/CK/landingpage?cid=true';" /> &nbsp;&nbsp;
+                <input name="" type="image" value="CANCEL" src="<?php echo App()->theme->baseUrl; ?>/images/buttons/no_white_EN.gif" onclick="javascript:hideOverlay_new();" />
             </div>
             <div class="overlaybox_btm_country">
             </div>
@@ -130,7 +112,7 @@
             <div class="topright-menu" style="display: none;">
 
                 <a class="shoppingbag" href="javascript:void(0);" id="smallshoppingItems">
-                    <img src="../../images/shop-mini.png" width="7" height="7" border="0" /> SHOPPING BAG (
+                    <img src="<?php echo App()->theme->baseUrl; ?>/images/shop-mini.png" width="7" height="7" border="0" alt="" /> SHOPPING BAG (
                 </a>
 
                 <a style="padding:3px 0;" href="javascript:hideTooltip('#emptybag');">
@@ -242,426 +224,114 @@
             <!-- END OF TOP RIGHT MENU -->
         </div>
         <!-- END OF HEADER -->
-        <div class="clear">
-        </div>
-        <!-- START OF MAIN MENU -->
-
-
+        
+        <div class="clear"></div>
+        
         <!-- START OF MAIN MENU -->
 
         <div id="makeMeScrollable">
-
-
             <div id="mainnav-wrapper">
                 <ul class="accordion" id="accordion-1">
                     <li>
-                        <a href="#" class="primary">
-                                                        New Arrivals
-                                                    </a>
+                        <a href="#" class="primary">New Arrivals</a>
                         <ul>
-                            <li>
-                                <a href="New-Arrivals.html">
-                                                                View All
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="New-Arrivals/Shoes.html">
-                                                                Shoes
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="New-Arrivals/Bags.html">
-                                                                Bags
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                                                Accessories
-                                                            </a>
-                                <ul>
-                                    <li>
-                                        <a href="New-Arrivals/Sunglasses.html">
-                                                                        Sunglasses
-                                                                    </a>
-                                    </li>
-                                    <li>
-                                        <a href="New-Arrivals/Belts.html">
-                                                                        Belts
-                                                                    </a>
-                                    </li>
-                                    <li>
-                                        <a href="New-Arrivals/Bracelets.html">
-                                                                        Bracelets
-                                                                    </a>
-                                    </li>
-                                    <li>
-                                        <a href="New-Arrivals/Necklaces.html">
-                                                                        Necklaces
-                                                                    </a>
-                                    </li>
-                                    <li>
-                                        <a href="New-Arrivals/Scarves.html">
-                                                                        Scarves
-                                                                    </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="New-Arrivals/Online-Exclusives.html">
-                                                                Online Exclusives
-                                                            </a>
-                            </li>
+                            <li> <a href="New-Arrivals.html">View All</a> </li> 
+                            <li> <a href="New-Arrivals/Shoes.html">Shoes</a> </li> 
+                            <li> <a href="New-Arrivals/Bags.html">Bags</a> </li> 
+                            <li> 
+                                <a href="#"> Accessories </a> 
+                                <ul> 
+                                    <li> <a href="New-Arrivals/Sunglasses.html"> Sunglasses </a> </li> 
+                                    <li> <a href="New-Arrivals/Belts.html"> Belts </a> </li> 
+                                    <li> <a href="New-Arrivals/Bracelets.html"> Bracelets </a> </li> 
+                                    <li> <a href="New-Arrivals/Necklaces.html"> Necklaces </a> </li> 
+                                    <li> <a href="New-Arrivals/Scarves.html"> Scarves </a> </li> 
+                                </ul> 
+                            </li> 
+                            <li> <a href="New-Arrivals/Online-Exclusives.html"> Online Exclusives </a> </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#" class="primary">
-                                                        Charles &amp; Keith Collection
-                                                    </a>
-                        <ul>
-                            <li>
-                                <a href="Signature-Label.html">
-                                                                View All
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="New-Arrivals/Signature-Label.html">
-                                                                New Arrivals
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Online-Exclusives/Signature-Label.html">
-                                                                Online Exclusives
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Signature-Label/Boots.html">
-                                                                Boots
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Signature-Label/Clogs.html">
-                                                                Clogs
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Signature-Label/Flats.html">
-                                                                Flats
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Signature-Label/Heels.html">
-                                                                Heels
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Signature-Label/Wedges.html">
-                                                                Wedges
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Sale/Signature-Label.html">
-                                                                SALE
-                                                            </a>
-                            </li>
-                        </ul>
+                    <li> 
+                        <a href="#" class="primary"> Charles &amp; Keith Collection </a> 
+                        <ul> 
+                            <li> <a href="Signature-Label.html"> View All </a> </li> 
+                            <li> <a href="New-Arrivals/Signature-Label.html"> New Arrivals </a> </li> 
+                            <li> <a href="Online-Exclusives/Signature-Label.html"> Online Exclusives </a> </li> 
+                            <li> <a href="Signature-Label/Boots.html"> Boots </a> </li> 
+                            <li> <a href="Signature-Label/Clogs.html"> Clogs </a> </li> 
+                            <li> <a href="Signature-Label/Flats.html"> Flats </a> </li> 
+                            <li> <a href="Signature-Label/Heels.html"> Heels </a> </li> 
+                            <li> <a href="Signature-Label/Wedges.html"> Wedges </a> </li> 
+                            <li> <a href="Sale/Signature-Label.html"> SALE </a> </li> 
+                        </ul> 
                     </li>
-                    <li>
-                        <a href="#" class="primary">
-                                                        Shoes
-                                                    </a>
-                        <ul>
-                            <li>
-                                <a href="Shoes.html">
-                                                                View All
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="New-Arrivals/Shoes.html">
-                                                                New Arrivals
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Online-Exclusives/Shoes.html">
-                                                                Online Exclusives
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Signature-Label/Shoes.html">
-                                                                Charles &amp; Keith Collection
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Shoes/Boots.html">
-                                                                Boots
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Shoes/Clogs.html">
-                                                                Clogs
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Shoes/Flats.html">
-                                                                Flats
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Shoes/Heels.html">
-                                                                Heels
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Shoes/Wedges.html">
-                                                                Wedges
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Sale/Shoes.html">
-                                                                SALE
-                                                            </a>
-                            </li>
-                        </ul>
+                    <li> 
+                        <a href="#" class="primary"> Shoes </a> 
+                        <ul> 
+                            <li> <a href="Shoes.html"> View All </a> </li> 
+                            <li> <a href="New-Arrivals/Shoes.html"> New Arrivals </a> </li> 
+                            <li> <a href="Online-Exclusives/Shoes.html"> Online Exclusives </a> </li> 
+                            <li> <a href="Signature-Label/Shoes.html"> Charles &amp; Keith Collection </a> </li> 
+                            <li> <a href="Shoes/Boots.html"> Boots </a> </li> 
+                            <li> <a href="Shoes/Clogs.html"> Clogs </a> </li> 
+                            <li> <a href="Shoes/Flats.html"> Flats </a> </li> 
+                            <li> <a href="Shoes/Heels.html"> Heels </a> </li> 
+                            <li> <a href="Shoes/Wedges.html"> Wedges </a> </li> 
+                            <li> <a href="Sale/Shoes.html"> SALE </a> </li> 
+                        </ul> 
                     </li>
-                    <li>
-                        <a href="#" class="primary">
-                                                        Bags
-                                                    </a>
-                        <ul>
-                            <li>
-                                <a href="Bags.html">
-                                                                View All
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="New-Arrivals/Bags.html">
-                                                                New Arrivals
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Online-Exclusives/Bags.html">
-                                                                Online Exclusives
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Bowling.html">
-                                                                Bowling
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Card-Holder.html">
-                                                                Card Holder
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Clutch.html">
-                                                                Clutch
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Handbag.html">
-                                                                Handbag
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Haversack.html">
-                                                                Haversack
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Hobo.html">
-                                                                Hobo
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Iphone-Case.html">
-                                                                iPhone Case
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Passport-Holder.html">
-                                                                Passport Holder
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Satchel.html">
-                                                                Satchel
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Shoulder-Bag.html">
-                                                                Shoulder Bag
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Sling-Bag.html">
-                                                                Sling Bag
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Tote.html">
-                                                                Tote
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Wallet.html">
-                                                                Wallet
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Bags/Wristlet.html">
-                                                                Wristlet
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Sale/Bags.html">
-                                                                SALE
-                                                            </a>
-                            </li>
-                        </ul>
+                    <li> 
+                        <a href="#" class="primary"> Bags </a> 
+                        <ul> 
+                            <li> <a href="Bags.html"> View All </a> </li> 
+                            <li> <a href="New-Arrivals/Bags.html"> New Arrivals </a> </li> 
+                            <li> <a href="Online-Exclusives/Bags.html"> Online Exclusives </a> </li> 
+                            <li> <a href="Bags/Bowling.html"> Bowling </a> </li> 
+                            <li> <a href="Bags/Card-Holder.html"> Card Holder </a> </li> 
+                            <li> <a href="Bags/Clutch.html"> Clutch </a> </li> 
+                            <li> <a href="Bags/Handbag.html"> Handbag </a> </li> 
+                            <li> <a href="Bags/Haversack.html"> Haversack </a> </li> 
+                            <li> <a href="Bags/Hobo.html"> Hobo </a> </li> 
+                            <li> <a href="Bags/Iphone-Case.html"> iPhone Case </a> </li> 
+                            <li> <a href="Bags/Passport-Holder.html"> Passport Holder </a> </li> 
+                            <li> <a href="Bags/Satchel.html"> Satchel </a> </li> 
+                            <li> <a href="Bags/Shoulder-Bag.html"> Shoulder Bag </a> </li> 
+                            <li> <a href="Bags/Sling-Bag.html"> Sling Bag </a> </li> 
+                            <li> <a href="Bags/Tote.html"> Tote </a> </li> 
+                            <li> <a href="Bags/Wallet.html"> Wallet </a> </li> 
+                            <li> <a href="Bags/Wristlet.html"> Wristlet </a> </li> 
+                            <li> <a href="Sale/Bags.html"> SALE </a> </li> 
+                        </ul> 
                     </li>
-                    <li>
-                        <a href="#" class="primary">
-                                                        Accessories
-                                                    </a>
+                    <li> 
+                        <a href="#" class="primary"> Accessories </a> 
                         <ul>
-                            <li>
-                                <a href="Accessories.html">
-                                                                View All
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="New-Arrivals/Accessories.html">
-                                                                New Arrivals
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Online-Exclusives/Accessories.html">
-                                                                Online Exclusives
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Accessories/Sunglasses.html">
-                                                                Sunglasses
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Accessories/Belts.html">
-                                                                Belts
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Accessories/Bracelets.html">
-                                                                Bracelets
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Accessories/Necklaces.html">
-                                                                Necklaces
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Accessories/Scarves.html">
-                                                                Scarves
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Sale/Accessories.html">
-                                                                SALE
-                                                            </a>
-                            </li>
-                        </ul>
+                            <li> <a href="Accessories.html"> View All </a> </li> 
+                            <li> <a href="New-Arrivals/Accessories.html"> New Arrivals </a> </li> 
+                            <li> <a href="Online-Exclusives/Accessories.html"> Online Exclusives </a> </li> 
+                            <li> <a href="Accessories/Sunglasses.html"> Sunglasses </a> </li> 
+                            <li> <a href="Accessories/Belts.html"> Belts </a> </li> 
+                            <li> <a href="Accessories/Bracelets.html"> Bracelets </a> </li> 
+                            <li> <a href="Accessories/Necklaces.html"> Necklaces </a> </li> 
+                            <li> <a href="Accessories/Scarves.html"> Scarves </a> </li> 
+                            <li> <a href="Sale/Accessories.html"> SALE </a> </li> 
+                        </ul> 
                     </li>
-                    <li>
-                        <a href="#" class="primary">
-                                                        Online Exclusives
-                                                    </a>
-                        <ul>
-                            <li>
-                                <a href="Online-Exclusives.html">
-                                                                View All
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="New-Arrivals/Online-Exclusives.html">
-                                                                New Arrivals
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Online-Exclusives/Signature-Label.html">
-                                                                Charles &amp; Keith Collection
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Online-Exclusives/Shoes.html">
-                                                                Shoes
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Online-Exclusives/Bags.html">
-                                                                Bags
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Online-Exclusives/Bracelets.html">
-                                                                Bracelets
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Online-Exclusives/Necklaces.html">
-                                                                Necklaces
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Online-Exclusives/Scarves.html">
-                                                                Scarves
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Sale/Online-Exclusives.html">
-                                                                Sale
-                                                            </a>
-                            </li>
-                        </ul>
+                    <li> 
+                        <a href="#" class="primary"> Online Exclusives </a> 
+                        <ul> 
+                            <li> <a href="Online-Exclusives.html"> View All </a> </li> <li> <a href="New-Arrivals/Online-Exclusives.html"> New Arrivals </a> </li> <li> <a href="Online-Exclusives/Signature-Label.html"> Charles &amp; Keith Collection </a> </li> <li> <a href="Online-Exclusives/Shoes.html"> Shoes </a> </li> <li> <a href="Online-Exclusives/Bags.html"> Bags </a> </li> <li> <a href="Online-Exclusives/Bracelets.html"> Bracelets </a> </li> <li> <a href="Online-Exclusives/Necklaces.html"> Necklaces </a> </li> <li> <a href="Online-Exclusives/Scarves.html"> Scarves </a> </li> <li> <a href="Sale/Online-Exclusives.html"> Sale </a> </li> 
+                        </ul> 
                     </li>
-
-                    <li>
-                        <a href="#" class="primary">
-                            <font color="red">
-                                                            Sale
-                                                        </font>
-                        </a>
-
-                        <ul>
-                            <li>
-                                <a href="Sale.html">
-                                                                View All
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Sale/Shoes.html">
-                                                                Shoes
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Sale/Bags.html">
-                                                                Bags
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Sale/Accessories.html">
-                                                                Accessories
-                                                            </a>
-                            </li>
-                            <li>
-                                <a href="Sale/Online-Exclusives.html">
-                                                                Online Exclusives
-                                                            </a>
-                            </li>
-
-                        </ul>
+                    <li> 
+                        <a href="#" class="primary"> <font color="red"> Sale </font> </a> 
+                        <ul> 
+                            <li> <a href="Sale.html"> View All </a> </li> <li> <a href="Sale/Shoes.html"> Shoes </a> </li> <li> <a href="Sale/Bags.html"> Bags </a> </li> <li> <a href="Sale/Accessories.html"> Accessories </a> </li> <li> <a href="Sale/Online-Exclusives.html"> Online Exclusives </a> </li> 
+                        </ul> 
                     </li>
-                    <div class="spacer2">
-                    </div>
+                    
+                    <div class="spacer2"></div>
+                    
                     <li>
                         <a href="#" class="primary">
                                                         Campaign
@@ -891,7 +561,7 @@
             </div>
         </div>
         <div class="mainnav_arr">
-            <img src="../../images/icon-mainnav-arr-indicator.png" border="0">
+            <img src="<?php echo App()->theme->baseUrl; ?>/images/icon-mainnav-arr-indicator.png" border="0" alt="" />
         </div>
         <div class="clear">
         </div>
@@ -907,11 +577,9 @@
                     <div class="main-content">
                         <div id="one-column">
                             <p>
-                                <link rel="stylesheet" type="text/css" href="../../../media/CharlesKeithOnline/slider-js/b2c.css">
-                            </p>
-                            <script type="text/javascript" src="../../../media/CharlesKeithOnline/slider-js/jquery.js">
-                            </script>
-                            <script type="text/javascript" src="../../../media/CharlesKeithOnline/slider-js/jquery.bxSlider.js">
+                                <link rel="stylesheet" type="text/css" href="<?php echo App()->theme->baseUrl; ?>/css/b2c.css" />
+                            </p>                            
+                            <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/jquery.bxSlider.js">
                             </script>
                             <script type="text/javascript">
                                 <!--
@@ -935,17 +603,17 @@
                                         <div id="sliderhome">
                                             <div>
                                                 <a href="Campaign/Summer.html" onclick="ga('send', 'event', 'banner', 'click', 'Summer-Launch-Campaign', 1.00, {'nonInteraction': 1});">
-                                                    <img src="../../../media/CharlesKeithOnline/banner/ck-home-model-14april.jpg" border="0" alt="" width="476" height="608">
+                                                    <img src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-model-14april.jpg" border="0" alt="" width="476" height="608" />
                                                 </a>
                                             </div>
                                             <div>
                                                 <a href="Newsletter.html" onclick="ga('send', 'event', 'banner', 'click', 'Summer-Launch-Newsletter', 1.00, {'nonInteraction': 1});">
-                                                    <img src="../../../media/CharlesKeithOnline/banner/charles-keith-home-Summer-2015-join-mailing-list.jpg" border="0" alt="" width="476" height="608">
+                                                    <img src="<?php echo App()->theme->baseUrl; ?>/images/banner/charles-keith-home-Summer-2015-join-mailing-list.jpg" border="0" alt="" width="476" height="608" />
                                                 </a>
                                             </div>
                                             <div>
                                                 <a href="https://secure.charleskeith.com/INTLStore/CK/create account?lang=en" onclick="ga('send', 'event', 'banner', 'click', 'Summer-Launch-Sign-Up', 1.00, {'nonInteraction': 1});">
-                                                    <img src="../../../media/CharlesKeithOnline/banner/charles-keith-home-Summer-2015-sign-up.jpg" alt="" width="476" height="608" border="0">
+                                                    <img src="<?php echo App()->theme->baseUrl; ?>/images/banner/charles-keith-home-Summer-2015-sign-up.jpg" alt="" width="476" height="608" border="0" />
                                                 </a>
                                             </div>
                                         </div>
@@ -953,77 +621,76 @@
 
                                     <div style="width:476px;float:left;" id="corporate-site">
                                         <a href="Campaign/Summer.html" onclick="ga('send', 'event', 'banner', 'click', 'Summer-Launch-Campaign', 1.00, {'nonInteraction': 1});">
-                                            <img src="../../../media/CharlesKeithOnline/banner/ck-home-model-14april.jpg" border="0" alt="" width="476" height="608">
+                                            <img src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-model-14april.jpg" border="0" alt="" width="476" height="608" />
                                         </a>
                                     </div>
                                     <div id="home-shoes" style="width:476px;float:right;">
                                         <a href="Shoes.html" onclick="ga('send', 'event', 'banner', 'click', 'Home-Shoes-2015', 1.00, {'nonInteraction': 1});">
-                                            <img src="../../../media/CharlesKeithOnline/banner/ck-home-shoes14april.jpg" alt="CHARLES &amp; KEITH Bags" style="border: 0px" border="0">
+                                            <img src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-shoes14april.jpg" alt="FURST DESIGN Bags" style="border: 0px" border="0" />
                                         </a>
-                                        <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', 'Home-Shoes-2015', 2.00, {'nonInteraction': 1});" style="display:none;">
+                                        <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', 'Home-Shoes-2015', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
 
                                     </div>
                                     <div id="anzac" style="width:476px;float:right;">
                                         <a href="Promotions.html#2" onclick="ga('send', 'event', 'banner', 'click', 'Home-Anzac-Promo-2015', 1.00, {'nonInteraction': 1});">
-                                            <img src="#" alt="CHARLES &amp; KEITH ANZAC DAY Promotion" style="border: 0px" border="0" id="anzac-img">
+                                            <img src="#" alt="FURST DESIGN ANZAC DAY Promotion" style="border: 0px" border="0" id="anzac-img" />
                                         </a>
-                                        <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', 'Home-Anzac-Promo-2015', 2.00, {'nonInteraction': 1});" style="display:none;">
+                                        <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', 'Home-Anzac-Promo-2015', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
 
                                     </div>
                                     <div style="width:476px;float:right;margin-top:8px;">
                                         <a href="Bags/Wallet.html" onclick="ga('send', 'event', 'banner', 'click', 'Home-Wallet-2015', 1.00, {'nonInteraction': 1});">
-                                            <img style="border: 0px" src="../../../media/CharlesKeithOnline/banner/ck-home-accessories-14april.jpg" alt="CHARLES &amp; KEITH Wallet">
+                                            <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-accessories-14april.jpg" alt="FURST DESIGN Wallet" />
                                         </a>
-                                        <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ' Home-Wallet-2015', 2.00, {'nonInteraction': 1});" style="display:none;">
+                                        <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ' Home-Wallet-2015', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
                                         <a href="Bags.html" onclick="ga('send', 'event', 'banner', 'click', 'Home-Bags-2015', 1.00, {'nonInteraction': 1});" style="margin-left:4px;">
-                                            <img style="border: 0px" src="../../../media/CharlesKeithOnline/banner/ck-home-bags-14april.jpg" alt="CHARLES &amp; KEITH Accessories">
+                                            <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-bags-14april.jpg" alt="FURST DESIGN Accessories" />
                                         </a>
-                                        <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ' Home-Bags-2015', 2.00, {'nonInteraction': 1});" style="display:none;">
+                                        <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ' Home-Bags-2015', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
                                     </div>
                                 </div>
 
                                 <div style="width:960px;float:left;margin-bottom:8px;" id="usaonly">
                                     <a href="Promotions.html#2" onclick="ga('send', 'event', 'banner', 'click', 'CHARLES-KEITH-Free-Standard-Delivery-US-2015', 1.00, {'nonInteraction': 1});">
-                                        <img style="border: 0px" src="../../../media/CharlesKeithOnline/banner/ck-home-standard-delivery-16-mar-us.jpg" alt="CHARLES &amp; KEITH Promotions">
+                                        <img style="border: 0px" src="<?php echo App()->theme->baseUrl ?>/images/banner/ck-home-standard-delivery-16-mar-us.jpg" alt="FURST DESIGN Promotions" />
                                     </a>
-                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ''CHARLES - KEITH - Free - Standard - Delivery - US - 2015',2.00, {'nonInteraction': 1});" style="display:none;">
+                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ''CHARLES - KEITH - Free - Standard - Delivery - US - 2015',2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
                                 </div>
                                 <div style="width:960px;float:left;margin-bottom:8px;" id="gcccountries">
                                     <a href="Promotions.html#2" onclick="ga('send', 'event', 'banner', 'click', 'CHARLES-KEITH-GCC-Launch', 1.00, {'nonInteraction': 1});">
-                                        <img style="border: 0px" src="../../../media/CharlesKeithOnline/banner/ck-home-GCC-promo-freeDelivery.jpg" alt="CHARLES &amp; KEITH Promotions">
+                                        <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-GCC-promo-freeDelivery.jpg" alt="FURST DESIGN Promotions" />
                                     </a>
-                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ''CHARLES - KEITH - GCC - Launch',2.00, {'nonInteraction': 1});" style="display:none;">
+                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ''CHARLES - KEITH - GCC - Launch',2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
                                 </div>
 
                                 <div style="width:960px;float:left;margin-bottom:8px;" id="hk-mac">
                                     <a href="Promotions.html#2" onclick="ga('send', 'event', 'banner', 'click', 'Free-Standard-Delivery-HKG-2015', 1.00, {'nonInteraction': 1});">
-                                        <img style="border: 0px" src="../../../media/CharlesKeithOnline/banner/ck-home-standard-delivery-hk-mac-16-mar.jpg" alt="CHARLES &amp; KEITH Promotions">
+                                        <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-standard-delivery-hk-mac-16-mar.jpg" alt="FURST DESIGN Promotions" />
                                     </a>
-                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ''Free - Standard - Delivery - HKG - 2015',2.00, {'nonInteraction': 1});" style="display:none;">
+                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ''Free - Standard - Delivery - HKG - 2015',2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
                                 </div>
 
 
                                 <div style="width:960px;float:left;margin-bottom:8px;" id="shipping-promo">
                                     <a href="Promotions.html#2" onclick="ga('send', 'event', 'banner', 'click', 'CHARLES-KEITH-FREE-INTERNATIONAL-DELIVERY-30-JAN-INTL-2015', 1.00, {'nonInteraction': 1});">
-                                        <img style="border: 0px" src="../../../media/CharlesKeithOnline/banner/ck-home-standard-delivery-intl-16-mar.jpg" alt="CHARLES &amp; KEITH Promotions">
+                                        <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-standard-delivery-intl-16-mar.jpg" alt="FURST DESIGN Promotions" />
                                     </a>
-                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ' CHARLES-KEITH-FREE-INTERNATIONAL-DELIVERY-30-JAN-INTL-2015', 2.00, {'nonInteraction': 1});" style="display:none;">
+                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ' CHARLES-KEITH-FREE-INTERNATIONAL-DELIVERY-30-JAN-INTL-2015', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
                                 </div>
                                 <div style="width:960px;float:left; margin-bottom:8px;" id="mothers-day">
                                     <a href="http://www.charleskeith.com/media/CharlesKeithOnline/mothers-day-edit/mothers-day-edit-intl.html" onclick="ga('send', 'event', 'banner', 'click', 'Charles-Keith-Mothers-Day-Edit', 1.00, {'nonInteraction': 1});">
-                                        <img style="border: 0px" src="../../../../charleskeith.staging.cxrus.net/media/CharlesKeithOnline/banner/ck-home-to-mum-with-love-2015.jpg" alt="CHARLES &amp; KEITH">
+                                        <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-to-mum-with-love-2015.jpg" alt="FURST DESIGN" />
                                     </a>
-                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', 'Charles-Keith-Mothers-Day-Edit', 2.00, {'nonInteraction': 1});" style="display:none;">
+                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', 'Charles-Keith-Mothers-Day-Edit', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
                                 </div>
                                 <div style="width:960px;float:left;" id="iwd">
                                     <a href="http://www.charleskeith.com/media/CharlesKeithOnline/international-womens-day/international-womens-day-intl.html" onclick="ga('send', 'event', 'banner', 'click', 'Charles-Keith-IWD', 1.00, {'nonInteraction': 1});">
-                                        <img style="border: 0px" src="../../../media/CharlesKeithOnline/banner/ck-iwd-2015.jpg" alt="CHARLES &amp; KEITH">
+                                        <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-iwd-2015.jpg" alt="FURST DESIGN" />
                                     </a>
-                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', 'Charles-Keith-IWD', 2.00, {'nonInteraction': 1});" style="display:none;">
+                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', 'Charles-Keith-IWD', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
                                 </div>
 
-
-                                <img id="image3" style="border:none;" border="0">
+                                <img id="image3" style="border:none;" border="0" src="" alt=""/>
 
                             </div>
                             <script type="text/javascript">
@@ -1183,44 +850,7 @@
             </div>
         </div>
 
-        <!-- Google Tag Manager -->
-        <script>
-            dataLayer = [{
-                'pageTitle': 'Online Shoes | Women\'s Shoes | Footwear for Women - CHARLES & KEITH',
-                'pageUrl': 'http://www.charleskeith.com:80/INTLStore/CK/ASM/Home',
-                'Member_ID': '',
-                'transactionId': '',
-                'paymentType': '',
-                'country': 'American Samoa',
-                'promoCode': '',
-                'promoDiscount': '',
-                'transactionSubtotal': '',
-                'transactionShipping': '',
-                'transactionTotal': '',
-                'currency': '',
-                'transactionProducts': ''
-            }];
-        </script>
-        <noscript>
-            <iframe src="http://www.googletagmanager.com/ns.html?id=GTM-WP8T3B" height="0" width="0" style="display:none;visibility:hidden">
-            </iframe>
-        </noscript>
-        <script>
-            (function(w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({
-                    'gtm.start': new Date().getTime(),
-                    event: 'gtm.js'
-                });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
-                j.src =
-                    '../../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-WP8T3B');
-        </script>
+        <!-- Google Tag Manager -->        
         <!-- End Google Tag Manager -->
         <script type="text/javascript">
             var _gaq = _gaq || [];
@@ -1242,7 +872,26 @@
 
     </div>
     <!--End of landing-->
-
+    
+    <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/cufon-yui.js"></script>
+    <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/Century_Gothic_700.font.js"></script>
+    <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/common.js"></script>    
+    <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/supersized.3.2.7.js"></script>    
+    <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/jScrollPane.js"></script>
+    <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/browserDetect.js"></script>
+    <script type='text/javascript' src='<?php echo App()->theme->baseUrl; ?>/js/jquery.cookie.js'></script>
+    <script type='text/javascript' src='<?php echo App()->theme->baseUrl; ?>/js/jquery.dcjqaccordion.2.7.min.js'></script>
+    <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/jquery.dd.js"></script>    
+    <script src="<?php echo App()->theme->baseUrl; ?>/js/jquery-ui-1.8.23.custom.min.js" type="text/javascript"></script>
+    <!-- Smooth Div Scroll 1.3 minified-->
+    <script src="<?php echo App()->theme->baseUrl; ?>/js/mainnav-smoothScrolling.js" type="text/javascript"></script>  
+    <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/ProductController.js"></script>
+    <!--<script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/SmallShoppingBagController.js"></script>-->
+    <!--<script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/engine.js"></script>-->
+    <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/util.js"></script>
+    <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/script.js"></script>
     <script type="text/javascript">
         landing();
     </script>
