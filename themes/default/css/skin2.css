@@ -1,0 +1,60 @@
+.blue {
+	border: 1px solid rgb(221, 221, 221);
+}
+.blue .divider {
+	display: none;
+}
+.blue .arrow {
+	background: url("../../../www.marghoobsuleman.com/mywork/jcomponents/image-dropdown/samples/images/msdropdown/skin2/dd_arrow.html") no-repeat; width: 27px; height: 27px; margin-top: -14px;
+}
+.blue .arrow:hover {
+	background-position: 0px 100%;
+}
+.blue .ddTitle {
+	background: url("../../../www.marghoobsuleman.com/mywork/jcomponents/image-dropdown/samples/images/msdropdown/skin2/title-bg.html") repeat-x left top rgb(16, 187, 230); color: rgb(255, 255, 255);
+}
+.blue .ddTitle .ddTitleText {
+	padding: 10px 20px 10px 5px; font-size: 16px; font-weight: bold;
+}
+.blue .ddTitle .ddTitleText .ddTitleText {
+	padding: 0px;
+}
+.blue .ddTitle .description {
+	color: rgb(102, 102, 102); font-size: 12px;
+}
+.blue .ddTitle .ddTitleText img {
+	padding-right: 5px;
+}
+.blue .ddChild {
+	border: 1px solid rgb(195, 195, 195); left: -1px; background-color: rgb(255, 255, 255);
+}
+.blue .ddChild li {
+	padding: 5px; border-bottom-color: rgb(195, 195, 195); border-bottom-width: 1px; border-bottom-style: solid; background-color: rgb(255, 255, 255);
+}
+.blue .ddChild li .description {
+	color: rgb(102, 102, 102);
+}
+.blue .ddChild li .ddlabel {
+	color: rgb(51, 51, 51);
+}
+.blue .ddChild li.hover {
+	background-color: rgb(102, 204, 255);
+}
+.blue .ddChild li img {
+	padding: 0px 6px 0px 0px;
+}
+.blue .ddChild li.optgroup {
+	padding: 0px;
+}
+.blue .ddChild li.optgroup .optgroupTitle {
+	padding: 0px 5px; font-style: italic; font-weight: bold;
+}
+.blue .ddChild li.optgroup ul li {
+	padding: 5px 5px 5px 15px;
+}
+.blue .ddChild li.selected {
+	background-color: rgb(13, 151, 186);
+}
+.blue .ddChild li.selected .ddlabel {
+	color: rgb(255, 255, 255);
+}

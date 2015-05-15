@@ -1,0 +1,179 @@
+:focus { 
+	outline:0; 
+}
+
+.borderRadius {
+	border-radius: 0px; -moz-border-radius: 0px;
+}
+.borderRadiusTp {
+	border-radius: 0px 0px 0px 0px; border-radius: 0px 0px 0px 0px;
+}
+.borderRadiusBtm {
+	border-radius: 0px 0px 0px 0px; -moz-border-radius: 0 0 0px 0px;
+}
+.ddcommon {
+	display: inline-block; position: relative; cursor: default; zoom: 1;
+}
+.ddcommon ul {
+	margin: 0px; padding: 0px;
+}
+.ddcommon ul li {
+	list-style-type: none;
+}
+.borderRadiusTp ul li:last-child {
+	border-radius: 0px 0px 0px 0px; border: none; -moz-border-radius: 0 0 0px 0px;
+}
+.borderRadiusBtm ul li:first-child {
+	border-radius: 0px 0px 0px 0px; border-radius: 0px 0px 0px 0px;
+}
+.ddcommon .disabled img {
+	color: rgb(153, 153, 153); filter: alpha(opacity=50); opacity: 0.5; -khtml-opacity: .5; -moz-opacity: .5;
+}
+.ddcommon .disabled span {
+	color: rgb(153, 153, 153); filter: alpha(opacity=50); opacity: 0.5; -khtml-opacity: .5; -moz-opacity: .5;
+}
+.disabledAll.ddcommon {
+	color: rgb(153, 153, 153); filter: alpha(opacity=50); opacity: 0.5; -khtml-opacity: .5; -moz-opacity: .5;
+}
+.ddcommon .clear {
+	clear: both;
+}
+.ddcommon .shadow {
+	box-shadow: 5px 5px 5px -5px #888888; -moz-box-shadow: 5px 5px 5px -5px #888888; -webkit-box-shadow: 5px 5px 5px -5px #888888;
+}
+.ddcommon input.text {
+	background:#ffffff; padding: 0px; border: currentColor; left: 2px; top: 0px; width: 98%; height: 98%; color:#7e7e7e; display: block; position: absolute;
+}
+.ddOutOfVision {
+	display: inline-block; position: relative; zoom: 1;
+}
+.borderRadius .shadow {
+	box-shadow: 5px 5px 5px -5px #888888; -moz-box-shadow: 5px 5px 5px -5px #888888; -webkit-box-shadow: 5px 5px 5px -5px #888888;
+}
+.borderRadiusBtm .shadow {
+	box-shadow: -5px -5px 5px -5px #888888; -moz-box-shadow: -5px -5px 5px -5px #888888; -webkit-box-shadow: -5px -5px 5px -5px #888888;
+}
+.borderRadiusTp .border {
+	border-radius: 0px 0px 0px 0px; -moz-border-radius: 0 0 0px 0px;
+}
+.borderRadius .border {
+	border-radius: 0px 0px 0px 0px; -moz-border-radius: 0 0 0px 0px;
+}
+.borderRadiusBtm .border {
+	border-radius: 0px 0px 0px 0px; border-radius: 0px 0px 0px 0px;
+}
+img.fnone {
+	float: none !important;
+}
+img.fnew {
+	margin-left:5px;
+}
+.ddcommon .divider {
+	width: 0px; height: 100%; position: absolute;
+}
+.ddcommon .arrow {
+	top: 50%; right: 4px; display: inline-block; position: absolute; cursor:pointer;
+}
+.ddcommon .arrow:hover {
+	background-position: 0px 100%;
+}
+.ddcommon .ddTitle {
+	padding: 0px; width: 100%; display: inline-block; position: relative;  cursor:pointer;
+}
+.ddcommon .ddTitle .ddTitleText {
+	display: block;
+}
+.ddcommon .ddTitle .ddTitleText .ddTitleText {
+	padding: 0px;
+}
+.ddcommon .ddTitle .description {
+	display: block;
+}
+.ddcommon .ddTitle .ddTitleText img {
+	vertical-align: middle; float: left; position: relative; margin-top:-2px;
+}
+.ddcommon .ddChild {
+	width: 100%; display: none; position: absolute; z-index: 9999; overflow-x: hidden; overflow-y: auto; zoom: 1;
+}
+.ddcommon .ddChild li {
+	clear: both;  cursor:pointer;
+}
+.ddcommon .ddChild li .description {
+	display: block;
+}
+.ddcommon .ddChild li img {
+	border: 0px currentColor; vertical-align: middle; float: left; position: static;  margin-top:-2px;
+}
+.ddcommon .ddChild li.optgroup {
+	padding: 0px;
+}
+.ddcommon .ddChild li.optgroup .optgroupTitle {
+	padding: 0px 5px; font-style: italic; font-weight: bold;
+}
+.ddcommon .ddChild li.optgroup ul li {
+	padding: 5px 5px 5px 15px;
+}
+.ddcommon .noBorderTop {
+	margin: 0px; padding: 0px; border-top-color: currentColor !important; border-top-width: 0px !important; border-top-style: none !important;
+}
+.dd {
+	border: none;
+}
+.dd .divider {
+	right: 24px; border:none;
+}
+.dd .arrow {
+	background: url("../images/arrow-dd.gif") no-repeat; width: 16px; height: 16px; margin-top: -8px;
+}
+.dd .arrow:hover {
+	background-position: 0px 100%;
+}
+.dd .ddTitle {
+	background-color:#ffffff; color:#000000;
+}
+.dd .ddTitle .ddTitleText {
+	padding: 5px 20px 5px 5px;
+}
+.dd .ddTitle .ddTitleText .ddTitleText {
+	padding: 0px;
+}
+.dd .ddTitle .description {
+	color:#666666; font-size: 12px;
+}
+.dd .ddTitle .ddTitleText img {
+	padding-right: 5px;
+}
+.dd .ddChild {
+	border: none; left: 0; background-color:#ffffff; max-height:150px;!important overflow:auto!important;
+}
+.dd .ddChild li {
+	padding: 5px; border: none; background-color:#ffffff;
+}
+.dd .ddChild li .description {
+	color:#666666;
+}
+.dd .ddChild li .ddlabel {
+	color:#232323;
+}
+.dd .ddChild li.hover {
+	background-color:#f2f2f2;
+}
+.dd .ddChild li img {
+	padding: 0px 6px 0px 0px;
+}
+.dd .ddChild li.optgroup {
+	padding: 0px;
+}
+.dd .ddChild li.optgroup .optgroupTitle {
+	padding: 0px 5px; font-style: italic; font-weight: bold;
+}
+.dd .ddChild li.optgroup ul li {
+	padding: 5px 5px 5px 15px;
+}
+.dd .ddChild li.selected {
+	color:#232323; background-color:#c6c6c6;
+}
+
+.dd .ddChild li.selected .ddlabel{
+	color:#232323;
+}
