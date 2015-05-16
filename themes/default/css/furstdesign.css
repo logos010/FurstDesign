@@ -1,0 +1,18 @@
+/*customized css*/
+
+input.btn{
+    background: black;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: smaller;
+}
+input.btn:hover{
+    color: #FFF;
+    background: black;        
+}
+
+.form-group{
+    margin-bottom: 15px;
+}
+
+.control-label{padding-right: 5px; width: 100px !important; text-align: left !important}

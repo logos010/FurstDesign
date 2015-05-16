@@ -13,8 +13,11 @@
         <link href="<?php echo App()->theme->baseUrl; ?>/css/dd.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="<?php echo App()->theme->baseUrl; ?>/skin2.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="<?php echo App()->theme->baseUrl; ?>/css/jScrollPane-new.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="<?php echo App()->theme->baseUrl; ?>/css/bootstrap.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="<?php echo App()->theme->baseUrl; ?>/css/furstdesign.css" rel="stylesheet" type="text/css" media="screen" />        
 
-        <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/jquery.js"></script>    
+        <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/jquery.js"></script>
+        <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/bootstrap.js"></script>
     </head>
     <body>        
         <style type="text/css">    
@@ -108,11 +111,11 @@
                 </div>
             </a>
             <!-- END OF LOGO -->
+            
             <!-- START OF TOP RIGHT MENU -->
-            <div class="topright-menu" style="display: none;">
-
+            <div class="topright-menu">
                 <a class="shoppingbag" href="javascript:void(0);" id="smallshoppingItems">
-                    <img src="<?php echo App()->theme->baseUrl; ?>/images/shop-mini.png" width="7" height="7" border="0" alt="" /> SHOPPING BAG (
+                    <img src="<?php echo App()->theme->baseUrl; ?>/images/shop-mini.png" width="7" height="7" border="0" alt="" /> SHOPPING BAG (0)
                 </a>
 
                 <a style="padding:3px 0;" href="javascript:hideTooltip('#emptybag');">
@@ -120,58 +123,25 @@
                         There's no item in your shopping bag.
                     </div>
                 </a>
-                <span id="shoppingBagSpan">
-                                                |
-                                            </span>
-                <!--
-                                  <a href="#">
-                                  Sign Out
-                                  </a>
-                                  <span>
-                                  |
-                                  </span>
-                                            -->
-                <a href="http://www.charleskeith.com/INTLStore/CK/credit-balance?dest=ASM" id="lOnlineCreditBalance">
-                                                Online Store Credits : 
-                                            </a>
-                <span id="lOnlineCreditBalanceSpan">
-                                                |
-                                            </span>
-                <a href="http://www.charleskeith.com/INTLStore/CK/sign in?dest=ASM" id="signIn">
-                                                Sign In
-                                            </a>
-                <span id="signInSpan">
-                                                |
-                                            </span>
-                <a href="#" id="signInName" class="myaccount-username">
-                </a>
-                <span id="signInNameSpan">
-                                                |
-                                            </span>
-                <a href="javascript:void(0);" class="showoverlay" name="#changecountry" onClick="javascript:showOverlay_new(this);">
-                                                American Samoa
-                                            </a>
-                <span>
-                                                |
-                                            </span>
-                <a href="javascript:void(0);" id="init-search-dd">
-                                                Search
-                                            </a>
-                <div class="clear">
-                </div>
+                <span id="shoppingBagSpan">|</span>       
+                <a href="<?php echo App()->createUrl('user/login'); ?>" id="signIn"> Sign In </a>
+                <span id="signInSpan">| </span>
+                <a href="#" id="signInName" class="myaccount-username"></a>
+                <span id="signInNameSpan"> | </span>                
+                <a href="javascript:void(0);" id="init-search-dd">Search</a>
+                <div class="clear"></div>
+                
                 <!--Start of search-ddbox -->
                 <div id="search-box" style="display:none;">
                     <div class="search-menu">
                         <div class="spacer">
                         </div>
                         <input id="search" name="search" type="text" value="" class="searchtxt" onfocus="clearText(this)" onblur="clearText(this)" onkeydown="searchCaller(event, 'en');" />
-                        <a href="#" onclick="searchCaller(event, 'en');">
-                                                        >
-                                                    </a>
-                        <div class="spacer">
-                        </div>
+                        <a href="#" onclick="searchCaller(event, 'en');"> ></a>
+                        <div class="spacer"></div>
                     </div>
                 </div>
+                
                 <!--End of search-ddbox -->
                 <!--Start of shoppingbag-ddbox -->
                 <div id="shoppingbag-box">
@@ -573,248 +543,7 @@
         <!--   START OF MAIN CONTENT AREA -->
         <div style="padding-top: 80px; margin-left: 230px;">
             <div id="main-content-container-home">
-                <div id="static-content">
-                    <div class="main-content">
-                        <div id="one-column">
-                            <p>
-                                <link rel="stylesheet" type="text/css" href="<?php echo App()->theme->baseUrl; ?>/css/b2c.css" />
-                            </p>                            
-                            <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/jquery.bxSlider.js">
-                            </script>
-                            <script type="text/javascript">
-                                <!--
-                                var $j = $.noConflict(true);
-                                $j(document).ready(function() {
-                                    $j('#sliderhome').bxSlider({
-                                        mode: 'vertical',
-                                        auto: true,
-                                        pager: true,
-                                        controls: false,
-                                        speed: 400,
-                                        pause: 6000
-                                    });
-                                });
-                                // -->
-                            </script>
-
-                            <div style="width:960px;float:left;">
-                                <div style="width:960px;float:left;margin-bottom:5px;margin-top:8px;">
-                                    <div id="delivery-destination" style="width:476px;float:left;">
-                                        <div id="sliderhome">
-                                            <div>
-                                                <a href="Campaign/Summer.html" onclick="ga('send', 'event', 'banner', 'click', 'Summer-Launch-Campaign', 1.00, {'nonInteraction': 1});">
-                                                    <img src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-model-14april.jpg" border="0" alt="" width="476" height="608" />
-                                                </a>
-                                            </div>
-                                            <div>
-                                                <a href="Newsletter.html" onclick="ga('send', 'event', 'banner', 'click', 'Summer-Launch-Newsletter', 1.00, {'nonInteraction': 1});">
-                                                    <img src="<?php echo App()->theme->baseUrl; ?>/images/banner/charles-keith-home-Summer-2015-join-mailing-list.jpg" border="0" alt="" width="476" height="608" />
-                                                </a>
-                                            </div>
-                                            <div>
-                                                <a href="https://secure.charleskeith.com/INTLStore/CK/create account?lang=en" onclick="ga('send', 'event', 'banner', 'click', 'Summer-Launch-Sign-Up', 1.00, {'nonInteraction': 1});">
-                                                    <img src="<?php echo App()->theme->baseUrl; ?>/images/banner/charles-keith-home-Summer-2015-sign-up.jpg" alt="" width="476" height="608" border="0" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div style="width:476px;float:left;" id="corporate-site">
-                                        <a href="Campaign/Summer.html" onclick="ga('send', 'event', 'banner', 'click', 'Summer-Launch-Campaign', 1.00, {'nonInteraction': 1});">
-                                            <img src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-model-14april.jpg" border="0" alt="" width="476" height="608" />
-                                        </a>
-                                    </div>
-                                    <div id="home-shoes" style="width:476px;float:right;">
-                                        <a href="Shoes.html" onclick="ga('send', 'event', 'banner', 'click', 'Home-Shoes-2015', 1.00, {'nonInteraction': 1});">
-                                            <img src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-shoes14april.jpg" alt="FURST DESIGN Bags" style="border: 0px" border="0" />
-                                        </a>
-                                        <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', 'Home-Shoes-2015', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
-
-                                    </div>
-                                    <div id="anzac" style="width:476px;float:right;">
-                                        <a href="Promotions.html#2" onclick="ga('send', 'event', 'banner', 'click', 'Home-Anzac-Promo-2015', 1.00, {'nonInteraction': 1});">
-                                            <img src="#" alt="FURST DESIGN ANZAC DAY Promotion" style="border: 0px" border="0" id="anzac-img" />
-                                        </a>
-                                        <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', 'Home-Anzac-Promo-2015', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
-
-                                    </div>
-                                    <div style="width:476px;float:right;margin-top:8px;">
-                                        <a href="Bags/Wallet.html" onclick="ga('send', 'event', 'banner', 'click', 'Home-Wallet-2015', 1.00, {'nonInteraction': 1});">
-                                            <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-accessories-14april.jpg" alt="FURST DESIGN Wallet" />
-                                        </a>
-                                        <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ' Home-Wallet-2015', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
-                                        <a href="Bags.html" onclick="ga('send', 'event', 'banner', 'click', 'Home-Bags-2015', 1.00, {'nonInteraction': 1});" style="margin-left:4px;">
-                                            <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-bags-14april.jpg" alt="FURST DESIGN Accessories" />
-                                        </a>
-                                        <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ' Home-Bags-2015', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
-                                    </div>
-                                </div>
-
-                                <div style="width:960px;float:left;margin-bottom:8px;" id="usaonly">
-                                    <a href="Promotions.html#2" onclick="ga('send', 'event', 'banner', 'click', 'CHARLES-KEITH-Free-Standard-Delivery-US-2015', 1.00, {'nonInteraction': 1});">
-                                        <img style="border: 0px" src="<?php echo App()->theme->baseUrl ?>/images/banner/ck-home-standard-delivery-16-mar-us.jpg" alt="FURST DESIGN Promotions" />
-                                    </a>
-                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ''CHARLES - KEITH - Free - Standard - Delivery - US - 2015',2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
-                                </div>
-                                <div style="width:960px;float:left;margin-bottom:8px;" id="gcccountries">
-                                    <a href="Promotions.html#2" onclick="ga('send', 'event', 'banner', 'click', 'CHARLES-KEITH-GCC-Launch', 1.00, {'nonInteraction': 1});">
-                                        <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-GCC-promo-freeDelivery.jpg" alt="FURST DESIGN Promotions" />
-                                    </a>
-                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ''CHARLES - KEITH - GCC - Launch',2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
-                                </div>
-
-                                <div style="width:960px;float:left;margin-bottom:8px;" id="hk-mac">
-                                    <a href="Promotions.html#2" onclick="ga('send', 'event', 'banner', 'click', 'Free-Standard-Delivery-HKG-2015', 1.00, {'nonInteraction': 1});">
-                                        <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-standard-delivery-hk-mac-16-mar.jpg" alt="FURST DESIGN Promotions" />
-                                    </a>
-                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ''Free - Standard - Delivery - HKG - 2015',2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
-                                </div>
-
-
-                                <div style="width:960px;float:left;margin-bottom:8px;" id="shipping-promo">
-                                    <a href="Promotions.html#2" onclick="ga('send', 'event', 'banner', 'click', 'CHARLES-KEITH-FREE-INTERNATIONAL-DELIVERY-30-JAN-INTL-2015', 1.00, {'nonInteraction': 1});">
-                                        <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-standard-delivery-intl-16-mar.jpg" alt="FURST DESIGN Promotions" />
-                                    </a>
-                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', ' CHARLES-KEITH-FREE-INTERNATIONAL-DELIVERY-30-JAN-INTL-2015', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
-                                </div>
-                                <div style="width:960px;float:left; margin-bottom:8px;" id="mothers-day">
-                                    <a href="http://www.charleskeith.com/media/CharlesKeithOnline/mothers-day-edit/mothers-day-edit-intl.html" onclick="ga('send', 'event', 'banner', 'click', 'Charles-Keith-Mothers-Day-Edit', 1.00, {'nonInteraction': 1});">
-                                        <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-home-to-mum-with-love-2015.jpg" alt="FURST DESIGN" />
-                                    </a>
-                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', 'Charles-Keith-Mothers-Day-Edit', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
-                                </div>
-                                <div style="width:960px;float:left;" id="iwd">
-                                    <a href="http://www.charleskeith.com/media/CharlesKeithOnline/international-womens-day/international-womens-day-intl.html" onclick="ga('send', 'event', 'banner', 'click', 'Charles-Keith-IWD', 1.00, {'nonInteraction': 1});">
-                                        <img style="border: 0px" src="<?php echo App()->theme->baseUrl; ?>/images/banner/ck-iwd-2015.jpg" alt="FURST DESIGN" />
-                                    </a>
-                                    <img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="ga('send', 'event', 'banner', 'impression', 'Charles-Keith-IWD', 2.00, {'nonInteraction': 1});" style="display:none;" alt="" />
-                                </div>
-
-                                <img id="image3" style="border:none;" border="0" src="" alt=""/>
-
-                            </div>
-                            <script type="text/javascript">
-                                <!--
-                                var x = location.pathname;
-                                var video = document.getElementById('ytplayer');
-                                var zaf = '/INTLStore/CK/ZAF/Home';
-                                var usa = '/INTLStore/CK/USA/Home';
-                                var aze = '/INTLStore/CK/AZE/Home';
-                                var bhr = '/INTLStore/CK/BHR/Home';
-                                var brn = '/INTLStore/CK/BRN/Home';
-                                var cyp = '/INTLStore/CK/CYP/Home';
-                                var egy = '/INTLStore/CK/EGY/Home';
-                                var est = '/INTLStore/CK/EST/Home';
-                                var geo = '/INTLStore/CK/GEO/Home';
-                                var irn = '/INTLStore/CK/IRN/Home';
-                                var jor = '/INTLStore/CK/JOR/Home';
-                                var kaz = '/INTLStore/CK/KAZ/Home';
-                                var kwt = '/INTLStore/CK/KWT/Home';
-                                var lva = '/INTLStore/CK/LVA/Home';
-                                var lbn = '/INTLStore/CK/LBN/Home';
-                                var ltu = '/INTLStore/CK/LTU/Home';
-                                var mar = '/INTLStore/CK/MAR/Home';
-                                var mmr = '/INTLStore/CK/MMR/Home';
-                                var omn = '/INTLStore/CK/OMN/Home';
-                                var pak = '/INTLStore/CK/PAK/Home';
-                                var phl = '/INTLStore/CK/PHL/Home';
-                                var qat = '/INTLStore/CK/QAT/Home';
-                                var sau = '/INTLStore/CK/SAU/Home';
-                                var tur = '/INTLStore/CK/TUR/Home';
-                                var are = '/INTLStore/CK/ARE/Home';
-                                var nzl = '/INTLStore/CK/NZL/Home';
-                                var twa = '/INTLStore/CK/TWA/Home';
-                                var vnm = '/INTLStore/CK/VNM/Home';
-                                var mys = '/INTLStore/CK/MYS/Home';
-                                var mng = '/INTLStore/CK/MNG/Home';
-                                var idn = '/INTLStore/CK/IDN/Home';
-                                var ind = '/INTLStore/CK/IND/Home';
-                                var hkg = '/INTLStore/CK/HKG/Home';
-                                var mac = '/INTLStore/CK/MAC/Home';
-                                var tha = '/INTLStore/CK/THA/Home';
-                                var vnm = '/INTLStore/CK/VNM/Home';
-                                var lka = '/INTLStore/CK/LKA/Home';
-                                var kor = '/INTLStore/CK/KOR/Home';
-                                var khm = '/INTLStore/CK/KHM/Home';
-                                var aus = '/INTLStore/CK/AUS/Home';
-                                var lao = '/INTLStore/CK/LAO/Home';
-                                var dom = '/INTLStore/CK/DOM/Home';
-                                var intall = '/INTLStore/CK/INT/Home';
-                                if (x === zaf) {
-                                    document.getElementById('image3').src = '../../../media/CharlesKeithOnline/banner/home-product-disclaimer.jpg';
-                                    document.getElementById('image3').style.marginTop = '5px';
-                                    document.getElementById('usaonly').style.display = 'none';
-                                    document.getElementById('hk-mac').style.display = 'none';
-                                    document.getElementById('corporate-site').style.display = 'none';
-                                    document.getElementById('gcccountries').style.display = 'none';
-                                    document.getElementById('anzac').style.display = 'none';
-                                } else if (x === aze || x === brn || x === cyp || x === egy || x === est || x === geo || x === irn || x === jor || x === kaz || x === lva || x === lbn || x === ltu || x === mar || x === mmr || x === pak || x === phl || x === sau || x === tur || x === lao || x === dom || x === intall) {
-                                    document.getElementById('image3').style.display = 'none';
-                                    document.getElementById('usaonly').style.display = 'none';
-                                    document.getElementById('hk-mac').style.display = 'none';
-                                    document.getElementById('shipping-promo').style.display = 'none';
-                                    document.getElementById('iwd').style.display = 'none';
-                                    document.getElementById('sliderhome').style.display = 'none';
-                                    document.getElementById('delivery-destination').style.display = 'none';
-                                    document.getElementById('gcccountries').style.display = 'none';
-                                    document.getElementById('mothers-day').style.display = 'none';
-                                    document.getElementById('anzac').style.display = 'none';
-                                } else if (x === usa) {
-                                    document.getElementById('image3').style.display = 'none';
-                                    document.getElementById('shipping-promo').style.display = 'none';
-                                    document.getElementById('hk-mac').style.display = 'none';
-                                    document.getElementById('corporate-site').style.display = 'none';
-                                    document.getElementById('gcccountries').style.display = 'none';
-                                    document.getElementById('anzac').style.display = 'none';
-                                } else if (x === mac || x === hkg) {
-                                    document.getElementById('image3').style.display = 'none';
-                                    document.getElementById('shipping-promo').style.display = 'none';
-                                    document.getElementById('usaonly').style.display = 'none';
-                                    document.getElementById('corporate-site').style.display = 'none';
-                                    document.getElementById('gcccountries').style.display = 'none';
-                                    document.getElementById('anzac').style.display = 'none';
-                                } else if (x === aus) {
-                                    document.getElementById('image3').style.display = 'none';
-                                    document.getElementById('shipping-promo').style.display = 'none';
-                                    document.getElementById('usaonly').style.display = 'none';
-                                    document.getElementById('hk-mac').style.display = 'none';
-                                    document.getElementById('corporate-site').style.display = 'none';
-                                    document.getElementById('gcccountries').style.display = 'none';
-                                    document.getElementById('home-shoes').style.display = 'none';
-                                    document.getElementById('anzac-img').src = '../../../media/CharlesKeithOnline/banner/ck-home-anzac-day-aus-23april.jpg';
-                                } else if (x === nzl) {
-                                    document.getElementById('image3').style.display = 'none';
-                                    document.getElementById('shipping-promo').style.display = 'none';
-                                    document.getElementById('usaonly').style.display = 'none';
-                                    document.getElementById('hk-mac').style.display = 'none';
-                                    document.getElementById('corporate-site').style.display = 'none';
-                                    document.getElementById('gcccountries').style.display = 'none';
-                                    document.getElementById('home-shoes').style.display = 'none';
-                                    document.getElementById('anzac-img').src = '../../../media/CharlesKeithOnline/banner/ck-home-anzac-day-nz-23april.jpg';
-                                } else if (x === kwt || x === are || x === omn || x === qat || x === bhr) {
-                                    document.getElementById('image3').style.display = 'none';
-                                    document.getElementById('shipping-promo').style.display = 'none';
-                                    document.getElementById('usaonly').style.display = 'none';
-                                    document.getElementById('hk-mac').style.display = 'none';
-                                    document.getElementById('corporate-site').style.display = 'none';
-                                    document.getElementById('anzac').style.display = 'none';
-                                } else {
-                                    document.getElementById('image3').style.display = 'none';
-                                    document.getElementById('usaonly').style.display = 'none';
-                                    document.getElementById('hk-mac').style.display = 'none';
-                                    document.getElementById('corporate-site').style.display = 'none';
-                                    document.getElementById('gcccountries').style.display = 'none';
-                                    document.getElementById('anzac').style.display = 'none';
-                                }
-                                // -->
-                            </script>
-                        </div>
-                        <div class="clear">
-                        </div>
-                        <div class="clearfooter">
-                        </div>
-                    </div>
-                </div>
+                <?php echo $content; ?>
                 <!--End of static-content -->
             </div>
         </div>
@@ -822,36 +551,17 @@
 
         <div id="footer-home">
             <div class="copyright">
-                <a href="https://www.facebook.com/pages/Charles-Keith/157130102253?ref=ts" target="_blank" class="socialmedia">
-                                                                                            Facebook
-                                                                                        </a>
-                <a href="http://www.twitter.com/Charles_Keith" target="_blank" class="socialmedia">
-                                                                                            Twitter
-                                                                                        </a>
-                <a href="https://plus.google.com/101066707796671335057/posts?ref=ts#101066707796671335057/posts?ref=ts" target="_blank" class="socialmedia">
-                                                                                            Google+
-                                                                                        </a>
-                <a href="http://charleskeith.tumblr.com/?ref=ts" target="_blank" class="socialmedia">
-                                                                                            Tumblr
-                                                                                        </a>
-                <a href="http://www.pinterest.com/charleskeith/" target="_blank" class="socialmedia">
-                                                                                            Pinterest
-                                                                                        </a>
-                <a href="http://charleskeithsays.com/" target="_blank" class="socialmedia">
-                                                                                            Blog
-                                                                                        </a>
-                <a href="http://statigr.am/charleskeithofficial" target="_blank" class="socialmedia">
-                                                                                            Instagram
-                                                                                        </a>
-                <a href="http://www.youtube.com/user/CharlesKeithChannel#p/c/4D814D67E7562346" target="_blank" class="socialmedia">
-                                                                                            YouTube
-                                                                                        </a>
-
+                <a href="https://www.facebook.com/pages/Charles-Keith/157130102253?ref=ts" target="_blank" class="socialmedia">Facebook</a>
+                <a href="http://www.twitter.com/Charles_Keith" target="_blank" class="socialmedia"> Twitter </a> 
+                <a href="https://plus.google.com/101066707796671335057/posts?ref=ts#101066707796671335057/posts?ref=ts" target="_blank" class="socialmedia"> Google+ </a> 
+                <a href="http://charleskeith.tumblr.com/?ref=ts" target="_blank" class="socialmedia"> Tumblr </a> 
+                <a href="http://www.pinterest.com/charleskeith/" target="_blank" class="socialmedia"> Pinterest </a> 
+                <a href="http://charleskeithsays.com/" target="_blank" class="socialmedia"> Blog </a> 
+                <a href="http://statigr.am/charleskeithofficial" target="_blank" class="socialmedia"> Instagram </a> 
+                <a href="http://www.youtube.com/user/CharlesKeithChannel#p/c/4D814D67E7562346" target="_blank" class="socialmedia"> YouTube </a>                
             </div>
         </div>
-
-        <!-- Google Tag Manager -->        
-        <!-- End Google Tag Manager -->
+        
         <script type="text/javascript">
             var _gaq = _gaq || [];
         </script>
