@@ -7,68 +7,15 @@ $this->menu = array(
     array('label' => 'Create Product', 'url' => array('create')),
     array('label' => 'Manage Product', 'url' => array('admin')),
 );
+
+//Multiple Select Dropdown -->
+scriptFile(themeUrl() . "/js/jquery-ui-1.8.23.custom.min.js", CClientScript::POS_BEGIN);
+scriptFile(themeUrl() . "/js/mainnav-smoothScrolling.js", CClientScript::POS_BEGIN);
+scriptFile(themeUrl() . "/js/jQuery.equalHeights.js", CClientScript::POS_BEGIN);
 ?>
 
-<section id="slider"><!--slider-->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div id="slider-carousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#slider-carousel" data-slide-to="1"></li>
-                        <li data-target="#slider-carousel" data-slide-to="2"></li>
-                    </ol>
-
-                    <div class="carousel-inner">
-                        <?php $this->widget('application.components.Promotion'); ?>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section><!--product category-->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <?php $this->widget('application.components.ProductLeftHandSide'); ?>
-            </div>
-
-            <div class="col-sm-9 padding-right">
-                <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center">Features Items</h2>
-                    <!--Products grid -->
-                    <div id="loading" class="hidden">
-                        <img src="<?php echo App()->theme->baseUrl ?>/images/loading.gif" alt="loading" />
-                    </div>
-                    <div id="product-grid">
-                    <?php
-                        echo $grid;
-                    ?>
-                    </div>
-                    <!--End of product grid-->
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script type="text/javascript">
-    //add to cart
-    $("a.add-to-cart").on('click', function(){
-        var quantity = 1;
-        var productID = $(this).attr('id').substring(8, 9);
-        console.log(productID);
-        $.ajax({
-            url: "<?php echo App()->controller->createUrl('/order/addToCart'); ?>",
-            type: 'post',
-            data: "pid="+productID+"&quantity="+quantity,
-            success: function(items){                             
-                $("a#shopping-item").find("span").html(items + " items(s) in");
-            },
-        });
-    });
-</script>
+<div>
+    <?php foreach ($terms as $k => $v): ?>
+    <a href="<?php echo App()->controller->createUrl('product/cate/', array('tid' => $v->id)); ?>"><?php echo $v->name; ?></a><br/>
+    <?php endforeach; ?>
+</div>

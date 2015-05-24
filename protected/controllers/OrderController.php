@@ -15,6 +15,8 @@ class OrderController extends ControllerBase {
     }
     
     public function actionViewCart() {
+        cssFile(App()->theme->baseUrl . '/css/font-awesome.min.css');
+        
         $shopping = App()->shoppingCart;
 
         $this->render('viewCart', array(
@@ -25,11 +27,11 @@ class OrderController extends ControllerBase {
     
     public function actionAddToCart() {
         $pid = $_POST['pid'];
+        $size = $_POST['size'];
         $quantity = $_POST['quantity'];
-
         $product = Product::model()->findByPk($pid);
         App()->shoppingCart->put($product, $quantity);
-        echo Yii::app()->shoppingCart->getCount();
+        echo App()->shoppingCart->getCount();
     }
     
     public function actionCheckOut() {
@@ -41,7 +43,9 @@ class OrderController extends ControllerBase {
         }
     }
 
-    public function actionOrderConform($cid) {
+    public function actionOrderConform($cid) {        
+        scriptFile(App()->theme->baseUrl . "/js/validator.min.js");
+        
         $user = User::model()->findByPk($cid);
         if (!is_null($user)) {
             if (isset($_POST['order'])) {
@@ -126,7 +130,7 @@ class OrderController extends ControllerBase {
             'order' => 'ward_name'
         ));
 
-        $option = "<option>-- Ch?n Phu?ng/X� --</option>";
+        $option = "<option>-- Chọn Phường/Xã --</option>";
         foreach ($wards as $k => $v) {
             $option .= CHtml::tag('option', array('value' => $v - ward_id), $v->ward_name, true);
         }

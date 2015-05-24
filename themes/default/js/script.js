@@ -133,7 +133,7 @@ $(document).ready(function () {
 
     //show & hide quick view link
     if ($('.item-product-img').length) {
-        $('.item-product-img').live("mouseenter", function () {
+        $('.item-product-img').on("mouseenter", function () {
             if (this.className.indexOf("view3") >= 0) {
                 $(this).find('.product-img').animate({
                     opacity: 0.1}
@@ -144,7 +144,7 @@ $(document).ready(function () {
         }
         );
 
-        $('.item-product-img').live("mouseleave", function () {
+        $('.item-product-img').on("mouseleave", function () {
             if (this.className.indexOf("view3") >= 0) {
                 $(this).find('.product-img').animate({
                     opacity: 1.0}
@@ -169,24 +169,33 @@ $(document).ready(function () {
      }
      );
      */
-    checkItemDiv();
+    //checkItemDiv();
 }
 );
 
-function checkItemDiv() {
-    $("#total").html($(".catalogue-itembox").length);
-    if ($("#total").html() == 0) {
-        $('#footer').css("display", "none");
-        $('#footer2').css("display", "");
-        $('#empty_catalogue').css("display", "");
-    }
-    else {
-        $('#footer').css("display", "");
-        $('#footer2').css("display", "none");
-        $('#empty_catalogue').css("display", "none");
-    }
-}
+//function checkItemDiv() {
+//    $("#total").html($(".catalogue-itembox").length);
+//    if ($("#total").html() == 0) {
+//        $('#footer').css("display", "none");
+//        $('#footer2').css("display", "");
+//        $('#empty_catalogue').css("display", "");
+//    }
+//    else {
+//        $('#footer').css("display", "");
+//        $('#footer2').css("display", "none");
+//        $('#empty_catalogue').css("display", "none");
+//    }
+//}
 
+// multiple select dropdown
+//$(function(){
+//	//$("select").multiselect();
+//	$("#ms_category").multiselect({classes: "categoryFilter",noneSelectedText: "Category",selectedText: 'Category',minWidth: 125});
+//	$("#ms_material").multiselect({classes: "materialFilter",noneSelectedText: "Material",selectedText: 'Material',minWidth: 125});
+//	$("#ms_colour").multiselect({classes: "colourFilter",noneSelectedText: "Colour",selectedText: 'Colour',minWidth: 125});
+//	$("#ms_size").multiselect({classes: "sizeFilter",noneSelectedText: "Size",selectedText: 'Size',minWidth: 125});
+//	$("#ms_price").multiselect({classes: "priceFilter",noneSelectedText: "Price",selectedText: 'Price',minWidth: 125});
+//});
 
 
 function searchCaller(e, lang) {

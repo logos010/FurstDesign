@@ -15,9 +15,11 @@ class LoginController extends ControllerBase {
     public function actionLogin() {        
         if (Yii::app()->user->isGuest) {
             $model = new UserLogin;
+            
             // collect user input data
-            if (isset($_POST['UserLogin'])) {
+            if (isset($_POST['UserLogin'])) {                
                 $model->attributes = $_POST['UserLogin'];
+                var_dump(Yii::app()->user->returnUrl); exit();
                 // validate user input and redirect to previous page if valid
                 
                 if ($model->validate()) {

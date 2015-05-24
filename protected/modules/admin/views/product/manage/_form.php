@@ -47,11 +47,12 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
                 ));
                 echo $form->textFieldRow($model, 'discount', array(
                     'class' => 'span10',
-                    'onkeyup' => "$('#Product_discount').val($.number($(this).val()));"
+//                    'onkeyup' => "$('#Product_discount').val($.number($(this).val()));"
                 ));
                 echo $form->textFieldRow($model, 'sale_promotion', array('class' => 'span10'));
 //                echo $form->labelEx($model, 'status');
                 echo $form->dropDownlistRow($model, 'status', array(1 => 'Active', 0 => 'Inactive'), array('class' => 'span10'));
+                echo $form->dropDownlistRow($model, 'promote', array(1 => 'Active', 0 => 'Inactive'), array('class' => 'span10'));
                 ?>                
             </div>
             <div class="pull-left span6">

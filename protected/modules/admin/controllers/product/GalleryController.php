@@ -84,7 +84,7 @@ class GalleryController extends ControllerBase {
 
     public function actionUpload($pid) {
         $glue = array(
-            'small' => array('w' => 85, 'h' => 85),
+            'small' => array('w' => 40, 'h' => 40),
         );
 
         $filedata = $_FILES['Filedata'];

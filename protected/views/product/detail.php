@@ -1,298 +1,350 @@
-<?php
-cssFile(themeUrl() . "/css/star-rating.css");
-scriptFile(themeUrl() . "/js/jquery.elevatezoom.js", CClientScript::POS_BEGIN);
-scriptFile(themeUrl() . "/js/validator.min.js", CClientScript::POS_BEGIN);
-
-?>
-<style>
-    #msg{display:  none}
-</style>
-
-<section><!--product category-->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 hidden-xs">
-                <?php $this->widget('application.components.ProductLeftHandSide'); ?>
+<div class="product-details-container">
+    <div class="product-details-column-left">
+        <!-- START OF MAIN PRODUCT IMAGE -->
+        <div class="main-product-img">
+            <div class="clearfix">
+                <a href="<?php echo BASE_URL . '/' . str_replace('medium', 'original', $product->image); ?>" class="jqzoom" rel="gal1" title="<?php echo $product->name ?>" style="outline-style: none; text-decoration: none;">
+                    <img class="beforezoom" src="<?php echo BASE_URL . '/' . $product->image; ?>" title="<?php echo $product->name; ?>" alt="<?php echo $product->name; ?>">
+                </a>
             </div>
 
-            <div class="col-sm-9 padding-right">
-                <div class="product-details"><!--product-details-->
-                    <div class="col-sm-5">
-                        <div class="view-product">
-                            <?php $productImage = str_replace('/small', '/original', $product->image); ?>
-                            <img id="img_01" src="<?php echo BASE_URL . "/" . $product->image; ?>" data-zoom-image="<?php echo BASE_URL . "/" . $productImage; ?>" alt="<?php echo $product->name; ?>"/>
-                            <h3>ZOOM</h3>
-                        </div>
-                        <div id="similar-product" class="carousel slide" data-ride="carousel">
-
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <div id="gallery_01">
-                                        <?php
-                                        if (!is_null($gallery)):
-                                            foreach ($gallery as $k => $v):
-                                                $g = str_replace('/orginal', '/small', $v->uri);
-                                                echo CHtml::openTag('a', array('href' => '#', 'data-image' => BASE_URL . "/" . $g, 'data-zoom-image' => BASE_URL . "/" . $v->uri));
-                                                echo CHtml::image(BASE_URL . "/" . $g, $v->name, array('id' => 'img_01'));
-                                                echo CHtml::closeTag('a');
-                                            endforeach;
-                                        endif;
-                                        ?>
+            <br>
+            <div class="clearfix">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody>
+                        <tr align="center">
+                            <td align="center">
+                                <ul id="thumblist" class="clearfix">
+                                    <?php foreach ($gallery as $k => $v): ?>
+                                        <li>
+                                            <?php
+                                            $smallImg = BASE_URL . '/' . str_replace('medium', 'small', $v->uri);
+                                            $LargeImg = BASE_URL . '/' . str_replace('medium', 'original', $v->uri);
+                                            ?>
+                                            <a class="zoomThumbActive" href="javascript:void(0);" rel="{gallery: 'gal1', smallimage: '<?php echo $smallImg; ?>',largeimage: '<?php echo $LargeImg; ?>'}">
+                                                <img src="<?php echo BASE_URL . '/' . str_replace('medium', 'small', $v->uri) ?>" height="40" alt="ANKLE STRAP HEELS">
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td align="center">
+                                <div class="share-box">
+                                    <span class="share-text">SHARE</span>
+                                    <div class="share-icon" style="display: none;">
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.charleskeith.com%2FINTLStore%2FCK%2FASM%2F%2520Shoes%2FHeels%2FAnkle-Strap-Heels%2FCream%2FCK1-60360771%2FProduct" class="facebook" target="_blank"></a>
+                                        <a href="http://twitter.com/share?url=http%3A%2F%2Fwww.charleskeith.com%2FINTLStore%2FCK%2FASM%2F%2520Shoes%2FHeels%2FAnkle-Strap-Heels%2FCream%2FCK1-60360771%2FProduct" class="twitter" target="_blank"></a>
+                                        <a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.charleskeith.com%2FINTLStore%2FCK%2FASM%2F%2520Shoes%2FHeels%2FAnkle-Strap-Heels%2FCream%2FCK1-60360771%2FProduct" class="googleplus" target="_blank"></a>
+                                        <a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fwww.charleskeith.com%2FINTLStore%2FCK%2FASM%2F%2520Shoes%2FHeels%2FAnkle-Strap-Heels%2FCream%2FCK1-60360771%2FProduct" class="tumblr" target="_blank"></a>
+                                        <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.charleskeith.com%2FINTLStore%2FCK%2FASM%2F%2520Shoes%2FHeels%2FAnkle-Strap-Heels%2FCream%2FCK1-60360771%2FProduct" class="pinterest" target="_blank"></a>
+                                        <a href="http://statigr.am/charleskeithofficial" class="instagram" target="_blank"></a>
+                                        <a href="mailto:?body=http%3A%2F%2Fwww.charleskeith.com%2FINTLStore%2FCK%2FASM%2F%2520Shoes%2FHeels%2FAnkle-Strap-Heels%2FCream%2FCK1-60360771%2FProduct" class="showoverlay email"></a>
+                                        <a href="javascript:window.print()" class="print"></a>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- Controls -->
-                            <a class="left item-control" href="#similar-product" data-slide="prev">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a class="right item-control" href="#similar-product" data-slide="next">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="product-information"><!--/product-information-->
-                            <img src="<?php echo App()->theme->baseUrl; ?>/images/product-details/new.jpg" class="newarrival" alt="" />
-                            <h2><?php echo $product->name; ?></h2>
-                            <p>Web ID: 1089772</p>                                                        
-                            <!--<input id="prod-rating" value="0" type="number" class="rating" min=0 max=5 step=1 data-size="xs" data-stars="5">-->
-                            <input id="prating" value="0" type="number" class="rating">
-                            <span>
-                                <span><?php echo number_format($product->price, 0, '.', ','); ?> <sup>đ</sup></span>
-                                <label>Quantity:</label>
-                                <input type="text" value="3" name="qanntity" id="prod_quantity"/>
-                                <button type="button" class="btn btn-fefault cart" >
-                                    <i class="fa fa-shopping-cart"></i>
-<!--                                    <a href="javascript:void(0)" id="add-to-cart">Add to cart</a>-->
-                                    Add to cart
-                                </button>
-                            </span>
-                            <p><b>Availability:</b> <?php echo ($product->quantity > 0) ? 'Còn Hàng' : 'Liên Hệ'; ?></p>
-                            <p><b>Condition:</b> New</p>
-                            <p><b>Brand:</b> E-SHOPPER</p>
-
-                            <!-- Social share buttons -->
-                            <div id="share-buttons"> 
-                                <!-- Facebook -->
-                                <a href="http://www.facebook.com/sharer.php?u=http://www.simplesharebuttons.com" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" /></a>
-                                <!-- Twitter -->
-                                <a href="http://twitter.com/share?url=http://www.simplesharebuttons.com&text=Simple Share Buttons&hashtags=simplesharebuttons" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" /></a>
-                                <!-- Google+ -->
-                                <a href="https://plus.google.com/share?url=http://www.simplesharebuttons.com" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/google.png" alt="Google" /></a>
-                            </div>
-
-                        </div><!--/product-information-->
-                    </div>
-                </div><!--/product-details-->
-
-                <div class="category-tab shop-details-tab"><!--category-tab-->
-                    <div class="col-sm-12">
-                        <ul class="nav nav-tabs">
-                            <li><a href="#details" data-toggle="tab">Chi Tiết</a></li>
-                            <li><a href="#tag" data-toggle="tab">Tag</a></li>
-                            <li class="active"><a href="#reviews" data-toggle="tab">Reviews (<?php echo $numOfReview; ?>)</a></li>
-                        </ul>
-                    </div>
-                    <div class="tab-content">
-                        <div class="tab-pane fade" id="details" >
-                            <?php echo $product->detail; ?>
-                        </div>
-
-                        <!-- Tag -->
-                        <div class="tab-pane fade" id="tag" >   
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="images/home/gallery1.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                            
-                        </div>
-
-                        <!-- Reviews -->
-                        <div class="tab-pane fade active in" id="reviews" >
-                            <div class="col-sm-12">
-                                <?php  
-                                    if (!is_null($review)) :
-                                        foreach ($review as $k => $v):                                            
-                                ?>
-                                    <ul>
-                                        <li><a href="javascript:void(0)"><i class="fa fa-user"></i><?php echo $v->name; ?></a></li>
-                                        <li><a href="javascript:void(0)"><i class="fa fa-clock-o"></i><?php echo $v->date; ?></a></li>
-                                        <li><a href="javascript:void(0)"><i class="fa fa-calendar-o"></i><?php echo $v->time; ?></a></li>
-                                    </ul>
-                                    <p><?php echo $v->content; ?></p>
-                                <?php
-                                        endforeach;;
-                                    endif; 
-                                ?>                                
-                                
-                                <b>Write Your Review</b>
-                                <form method="post" id="prod-review-form" role="form" data-toggle="validator">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-9" id="msg">
-                                                <div class="alert alert-info">
-                                                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                                                    <strong>OnlineShop</strong> cám ơn bạn đã để lại lời nhắn.
-                                                </div>                                                
-                                            </div>
-                                        </div>
-                                        <div class="row">                                            
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <label for="inputName" class="control-label" placeholder="Your Name" >Name</label>
-                                                    <input type="text" class="form-control" id="inputName" placeholder="Your Name" name="name" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group">
-                                                    <label for="inputEmail" class="control-label">Email</label>
-                                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" data-error="That email address is invalid" required>
-                                                    <div class="help-block with-errors"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <textarea name="content" class="form-control" data-error="You neet to give your feedback" required ></textarea>
-                                                    <div class="help-block with-errors"></div>
-                                                    <button type="button" class="btn btn-primary" id="submit-prod-review" style="margin-top: 0px">Submit</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </div><!--/category-tab-->
-                
-                <?php if (count($recommendProducts)): ?>
-                <div class="recommended_items"><!--recommended_items-->
-                    <h2 class="title text-center">recommended items</h2>
-                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <?php
-                                $totalRecmdProd = count($recommendProducts);
-                                for ($i=1; $i<=$totalRecmdProd; $i++):
-                                    $active = $i<=3 ? 'active' : '';
-                            ?>
-                            <div class="item <?php echo $active; ?>">
-                                <?php foreach ($recommendProducts as $k => $v): ?>
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <a href="<?php echo App()->createUrl('/product/detail', array('pid' => $v->id)); ?>"><img src="<?php echo BASE_URL . "/" . $v->image; ?>" alt="<?php echo $v->name; ?>" /></a>
-                                                <h2><?php echo number_format($v->price, 0, " ", ","); ?> <sup>d</sup></h2>
-                                                <a href="<?php echo App()->createUrl('/product/detail', array('pid' => $v->id)); ?>"><p><?php echo $v->name; ?></p></a>                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php endforeach; ?>
-                            </div>
-                            <?php endfor; ?>
-                            
-                        </div>
-                        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>			
-                    </div>
-                </div><!--/recommended_items-->
-                <?php endif; ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+        <!-- END OF MAIN PRODUCT IMAGE -->
+    </div> <!-- END OF COLUMN LEFT -->
+
+    <div class="product-details-column-right">
+        <div class="product-main-desc">
+            <div class="product-name"><?php echo $product->name; ?></div>
+            <div class="spacer"></div>
+            <div class="product-code">CK1-60360771</div>
+            <div class="spacer"></div>
+            <div class="product-price">
+                <?php echo ($product->discount != 0) ? $product->isProductDiscounted($product) : number_format($product->price, 0, '', ',') . "<sup> đ</sup>"; ?>
+            </div>
+            <div class="spacer"></div>
+        </div>
+
+
+
+        <!-- START OF BUTTON HOLDER -->
+        <div class="product-navigator">
+            <a href="http://www.charleskeith.com/INTLStore/CK/product-category-sale?dest=ASM" class="back-to-thumb" title="Back to product catalogue"></a>
+            <div class="spacer"></div>
+            <a href="../../../../../Shoes/Heels/Basic-Slingback-Heels/Pink/CK1-60010259/Product.html" class="next-item" title="Next product"></a> 
+            <a href="../../../../../Shoes/Heels/Dorsay-Heels/Black/CK1-60580072/Product.html" class="previous-item" title="Previous product"></a>
+            <div class="spacer"></div>                
+        </div>
+        <!-- END OF BUTTON HOLDER --> 
+        <div class="spacer"></div>
+
+        <!-- START Main Info in Collapsible -->
+        <div id="accordion-maininfo">
+            <?php echo $product->detail; ?>
+            <!-- Product detail block -->
+            <h3>Details</h3>
+            <div>
+                <p><?php echo $product->description; ?></p>
+                <p><br mce_bogus="1"></p>
+                <p style="font-weight:bold;">PAIR IT WITH:</p>
+                <table class="mceItemTable" style="border-spacing:5px;margin-left:-5px;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="../../../../../Bags/Wristlet/Triangular-Wristlet/Lilac/CK6-20700205/Product.html" target="_blank">
+                                    <img style="width:120px; height:120px;" src=""></a>
+                            </td>
+                            <td>
+                                <a href="../../../../../Bags/Wallet/Turn-Lock-Wallet/Black/CK2-10840019/Product.html" target="_blank">
+                                    <img style="width:120px; height:120px;" src=""></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><br mce_bogus="1"></p>
+                <br/><br/>
+                <div class="clear">
+                    <strong>Label:</strong> CHARLES & KEITH<br/>
+                    <strong>Shoe Type:</strong> Heels<br/>
+                    <strong>Shoe Style:</strong> Ankle Strap<br/>
+                    <strong>Toe Type:</strong> Open Toe<br/>
+                    <strong>Material Description:</strong> Natural PU<br/>
+                    <strong>Heel Height Range:</strong> High (76-95)<br/></div>
+            </div>
+
+            <!-- Product detail block -->
+            <h3>Shipping &amp; Delivery</h3>
+            <div>
+                CHARLESKEITH.COM offers Economical Delivery, Standard Delivery and Express Delivery for International orders. The delivery timing taken will be approximately 3-6 business days for express mode, 6-10 business days for standard mode and 10-16 business days for economical mode after placing your order online. For more details, please refer to our 
+                <a href="http://www.charleskeith.com/INTLStore/CK/shipping and tracking" _mce_href="http://www.charleskeith.com/INTLStore/CK/shipping%20and%20tracking" style="">shipping and tracking policy</a>.
+            </div>
+
+            <!-- Product detail block -->
+            <h3>Returns</h3>
+            <div>
+                We want you to love what you have purchased from us. If something is not right, please let us know. If you wish to return the item to us, please refer to our <a href="http://www.charleskeith.com/INTLStore/CK/returns and exchanges" _mce_href="http://www.charleskeith.com/INTLStore/CK/returns%20and%20exchanges" style="">returns and exchange policy</a> for more information. 
+            </div>
+
+            <!-- Product detail block -->
+            <h3 class="showoverlay non-expandable" name="#sizechart" onClick="javascript:showOverlay_new(this);">Size Chart</h3>
+        </div>
+        <div class="spacer"></div>
+        <!-- END Main Info in Collapsible -->
+
+        <div class="spacer2"></div>
+        <div class="size-section" id="sizeDropDown">
+            <select id="product_size" title="Size" multiple="multiple" name="Size" size="3">
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+            </select>
+            <input type="hidden" name="product_size" id="prod_size" />
+            <div class="clear"></div>
+            <span id="sizeValidator" style="color: red"></span>
+        </div>
+
+        <div class="spacer"></div>
+        <div class="qty-section" id="quantityDropDown">
+            <select id="product_qty" title="Quantity" multiple="multiple" name="Quantity" size="3" disabled>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <input type="hidden" name="product_qty" id="prod_qty" />
+        </div>
+
+        <!-- START OF COLOR, SIZE, QTY SELECT SECTION -->
+
+        <div class="qty-section" id="quantityDropDown">
+        </div>
+        <div class="clear"></div>
+        <div class="spacer1-5"></div>
+        <input id="addToBagButton" name="" type="image" value="ADD TO BAG" src="<?php echo App()->theme->baseUrl; ?>/images/buttons/new/btn-addtobag.gif" onclick="javascript:void(0)">
     </div>
-</section>
 
-<style>
-    /*set a border on the images to prevent shifting*/ 
-    #gallery_01 img{border:1px solid white;} 
-    /*Change the colour*/ 
-    /*.active img{border:2px solid #333 !important;}*/
-</style>
+    <div class="spacer2"></div>
 
-<script src="<?php echo themeUrl(); ?>/js/star-rating.js" type="text/javascript"></script>
+    <!-- LAST PRODUCTS -->
+    <div class="product-details-last-viewed">
+        <div class="hr"></div>
+        <div class="spacer2"></div>
+        <h2>Last Viewed Products</h2>
+        <script type="text/javascript">
+            var lastViewed = $.parseJSON($.cookie('lastViewedProucts'));
+            var baseUrl = '<?php echo BASE_URL . "/"; ?>';
+            var count = lastViewed['items'].length;
+            var productLink = "<?php echo App()->controller->createUrl('/product/detail/pid/'); ?>";
+
+            for (i = 0; i < count; i++) {
+                document.write('<div class="catalogue-itembox">');
+                document.write('<div class="item-product-img">');
+                document.write('<a href="' + productLink + '/' + lastViewed['items'][i]['id'] + '">');
+                document.write('<img src="' + baseUrl + lastViewed['items'][i]['image'] + '" border="0" class="product-img" alt="' + lastViewed['items'][i]['name'] + '" title="' + lastViewed['items'][i]['name'] + '" />');
+                document.write('</a>');
+                document.write('</div>');
+                document.write('</div>');
+            }
+//            console.log("Remove cookie - " + $.removeCookie('lastViewedProucts')); 
+        </script>
+        <div class="clear"></div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+
 <script type="text/javascript">
-    //Gallery
-    $("#img_01").elevateZoom({
-        constrainType: "height",
-        constrainSize: 274,
-        zoomType: "lens",
-        containLensZoom: true,
-        gallery: 'gallery_01',
-        cursor: 'pointer',
-        galleryActiveClass: "active"
+    //settings of product main info accordion 
+    $("#accordion-maininfo").accordion({
+        //0019596: Auto-expand DETAILS tab in product detail page
+        //active: false,
+        heightStyle: "content",
+        collapsible: true
     });
-    $("#img_01").bind("click", function (e) {
-        var ez = $('#zoom_03').data('elevateZoom');
-        $.fancybox(ez.getGalleryList());
-        return false;
+    // product image zoom in setting
+    $('.jqzoom').jqzoom({
+        zoomType: 'innerzoom',
+        preloadImages: false,
+        alwaysOn: false,
+        title: false,
+        zoomWidth: 2,
+        zoomHeight: 2
     });
+    // if the browser is IE8, remove the float style.
+    // this is workaround for tracking issue #0015019 (Big image not displayed properly when viewing in product details page using IE8)
+    if ($.browser.msie && document.documentMode && document.documentMode == 8) {
+        $(".jqzoom").css("float", "none");
+        if ($(".zoomPad").length > 0) {
+            $(".zoomPad").css("float", "none");
+        }
+    }
 
-    //Rating stars
-    $("#prating").rating({
-        min: 0,
-        max: 5,
-        step: 1,
-        size: 'xs',
-        stars: 5,
-        clearButton: '<button class="btn btn-default" type="button"><i class="glyphicon glyphicon-remove"></i> Clear</button>',
-        clearElement: "#kv-clear",
-        captionElement: "#kv-caption"
+    // show & hide share icons
+    $(".share-text").mouseenter(function () {
+        clearTimeout(timeout);
+        $('.share-icon').show();
     });
-
-    $("#prating").on('rating.change', function (event, value, caption) {
-        console.log(value);
-    })
-
-    //submit review button
-    $("#submit-prod-review").on('click', function () {
-        var formElement = $("form#prod-review-form").serialize();
-        $.ajax({
-            url: "<?php echo App()->controller->createUrl('product/productReview', array('pid' => $product->id)); ?>",
-            type: 'post',
-            data: formElement,
-            success: function (data) {
-                console.log(data);
-                $("#msg").fadeToggle("slow", "linear");
-            },
-            complete: function () {
-                document.getElementById("prod-review-form").reset();
-                $("#msg").delay(5000).fadeToggle("slow", "linear");
+    $(".share-text").mouseleave(function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(function ()
+        {
+            $('.share-icon').hide();
+        }, 200);
+    });
+    $(".share-icon").mouseenter(function () {
+        clearTimeout(timeout);
+        $('.share-icon').show();
+    });
+    $(".share-icon").mouseleave(function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(function ()
+        {
+            $('.share-icon').hide();
+        }, 200);
+    });
+    //select box
+    $('#product_size').ddslick({
+        height: 100,
+        width: 100,
+        selectText: "Size",
+    });
+    $('#product_qty').ddslick({
+        height: 100,
+        width: 100,
+        selectText: "Quantitly",
+    });
+    //http://designwithpc.com/plugins/ddslick
+    function getSelectedValue(selectBox) {
+        $('#' + selectBox).on('click', function () {
+            var ddData = $('#' + selectBox).data('ddslick');
+            if (!$.isEmptyObject(ddData['selectedData'])) {
+                $("input[name='" + selectBox + "']").val(ddData['selectedData']['value']);
+                return ddData['selectedData']['value'];
             }
         });
-        return false;
-    });
-    
+    }
+    getSelectedValue('product_size');
+    getSelectedValue('product_qty');
+
     //add to cart
-    $("button.cart").on('click', function(){
-        var quantity = $("#prod_quantity").val();
+    $("#addToBagButton").on('click', function () {
+        var s = $("input[name='product_size']").val();
+        var q = $("input[name='product_qty']").val();
+        var productName = '<?php echo $product->name; ?>';
+
+        if (s === '' || q === '') {
+            bootbox.alert("Bạn chưa chọn kích cỡ HOẶC số lượng sản phẩm");
+            return false;
+        }
+
+
         $.ajax({
             url: "<?php echo App()->controller->createUrl('/order/addToCart'); ?>",
             type: 'post',
-            data: "pid=<?php echo $product->id; ?>&quantity="+quantity,
-            success: function(items){
-                //alert('added ' + items);              
-                $("a#shopping-item").find("span").html(items + " items(s) in");
+            data: "pid=<?php echo $product->id; ?>&quantity=" + q + "&size=" + s,
+            success: function (items) {
+                $("#shopping-item").html("(" + items + ")");
             },
+            complete: function(){
+                bootbox.alert("Sản phẩm '"+productName+"' của bạn đã được đưa vào giỏ hàng.");
+            }
         });
     });
+
+    //set lastest viwwed products    
+    $.cookie.json = true;
+    $.cookie('lastViewedProucts', '',
+            {
+                expires: 7,
+                path: '/'
+            });
+
+    if ($.cookie('lastViewedProucts') === undefined || $.cookie('lastViewedProucts') === '') {
+        var productID = "<?php echo $product->id ?>";
+        var productName = "<?php echo $product->name ?>";
+        var productImg = "<?php echo $product->image ?>";
+        var last = new Object();
+        last = {"items": [{"id": productID, "name": productName, "image": productImg}]};
+        $.cookie('lastViewedProucts', last);
+    }
+    else {
+        var currentProductID = "<?php echo $product->id; ?>";
+        var cookie = $.cookie('lastViewedProucts');
+        var existed = 0;
+        for (var i = 0; i < count; i++) {
+//            console.log("last viewed: " + lastViewed['items'][i]['id'] + " Current: " + currentProductID);
+//            console.log(lastViewed['items'][i]['id'] === currentProductID);
+            if (lastViewed['items'][i]['id'] === currentProductID) {
+                existed = 1;
+                break;
+            }
+        }
+    }
+
+    //Add cookie when the product was viewed did not exist
+    if (!existed) {
+        if ($.cookie('lastViewedProucts')) {
+            cookie.items.push({"id": currentProductID, "name": "<?php echo $product->name ?>", "image": "<?php echo $product->image ?>"});
+            
+            if (count >= 6){
+                cookie.items.shift();
+                $.cookie('lastViewedProucts', cookie);
+            }
+            
+            $.cookie('lastViewedProucts', cookie);
+            console.log($.cookie('lastViewedProucts'));
+        }
+    }
+//    $.removeCookie('lastViewedProucts', {path: '/'});
+
 </script>

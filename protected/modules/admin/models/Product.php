@@ -23,20 +23,19 @@ class Product extends ProductBase {
 
             if (!is_dir($file_path)) {
                 mkdir($file_path . '/original', 0777, true);
-                mkdir($file_path . '/medium', 0777, true);
+                mkdir($file_path . '/medium', 0777, true);                
                 mkdir($file_path . '/small', 0777, true);
             }
 
-            $img = new Image($image->tempName);
-            //$image->resize(210, 180);
+            $img = new Image($image->tempName);            
             $img->save($file_path . '/original/' . $name);
             list($width, $height, $type, $attr) = getimagesize($image->tempName);
-            $img->resize(415, 310);
+            $img->resize(342, 342);
             $img->save($file_path . '/medium/' . $name);
-            $img->resize(210, 180);
+            $img->resize(253, 253);
             $img->save($file_path . '/small/' . $name);
 
-            $this->image = $uri . '/small/' . $name;
+            $this->image = $uri . '/medium/' . $name;
         }
     }
 

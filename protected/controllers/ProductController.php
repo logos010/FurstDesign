@@ -9,8 +9,13 @@ class ProductController extends ControllerBase {
     }
 
     public function actionIndex() {
+        $terms = Term::model()->findAll(array(
+            'condition' => 'status = 1 AND parent_id = 0',
+        ));
+                
         $this->render('index', array(
-            'grid' => $this->loadProduct()
+            'terms' => $terms
+                
         ));
     }
 
@@ -84,6 +89,11 @@ class ProductController extends ControllerBase {
     }
 
     public function actionDetail($pid) {
+        cssFile(App()->theme->baseUrl . '/css/jquery.jqzoom.css');
+        scriptFile(App()->theme->baseUrl . '/js/jquery.browser.js', CClientScript::POS_BEGIN);
+        scriptFile(App()->theme->baseUrl . '/js/jquery.jqzoom-core.js', CClientScript::POS_BEGIN);        
+        scriptFile(App()->theme->baseUrl . '/js/jquery.ddslick.js', CClientScript::POS_BEGIN);
+        
         $product = Product::model()->findByPk($pid);
 
         $gallery = ProductGallery::model()->findAll(array(
@@ -134,7 +144,8 @@ class ProductController extends ControllerBase {
         ));
         
         $this->render('loadProductByCate', array(
-            'grid' => $this->generateProduct($product),
+            'products' => $product,
+            'totalProducts' => count($product)
         ));
     }
 

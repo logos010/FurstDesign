@@ -5,19 +5,13 @@
 
 <section id="cart_items">
     <div class="container">
-        <div class="breadcrumbs">
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Check out</li>
-            </ol>
-        </div><!--/breadcrums-->
-
         <div class="table-responsive cart_info">
+            <form id="editForm" name="shoppingBagView" > 
             <table class="table table-condensed">
                 <thead>
                     <tr class="cart_menu">
                         <td class="image">Item</td>
-                        <td class="description"></td>
+                        <td class="description">Name</td>
                         <td class="price">Price</td>
                         <td class="quantity">Quantity</td>
                         <td class="total">Total</td>
@@ -28,7 +22,7 @@
                     <?php foreach ($items as $item): ?>
                         <tr id="itemRow-<?php echo $item->id ?>">
                             <td class="cart_product">
-                                <a href=""><img src="<?php echo BASE_URL . "/" . $item->image ?>" alt=""></a>
+                                <a href="<?php echo App()->controller->createUrl('product/detail', array('pid' => $item->id)); ?>"><img src="<?php echo BASE_URL . "/" . str_replace('medium', 'small', $item->image)  ?>" width="80" alt="<?php echo $item->name ?>"></a>
                             </td>
                             <td class="cart_description">
                                 <h4><a href=""><?php echo $item->name ?></a></h4>
@@ -77,6 +71,7 @@
                     </tr>                    
                 </tbody>
             </table>
+            </form>
         </div>
         
         <input name="button" class="btn btn-primary pull-right" id="checkout" value="Check out" type="submit">
@@ -88,7 +83,7 @@
                 <strong>Gio hang</strong> cua ban dang trong.
             </div>                                                
         </div>
-        
+    </div> 
 </section>
 
 <script type="text/javascript">

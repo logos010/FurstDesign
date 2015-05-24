@@ -26,7 +26,20 @@ class DefaultController extends ControllerBase {
         }
 //        $this->redirect($_SERVER['HTTP_REFERER']);
     }
-
+    
+    public function actionUpdate_Promotion($model, $pk) {
+        $model = $model . 'Base';
+        $data = new $model;
+        $rs = $data->findByPk($pk);
+        if ($rs != null) {
+            $rs->promote = ($rs->promote == 1) ? 0 : 1;
+            $rs->update('promote');
+        }
+        if (App()->request->isAjaxRequest) {
+            echo CJSON::encode(array('success' => true));
+            App()->end();
+        }
+    }
 }
 
 ?>

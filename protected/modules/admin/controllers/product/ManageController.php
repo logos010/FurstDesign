@@ -46,12 +46,15 @@ class ManageController extends ControllerBase {
 
         if (isset($_POST['Product'])) {
             $model->attributes = $_POST['Product'];
-            $price = str_replace(',', '', $_POST['Product']['price']);
+            
             $model->price = floatval(str_replace(',', '', $_POST['Product']['price']));
-            $model->quantity = floatval($_POST['Product']['quantity']);
+            $model->quantity = floatval(str_replace(',', '', $_POST['Product']['quantity']));          
             $model->sku = 'SKU';
-            $model->create_time = UDate::getCurrentDate('full');            
-
+            $model->create_time = UDate::getCurrentDate('full');
+            $model->detail = $_POST['Product']['detail'];
+            
+//echo '<pre>';print_r($_POST);echo '</pre>';            
+//echo '<pre>';print_r($model->attributes);echo '</pre>';
             if ($model->save()) {
                 $this->setFlash('Product has been created.');
                 $this->refresh();

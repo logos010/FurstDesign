@@ -1,6 +1,7 @@
 <?php
 $this->pageTitle = 'Manage Galleries';
 $this->breadcrumbs = array(
+    'Product' => array('/admin/product/manage'),
     $this->pageTitle,
 );
 ?>

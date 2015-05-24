@@ -1,6 +1,6 @@
 <?php
 
-class Product extends ProductBase {
+class Product extends ProductBase implements IECartPosition {
     
     public $lowPrice = 0;
     public $highPrice = 0;
@@ -74,5 +74,25 @@ class Product extends ProductBase {
             }
         }
         return $slider;
+    }
+    
+    public function getId() {
+        return 'Product ' . $this->id;
+    }
+
+    public function getPrice() {
+        return $this->price;
+    }
+
+    public function isProductDiscounted($product){
+        $newPrice = 0;
+        if ($product->discount < 1){
+            $newPrice = $product->price * (1 - $product->discount);            
+        }else{
+            $newPrice = $product->price = $product->discount;            
+        }
+        $newPrice = number_format($newPrice, 0, '', ',');
+        return '<del style="font-size: 0.8em">' . number_format($product->price, 0, "", ",") . "</del>" . "<sup> đ</sup>" . 
+                "<span class='new-price'>" . $newPrice . "<sup> đ</sup></span>" . " (Saved " . (($product->discount < 1) ? ($product->discount * 100) . "%" : ($product->discount) . "<sup>đ</sup>") . ")";
     }
 }

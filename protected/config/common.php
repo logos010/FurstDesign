@@ -17,7 +17,7 @@ return array(
         'application.modules.user.models.User',
         'application.modules.srbac.controllers.SBaseController',
         'ext.cart.*',
-        ),
+    ),
     'modules' => array(
         'admin',
         'contact',
@@ -42,7 +42,7 @@ return array(
             'returnUrl' => array('/user/profile'),
             # page after logout
             'returnLogoutUrl' => array('/user/login'),
-            ),
+        ),
         'srbac' => array(
             'userclass' => 'User',
             'userid' => 'id',
@@ -68,7 +68,7 @@ return array(
             'showHeader' => false,
             'showFooter' => false,
             'alwaysAllowedPath' => 'srbac.components'),
-        ),
+    ),
     // application components
     'components' => array(
         'user' => array(
@@ -83,7 +83,7 @@ return array(
             'password' => DB_PASSWORD,
             'charset' => DB_CHARSET,
             'tablePrefix' => DB_TABLE_PREFIX,
-            ),
+        ),
         'mail' => array(
             'class' => 'ext.mail.YiiMail',
             'transportType' => 'smtp',
@@ -93,30 +93,33 @@ return array(
                 'password' => 'eswebsoft.com',
                 'port' => '465',
                 'encryption' => 'ssl',
-                ),
+            ),
             //            'viewPath' => 'application.views.mail',
             'logging' => true,
-            'dryRun' => false),
-        'errorHandler' => array( // use 'site/error' action to display errors
-                'errorAction' => 'site/error', ),
+            'dryRun' => false
+        ),
+        'errorHandler' => array(// use 'site/error' action to display errors
+            'errorAction' => 'site/error',),
         'authManager' => array(
             'class' => 'application.modules.srbac.components.SDbAuthManager',
             'connectionID' => 'db',
             'itemTable' => 'tbl_auth_item',
             'assignmentTable' => 'tbl_auth_assignment',
             'itemChildTable' => 'tbl_auth_item_child',
-            ),
+        ),
         'urlManager' => array(
             'urlFormat' => 'path',
             'urlSuffix' => '',
             'caseSensitive' => false,
             'showScriptName' => false,
-            'rules' => array('/' => 'site/index', 'detail/<cate>/<alias:\w>-<id:\d>' =>
-                    'product/view'),
+            'rules' => array(
+                '/' => 'product/index',
+                'detail/<cate>/<alias:\w>-<id:\d>' => 'product/view'
             ),
-        'bootstrap' => array('class' => 'bootstrap.components.Bootstrap', ),
-        'shoppingCart' => array('class' => 'ext.cart.EShoppingCart', ),
-        'cache' => array('class' => 'system.caching.CFileCache', ),
-        'log' => array('class' => 'CLogRouter', ),
         ),
+        'bootstrap' => array('class' => 'bootstrap.components.Bootstrap',),
+        'shoppingCart' => array('class' => 'ext.cart.EShoppingCart',),
+        'cache' => array('class' => 'system.caching.CFileCache',),
+        'log' => array('class' => 'CLogRouter',),
+    ),
     'params' => array());

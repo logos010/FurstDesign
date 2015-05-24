@@ -65,12 +65,14 @@ $this->breadcrumbs = array(
                 ),
                 array(
                     'name' => 'quantity',
+                    'value' => 'number_format($data->quantity, 0, " ", ",")',
                     'htmlOptions' => array(
                         'align' => 'center'
                     )
                 ),
                 array(
                     'name' => 'price',
+                    'value' => 'number_format($data->price, 0, " ", ",")',
                     'htmlOptions' => array(
                         'align' => 'center'
                     )

@@ -17,9 +17,9 @@ if (!String.prototype.trim) {
 }
 
 function initCufon() {
-	Cufon.replace('h1');
-	Cufon.replace('h2');
-	Cufon.replace('h3'); //h3 is specially for mainnav links
+//	Cufon.replace('h1');
+//	Cufon.replace('h2');
+//	Cufon.replace('h3'); //h3 is specially for mainnav links
 }
 
 /****INITIALIZATION OF PRODUCT DETAILS PAGE****/

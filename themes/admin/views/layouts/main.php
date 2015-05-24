@@ -15,9 +15,9 @@
 
     <body>
         <?php $this->widget('application.modules.admin.components.AdminMenu'); ?>
-        <div class="container" style="margin-top: 60px">
+        <div class="container-fluid" style="margin-top: 60px">
 
-            <div class="container" id="<?php echo App()->controller->getId(); ?>">
+            <div class="container-fluid" id="<?php echo App()->controller->getId(); ?>">
                 <?php
                 $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
                     'homeLink' => CHtml::link('Home', array('//admin/menu/index/Menu[vid]/1')),

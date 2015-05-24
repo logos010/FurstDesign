@@ -16,10 +16,16 @@ function url($route, $params = array(), $ampersand = '&') {
     return Yii::app()->createUrl($route, $params, $ampersand);
 }
 
+/**
+ * default position is POS_BEGIN
+ **/
 function cssFile($path, $position = CClientScript::POS_BEGIN){
     return cs()->registerCssFile($path);
 }
 
+/**
+ * default position is POS_END
+ **/
 function scriptFile($path, $position = CClientScript::POS_END){
     return cs()->registerScriptFile($path, $position);    
 }
