@@ -847,7 +847,7 @@
                     }
                 });
             });
-
+            
             function goTo(url) {
                 var a = document.createElement("a");
                 var isSafari = /safari/i.test(navigator.userAgent);

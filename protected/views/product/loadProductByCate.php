@@ -36,9 +36,9 @@ $this->menu = array(
         <!-- END OF FILTER PRODUCT -->
         <div class="spacer"></div>        
 
-        <div class="equalize" id="equalize" style="overflow:visible; width:98%; padding:0 1%; margin:auto;">
+        <div class="equalize" id="equalize" data-equal="div" style="overflow:visible; width:98%; padding:0 1%; margin:auto;">
             <?php foreach ($products as $k => $v): ?>
-            <div class="catalogue-itembox" style="width: 27.3%; padding: 3%; height: 256px; margin-top: 3.5em">
+            <div class="catalogue-itembox" style="width: 27.3%; padding: 3%; height:310px; margin-top: 3.5em">
                 <div class="item-product-img">
                     <a href="<?php echo App()->controller->createUrl('product/detail', array('pid' => $v->id)); ?>">
                         <?php $img = str_replace('medium', 'small', $v->image); ?>
