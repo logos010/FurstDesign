@@ -89,8 +89,8 @@ return array(
             'transportType' => 'smtp',
             'transportOptions' => array(
                 'host' => 'smtp.gmail.com',
-                'username' => 'no-reply@eswebsoft.com',
-                'password' => 'eswebsoft.com',
+                'username' => 'logos010@gmail.com',
+                'password' => 'quocdieu@08',
                 'port' => '465',
                 'encryption' => 'ssl',
             ),

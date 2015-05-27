@@ -64,7 +64,7 @@
                                 </tr>
                                 <tr>
                                     <td>Total</td>
-                                    <td id="final-total"><span><?php echo number_format($totalPrice, 0, '.', ','); ?> <sup>đ</sup></span></td>
+                                    <td id="final-total"><strong><span><?php echo number_format($totalPrice, 0, '.', ','); ?> <sup>đ</sup></span></strong></td>
                                 </tr>
                             </table>
                         </td>
@@ -74,11 +74,12 @@
             </form>
         </div>
         
-        <input name="button" class="btn btn-primary pull-right" id="checkout" value="Check out" type="submit">
-        
+        <?php if (App()->shoppingCart->getCount()): ?>
+            <input name="button" class="btn btn-primary pull-right" id="checkout" value="Check out" type="submit">
+        <?php endif; ?>
         
         <div id="msg">
-            <div class="alert alert-info">
+            <div class="alert alert-info" role="alert">
                 <a href="#" class="close" data-dismiss="alert">&times;</a>
                 <strong>Gio hang</strong> cua ban dang trong.
             </div>                                                
@@ -91,15 +92,19 @@
     if (itemInCart === 0){
         $("#msg").show();
         $(".cart_info").hide();
-    }    
-
+    }
+    
     //add product
     $("a.cart_quantity_up").on('click', function () {
         var itemID = $(this).attr('id').substring(4, 5);
         var newQuantity = parseInt($("#quantity-" + itemID).val()) + 1;
         if (newQuantity > 20)
             newQuantity--;
-        var newTotalPrice = parseFloat($("#price-" + itemID).text()) * newQuantity;
+//        var newTotalPrice = parseFloat($("#price-" + itemID).text()) * newQuantity;
+        var newTotalPrice = priceFormat($("#price-" + itemID).text()) * newQuantity;
+        
+        console.log(parseFloat($("#price-" + itemID).text()) + " * " + newQuantity);
+        console.log(newTotalPrice);
 
         //set new quanity and total price
         $("#quantity-" + itemID).val(newQuantity);
@@ -113,7 +118,7 @@
         var newQuantity = parseInt($("#quantity-" + itemID).val()) - 1;
         if (newQuantity == 0)
             newQuantity++;
-        var newTotalPrice = parseFloat($("#price-" + itemID).text()) * newQuantity;
+        var newTotalPrice = priceFormat($("#price-" + itemID).text()) * newQuantity;
         $("#quantity-" + itemID).val(newQuantity);
         $("#total-" + itemID).text($.number(newTotalPrice));
         reCalculateTotalPrice();
@@ -160,16 +165,23 @@
         $(location).attr('href', "<?php echo App()->controller->createUrl("/order/checkOut"); ?>"); 
     })
 
+
+    //remove all commas form number
+    function priceFormat(price){
+        var p = parseFloat(price.replace(/\,/g,''));
+        return p;
+    }
+    
     function reCalculateTotalPrice() {
-        var prices = $("p.cart_total_price");
+        var prices = $("p.cart_total_price"); console.log(prices);
         var total = 0;
         prices.each(function () {
-            total += parseFloat($(this).text().replace(',', ''));
+//            total += parseFloat($(this).text().replace(',', ''));
+            total += priceFormat($(this).text());
         });
 //        console.log(total);
 
         $("#total-without-tax").html($.number(total) + "<sup>đ</sup>");
-        $("#final-total span").html($.number(total) + "<sup>đ</sup>");
-
+        $("#final-total span").html("<strong>" + $.number(total) + "<sup>đ</sup></strong>");
     }
 </script>

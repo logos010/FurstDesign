@@ -19,14 +19,16 @@ class LoginController extends ControllerBase {
             // collect user input data
             if (isset($_POST['UserLogin'])) {                
                 $model->attributes = $_POST['UserLogin'];
-                var_dump(Yii::app()->user->returnUrl); exit();
+//                var_dump(Yii::app()->user->returnUrl);
+//                var_dump(Yii::app()->controller->module->returnUrl); exit();
                 // validate user input and redirect to previous page if valid
                 
                 if ($model->validate()) {
                     $this->lastViset();
-                    if (strpos(Yii::app()->user->returnUrl, '/index.php') !== false)
+                    if (strpos(Yii::app()->user->returnUrl, '/index.php') !== false){
                         $this->redirect(Yii::app()->controller->module->returnUrl);
-                    else
+                        $this->redirect(App()->controller->createUrl('order/viewCart'));
+                    }else
                         $this->redirect(Yii::app()->user->returnUrl);
 //                        $this->redirect(Yii::app()->session['userView'.App()->user->id.'returnURL']);      
                 }
