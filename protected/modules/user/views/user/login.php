@@ -16,7 +16,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <input type="submit" class="btn pull-right" />
+                            <input type="submit" class="btn pull-right" id="signin" />
                         </div>
                     </div>                        
                     <?php echo CHtml::endForm(); ?>
@@ -30,7 +30,7 @@
                 <ul>
                     <li>
                         You can create your own account in order to login and make purchase
-                        <input type="button" value="Create my account"class="btn pull-right" />
+                        <input type="button" value="Create my account" class="btn pull-right" id="register" />
                     </li>
                 </ul>
             </div>
@@ -42,10 +42,20 @@
                 <ul>
                     <li>
                         Click here to receive your new password
-                        <input type="button" value="Forgot password" class="btn pull-right" />
+                        <input type="button" value="Forgot password" class="btn pull-right" id="forgot"/>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 </section><!--/form-->
+
+<script type="text/javascript">
+    $("#register").click(function(){
+         window.location="<?php echo App()->controller->createUrl('/user/registration');  ?>";
+    });
+    
+    $("#forgot").click(function(){
+        window.location="<?php echo App()->controller->createUrl('/user/recovery');  ?>";
+    });
+</script>

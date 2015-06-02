@@ -40,9 +40,8 @@ $this->menu = array(
             <?php foreach ($products as $k => $v): ?>
             <div class="catalogue-itembox" style="width: 27.3%; padding: 3%; height:310px; margin-top: 3.5em">
                 <div class="item-product-img">
-                    <a href="<?php echo App()->controller->createUrl('product/detail', array('pid' => $v->id)); ?>">
-                        <?php $img = str_replace('medium', 'small', $v->image); ?>
-                        <img src="<?php echo BASE_URL . "/" . $img; ?>" border="0" class="product-img">
+                    <a href="<?php echo App()->controller->createUrl('product/detail', array('pid' => $v->id)); ?>">                        
+                        <img src="<?php echo BASE_URL . "/" . $v->image; ?>" border="0" class="product-img">
                     </a>                    
                     <br>
                 </div>
@@ -53,7 +52,7 @@ $this->menu = array(
                         <div class="clear2"></div><span> CK1-70380433</span> 
                     </a>
                     <div class="clear2"></div>
-                    <?php echo ($v->discount != 0) ? $v->isProductDiscounted($v) : "<span class='product-price'>".number_format($v->price, 0, "", ",") . "</span>" . "<sup> đ</sup>"; ?>
+                    <?php echo ($v->discount != 0) ? $v->isProductDiscounted($v) : "<span class='product-price'>".number_format($v->price, 0, "", ",") . "</span><sup> đ</sup>"; ?>
                     <div class="clear2"></div>
                     <div class="item-label">NEW </div>
                 </div>

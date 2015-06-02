@@ -84,21 +84,22 @@ class GalleryController extends ControllerBase {
 
     public function actionUpload($pid) {
         $glue = array(
+            'medium' => array('w' => 400, 'h' => 400),            
             'small' => array('w' => 40, 'h' => 40),
         );
 
         $filedata = $_FILES['Filedata'];
         if ($filedata != '') {
             $name = UString::toAlias($filedata['name']) . '-' . time() . '.' . UFile::getFileExtension($filedata['name']);
-            $uri = PATH_UPLOAD . '/' . date('Y/m/');
-            $orginal = $uri . 'orginal/';
+            $uri = PATH_UPLOAD . '/thumb/' . date('Y/m/');
+            $original = $uri . 'original/';
 
-            if (!is_dir($orginal)) {
-                mkdir($uri . '/orginal', 0777, true);
+            if (!is_dir($original)) {
+                mkdir($uri . '/original', 0777, true);
             }
 
             $image = new Image($filedata['tmp_name']);
-            $image->save($orginal . $name);
+            $image->save($original . $name);
             //resize
             foreach ($glue as $key => $node) {
                 $glue = $uri . $key . '/';
@@ -114,7 +115,7 @@ class GalleryController extends ControllerBase {
             $model->attributes = array(
                 'pid' => $pid,
                 'name' => $filedata['name'],
-                'uri' => $orginal . $name,
+                'uri' => $original . $name,
                 'width' => $width,
                 'height' => $height,
                 'filesize' => $filedata['size'],

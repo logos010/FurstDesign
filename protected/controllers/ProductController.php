@@ -9,13 +9,22 @@ class ProductController extends ControllerBase {
     }
 
     public function actionIndex() {
+        scriptFile(App()->theme->baseUrl . "/js/jquery.bxSlider.js");
+        cssFile(App()->theme->baseUrl . "/css/jquery.bxslider.css");
+        
         $terms = Term::model()->findAll(array(
             'condition' => 'status = 1 AND parent_id = 0',
         ));
+        
+        //get promotion products
+        $criteria = new CDBCriteria();
+        $criteria->condition = "promote = 1 AND status = 1";
+                
+        $promote = Product::model()->findAll($criteria);
                 
         $this->render('index', array(
-            'terms' => $terms
-                
+            'terms' => $terms,
+            'promote' => $promote                
         ));
     }
 

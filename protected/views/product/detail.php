@@ -3,8 +3,12 @@
         <!-- START OF MAIN PRODUCT IMAGE -->
         <div class="main-product-img">
             <div class="clearfix">
-                <a href="<?php echo BASE_URL . '/' . str_replace('medium', 'original', $product->image); ?>" class="jqzoom" rel="gal1" title="<?php echo $product->name ?>" style="outline-style: none; text-decoration: none;">
-                    <img class="beforezoom" src="<?php echo BASE_URL . '/' . $product->image; ?>" title="<?php echo $product->name; ?>" alt="<?php echo $product->name; ?>">
+                <?php
+                $mediumImg = BASE_URL . '/' . $product->image;
+                $largeImg = BASE_URL . '/' . str_replace('medium', 'original', $product->image);
+                ?>
+                <a href="<?php echo $largeImg; ?>" class="jqzoom" rel='gal1'  title="<?php echo $product->name; ?>" >
+                    <img src="<?php echo $mediumImg; ?>"  title="<?php echo $product->name; ?>">
                 </a>
             </div>
 
@@ -18,11 +22,12 @@
                                     <?php foreach ($gallery as $k => $v): ?>
                                         <li>
                                             <?php
-                                            $smallImg = BASE_URL . '/' . str_replace('medium', 'small', $v->uri);
-                                            $LargeImg = BASE_URL . '/' . str_replace('medium', 'original', $v->uri);
+                                            $smallImg = BASE_URL . '/' . str_replace('original', 'small', $v->uri);
+                                            $mediumImg = BASE_URL . '/' . str_replace('original', 'medium', $v->uri);
+                                            $largeImg = BASE_URL . '/' . str_replace('original', 'original', $v->uri);
                                             ?>
-                                            <a class="zoomThumbActive" href="javascript:void(0);" rel="{gallery: 'gal1', smallimage: '<?php echo $smallImg; ?>',largeimage: '<?php echo $LargeImg; ?>'}">
-                                                <img src="<?php echo BASE_URL . '/' . str_replace('medium', 'small', $v->uri) ?>" height="40" alt="ANKLE STRAP HEELS">
+                                            <a class="zoomThumbActive" href="javascript:void(0);" rel="{gallery: 'gal1', smallimage: '<?php echo $mediumImg; ?>',largeimage: '<?php echo $largeImg; ?>'}">
+                                                <img src="<?php echo $smallImg; ?>" height="40" alt="ANKLE STRAP HEELS">
                                             </a>
                                         </li>
                                     <?php endforeach; ?>
@@ -82,51 +87,15 @@
         <div id="accordion-maininfo">
             <?php echo $product->detail; ?>
             <!-- Product detail block -->
-            <h3>Details</h3>
-            <div>
-                <p><?php echo $product->description; ?></p>
-                <p><br mce_bogus="1"></p>
-                <p style="font-weight:bold;">PAIR IT WITH:</p>
-                <table class="mceItemTable" style="border-spacing:5px;margin-left:-5px;">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a href="../../../../../Bags/Wristlet/Triangular-Wristlet/Lilac/CK6-20700205/Product.html" target="_blank">
-                                    <img style="width:120px; height:120px;" src=""></a>
-                            </td>
-                            <td>
-                                <a href="../../../../../Bags/Wallet/Turn-Lock-Wallet/Black/CK2-10840019/Product.html" target="_blank">
-                                    <img style="width:120px; height:120px;" src=""></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p><br mce_bogus="1"></p>
-                <br/><br/>
-                <div class="clear">
-                    <strong>Label:</strong> CHARLES & KEITH<br/>
-                    <strong>Shoe Type:</strong> Heels<br/>
-                    <strong>Shoe Style:</strong> Ankle Strap<br/>
-                    <strong>Toe Type:</strong> Open Toe<br/>
-                    <strong>Material Description:</strong> Natural PU<br/>
-                    <strong>Heel Height Range:</strong> High (76-95)<br/></div>
-            </div>
+            
 
             <!-- Product detail block -->
-            <h3>Shipping &amp; Delivery</h3>
-            <div>
-                CHARLESKEITH.COM offers Economical Delivery, Standard Delivery and Express Delivery for International orders. The delivery timing taken will be approximately 3-6 business days for express mode, 6-10 business days for standard mode and 10-16 business days for economical mode after placing your order online. For more details, please refer to our 
-                <a href="http://www.charleskeith.com/INTLStore/CK/shipping and tracking" _mce_href="http://www.charleskeith.com/INTLStore/CK/shipping%20and%20tracking" style="">shipping and tracking policy</a>.
-            </div>
+            
 
             <!-- Product detail block -->
-            <h3>Returns</h3>
-            <div>
-                We want you to love what you have purchased from us. If something is not right, please let us know. If you wish to return the item to us, please refer to our <a href="http://www.charleskeith.com/INTLStore/CK/returns and exchanges" _mce_href="http://www.charleskeith.com/INTLStore/CK/returns%20and%20exchanges" style="">returns and exchange policy</a> for more information. 
-            </div>
+            
 
-            <!-- Product detail block -->
-            <h3 class="showoverlay non-expandable" name="#sizechart" onClick="javascript:showOverlay_new(this);">Size Chart</h3>
+            <!-- Product detail block -->            
         </div>
         <div class="spacer"></div>
         <!-- END Main Info in Collapsible -->
@@ -295,8 +264,8 @@
             success: function (items) {
                 $("#shopping-item").html("(" + items + ")");
             },
-            complete: function(){
-                bootbox.alert("Sản phẩm '"+productName+"' của bạn đã được đưa vào giỏ hàng.");
+            complete: function () {
+                bootbox.alert("Sản phẩm '" + productName + "' của bạn đã được đưa vào giỏ hàng.");
             }
         });
     });
@@ -306,7 +275,6 @@
     $.cookie('lastViewedProucts', '',
             {
                 expires: 7,
-                path: '/'
             });
 
     if ($.cookie('lastViewedProucts') === undefined || $.cookie('lastViewedProucts') === '') {
@@ -332,15 +300,15 @@
     }
 
     //Add cookie when the product was viewed did not exist
-    if (!existed) {
-        if ($.cookie('lastViewedProucts')) {
+    if (!existed) { 
+        if (cookie) {
             cookie.items.push({"id": currentProductID, "name": "<?php echo $product->name ?>", "image": "<?php echo $product->image ?>"});
-            
-            if (count >= 6){
+
+            if (count >= 6) {
                 cookie.items.shift();
                 $.cookie('lastViewedProucts', cookie);
             }
-            
+
             $.cookie('lastViewedProucts', cookie);
             console.log($.cookie('lastViewedProucts'));
         }

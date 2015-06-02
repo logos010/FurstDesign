@@ -7,13 +7,13 @@ $this->breadcrumbs = array(
 
 <h1><?php echo UserModule::t("Registration"); ?></h1>
 
-    <?php if (Yii::app()->user->hasFlash('registration')): ?>
+<?php if (Yii::app()->user->hasFlash('registration')): ?>
     <div class="success">
-    <?php echo Yii::app()->user->getFlash('registration'); ?>
+        <?php echo Yii::app()->user->getFlash('registration'); ?>
     </div>
 <?php else: ?>
 
-    <div>
+    <div class="form">
         <?php
         $form = $this->beginWidget('UActiveForm', array(
             'id' => 'registration-form',
@@ -26,11 +26,6 @@ $this->breadcrumbs = array(
             ),
         ));
         ?>
-
-        <p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
-
-    <?php echo $form->errorSummary(array($model, $profile)); ?>
-
         <div class="form-group">
             <label for="username" class="col-sm-2 control-label">Username</label>
             <div class="col-sm-10">
@@ -66,53 +61,56 @@ $this->breadcrumbs = array(
             </div>
         </div>
 
-        <?php
-        $profileFields = $profile->getFields();
-        if ($profileFields) {
-            foreach ($profileFields as $field) {
-                ?>
-                <div class="form-group">
-                    <?php echo $form->labelEx($profile, $field->varname, array('class' => 'col-sm-2 control-label')); ?>̣̣̣
-                    <div class="col-sm-10">
-                    <?php
-                    if ($field->widgetEdit($profile)) {
-                        echo $field->widgetEdit($profile);
-                    } elseif ($field->range) {
-                        echo $form->dropDownList($profile, $field->varname, Profile::range($field->range, array('class' => 'form-control')));
-                    } elseif ($field->field_type == "TEXT") {
-                        echo$form->textArea($profile, $field->varname, array('rows' => 6, 'cols' => 50));
-                    } else {
-                        echo $form->textField($profile, $field->varname, array(
-                            'size' => 60, 
-                            'maxlength' => (($field->field_size) ? $field->field_size : 255),
-                            'class' => 'form-control'
-                        ));
-                    }
-                    ?>
-                    </div>
-                <?php echo $form->error($profile, $field->varname); ?>
-                </div>	
-                <?php
-            }
-        }
-        ?>
-            <?php if (UserModule::doCaptcha('registration')): ?>
-            <div>
-                <?php echo $form->labelEx($model, 'verifyCode'); ?>
-
-        <?php $this->widget('CCaptcha'); ?>
-        <?php echo $form->textField($model, 'verifyCode'); ?>
-        <?php echo $form->error($model, 'verifyCode'); ?>
-
-                <p class="hint"><?php echo UserModule::t("Please enter the letters as they are shown in the image above."); ?>
-                    <br/><?php echo UserModule::t("Letters are not case-sensitive."); ?></p>
+        <div class="form-group">
+            <label for="fullname" class="col-sm-2 control-label">Fullname</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="Profile[fullname]" id="fullname" placeholder="Fullname" required>
+                <div class="help-block with-errors"></div>
             </div>
-            <?php endif; ?>
-
-        <div>
-        <?php echo CHtml::submitButton(UserModule::t("Register"), array('class' => 'btn')); ?>
         </div>
 
-    <?php $this->endWidget(); ?>
+        <div class="form-group">
+            <label for="phone" class="col-sm-2 control-label">Phone</label>
+            <div class="col-sm-10">
+                <input type="tel" class="form-control" name="Profile[phone]" id="phone" placeholder="Phone" required >
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="address" class="col-sm-2 control-label">Address</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="Profile[address]" id="address" placeholder="Address" required >
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="birthday" class="col-sm-2 control-label">Birthday</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="Profile[birthday]" id="birthday" data-date-viewmode="years" data-provide="datepicker" placeholder="Birthday">
+                <div class="help-block with-errors"></div>
+            </div>
+            <div id="birthday"></div>
+        </div>
+
+        <div class="form-group">
+            <!--            <label for="capcha" class="col-sm-2 control-label">Captcha</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Profile[fullname]" id="captcha" placeholder="Fullname">
+                            <div class="help-block with-errors"></div>
+                        </div>-->
+            <?php $this->widget('CCaptcha'); ?>
+            <?php echo $form->textField($model, 'verifyCode'); ?>
+            <?php echo $form->error($model, 'verifyCode'); ?>
+        </div>
+
+        <?php echo CHtml::submitButton(UserModule::t("Register"), array('class' => 'btn btn-default')); ?>
+
+        <?php $this->endWidget(); ?>
     </div><!-- form -->
 <?php endif; ?>
+
+<script type="text/javascript">
+    $('#birthday').datepicker()
+</script>

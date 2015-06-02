@@ -3006,6 +3006,8 @@ select[multiple].form-group-lg .form-control {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+    background: #000;
+    color: #FFF;
 }
 .btn:focus,
 .btn:active:focus,

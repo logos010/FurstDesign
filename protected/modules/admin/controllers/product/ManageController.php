@@ -53,8 +53,6 @@ class ManageController extends ControllerBase {
             $model->create_time = UDate::getCurrentDate('full');
             $model->detail = $_POST['Product']['detail'];
             
-//echo '<pre>';print_r($_POST);echo '</pre>';            
-//echo '<pre>';print_r($model->attributes);echo '</pre>';
             if ($model->save()) {
                 $this->setFlash('Product has been created.');
                 $this->refresh();
@@ -81,6 +79,7 @@ class ManageController extends ControllerBase {
         if (isset($_POST['Product'])) {
             $model->attributes = $_POST['Product'];
             $model->price = floatval(str_replace(',', '', $_POST['Product']['price']));
+            $model->promote = $_POST['Product']['promote'];
             $model->detail = $_POST['Product']['detail'];
             if ($model->save()) {
                 $this->setFlash('Product has been updated.');

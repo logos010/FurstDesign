@@ -33,6 +33,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 
                 echo $form->textFieldRow($model, 'alias', array('class' => 'span10', 'maxlength' => 150));
                 echo $form->fileFieldRow($model, 'image', array('class' => 'span10', 'maxlength' => 255));
+                
                 if ($model->image != '') {
                     echo CHtml::image(BASE_URL . '/' . $model->image);
                 }
@@ -74,7 +75,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
                     'value' => $model->detail,
                     'editorTemplate' => 'full',
                     'width' => '800px',
-                    'height' => '150px'
+                    'height' => '150px',                    
                 ));
                 ?>
             </div>

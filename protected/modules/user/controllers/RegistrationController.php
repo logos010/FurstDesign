@@ -43,10 +43,14 @@ class RegistrationController extends ControllerBase {
         if (Yii::app()->user->id) {
             $this->redirect(Yii::app()->controller->module->profileUrl);
         } else {
-            echo '<pre>'; print_r($_POST); echo '</pre>';
-            if (isset($_POST['RegistrationForm'])) {
+            if (isset($_POST['RegistrationForm'])) {                
                 $model->attributes = $_POST['RegistrationForm'];
                 $profile->attributes = ((isset($_POST['Profile']) ? $_POST['Profile'] : array()));
+                
+//                echo '<pre>'; print_r($model->attributes); echo '</pre>';
+//                echo '<pre>'; print_r($profile->attributes); echo '</pre>';
+//                var_dump($model->validate());
+//                var_dump($profile->validate();                
                 
                 if ($model->validate() && $profile->validate()) {
                     $soucePassword = $model->password;
@@ -81,7 +85,7 @@ class RegistrationController extends ControllerBase {
                             } else {
                                 Yii::app()->user->setFlash('registration', UserModule::t("Thank you for your registration. Please check your email."));
                             }
-//                            $this->refresh();
+                            $this->refresh();
                         }
                     }
                 } else

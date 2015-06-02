@@ -197,7 +197,8 @@ class UserModule extends CWebModule {
      * Send mail method
      */
     public static function sendMail($email, $subject, $message) {
-        $adminEmail = UConfig::get('email', 'admin');
+//        $adminEmail = UConfig::get('email', 'admin'); var_dump($adminEmail); exit();
+        $adminEmail = 'logos010@gmail.com';
         $headers = "MIME-Version: 1.0\r\nFrom: $adminEmail\r\nReply-To: $adminEmail\r\nContent-Type: text/html; charset=utf-8";
         $message = wordwrap($message, 70);
         $message = str_replace("\n.", "\n..", $message);

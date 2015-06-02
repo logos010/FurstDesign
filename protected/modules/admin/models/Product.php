@@ -18,22 +18,23 @@ class Product extends ProductBase {
             Yii::import('application.extensions.helpers.*');
 
             $name = date('Ymdhis') . '.' . strtolower($image->extensionName);
-            $uri = 'upload/products/' . date('Y/m/d');
-            $file_path = webroot() . '/' . $uri;
+//            $uri = 'upload/products/' . date('Y/m');
+            $uri =  'upload/' . date('Y/m');
+           // $file_path = webroot() . '/' . $uri;
 
-            if (!is_dir($file_path)) {
-                mkdir($file_path . '/original', 0777, true);
-                mkdir($file_path . '/medium', 0777, true);                
-                mkdir($file_path . '/small', 0777, true);
+            if (!is_dir($uri)) {
+                mkdir($uri . '/original', 0777, true);
+                mkdir($uri . '/medium', 0777, true);                
+                //mkdir($uri . '/small', 0777, true);
             }
 
             $img = new Image($image->tempName);            
-            $img->save($file_path . '/original/' . $name);
+            $img->save($uri . '/original/' . $name);
             list($width, $height, $type, $attr) = getimagesize($image->tempName);
-            $img->resize(342, 342);
-            $img->save($file_path . '/medium/' . $name);
-            $img->resize(253, 253);
-            $img->save($file_path . '/small/' . $name);
+            $img->resize(400, 400, Image::WIDTH);
+            $img->save($uri . '/medium/' . $name);
+            //$img->resize(253, 253);
+            //$img->save($uri . '/small/' . $name);
 
             $this->image = $uri . '/medium/' . $name;
         }
