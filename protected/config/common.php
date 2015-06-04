@@ -17,6 +17,7 @@ return array(
         'application.modules.user.models.User',
         'application.modules.srbac.controllers.SBaseController',
         'ext.cart.*',
+        'ext.behaviors.CAdvancedArBehavior',
     ),
     'modules' => array(
         'admin',

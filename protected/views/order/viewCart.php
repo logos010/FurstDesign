@@ -22,7 +22,7 @@
                     <?php foreach ($items as $item): ?>
                         <tr id="itemRow-<?php echo $item->id ?>">
                             <td class="cart_product">
-                                <a href="<?php echo App()->controller->createUrl('product/detail', array('pid' => $item->id)); ?>"><img src="<?php echo BASE_URL . "/" . str_replace('medium', 'small', $item->image)  ?>" width="80" alt="<?php echo $item->name ?>"></a>
+                                <a href="<?php echo App()->controller->createUrl('product/detail', array('pid' => $item->id)); ?>"><img src="<?php echo BASE_URL . "/" . $item->image;  ?>" width="80" alt="<?php echo $item->name ?>"></a>
                             </td>
                             <td class="cart_description">
                                 <h4><a href=""><?php echo $item->name ?></a></h4>

@@ -84,8 +84,9 @@ $this->breadcrumbs = array(
                 'width',
                 'height',
                 'filesize',
-            /*  'create_time',
-             */
+                array(
+                    'class' => 'bootstrap.widgets.TbButtonColumn',
+                )
             ),
         ));
         ?>    </div>

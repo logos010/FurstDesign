@@ -22,7 +22,7 @@
             <?php
             $subMenu = $v->hasChild($v->id);
             foreach ($subMenu as $sk => $sv):
-                ?>
+            ?>
                 <li><a id="1" href="<?php echo App()->controller->createUrl($sv->url); ?>"><?php echo $sv->name; ?></a></li>
                 <?php endforeach; ?>
         </ul>

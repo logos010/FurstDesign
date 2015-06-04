@@ -47,8 +47,9 @@ class OrderController extends ControllerBase {
         scriptFile(App()->theme->baseUrl . "/js/validator.min.js");
         
         $user = User::model()->findByPk($cid);
-        if (!is_null($user)) {
+        if (!is_null($user)) {            
             if (isset($_POST['order'])) {
+                var_dump($session['validOrder']);
                 $totalOrder = intval(Order::model()->count());
                 $purchaseID = OrderService::generate_numbers(995 + $totalOrder, 1, 10);                
                 
@@ -74,7 +75,11 @@ class OrderController extends ControllerBase {
                     $detail->save();
                 }
                 Yii::app()->shoppingCart->clear();
-                echo "Thank you";
+                
+                $this->render('thankyou', array(
+                    'order' => Order::model()->findByPk($order->order_id),
+                    'orderDetail' => OrderDetail::model()->findAll(array('condition' => 'order_id=:oid', 'params' => array(':oid' => $order->order_id)))
+                ));
             } else {
                 $profile = $user->profile;
                 $this->render('orderConform', array(

@@ -35,7 +35,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
                 echo $form->fileFieldRow($model, 'image', array('class' => 'span10', 'maxlength' => 255));
                 
                 if ($model->image != '') {
-                    echo CHtml::image(BASE_URL . '/' . $model->image);
+                    echo CHtml::image(BASE_URL . '/' . $model->image, $v->name, array('width' => '80'));
                 }
                 echo $form->textFieldRow($model, 'quantity', array(
                     'class' => 'span10',
@@ -56,7 +56,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
                 echo $form->dropDownlistRow($model, 'promote', array(1 => 'Active', 0 => 'Inactive'), array('class' => 'span10'));
                 ?>                
             </div>
-            <div class="pull-left span6">
+            <div class="pull-left span6" style="height: 500px; border: 1px solid #4b4b4b; padding: 5px; overflow-y: scroll">
                 <?php echo $form->checkBoxListRow($model, 'pTerm', $term, array()); ?>
             </div>
             <div class="pull-left span12">

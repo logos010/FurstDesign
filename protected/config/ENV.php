@@ -10,7 +10,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 define('DB_CHARSET', 'utf8');
 define('DB_TABLE_PREFIX', 'tbl_');
-define('SITE_NAME', 'BOOTSTRAP');
+define('SITE_NAME', 'FURST EUROPEAN TAILOR');
 define('LOCALE', 'en');
 define('THEME', 'default');
 define('ADMIN_THEME', 'admin');

@@ -1,5 +1,7 @@
 <section>
     <div class="container">
+        <h3><?php echo UtiService::loadCategoryNameById($_GET['tid']); ?></h3>
+        <div class="spacer1-5"></div>
         <?php foreach ($news as $k => $v):?> 
         <div class="row">
             <div class="row" >

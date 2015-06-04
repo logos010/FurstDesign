@@ -93,21 +93,9 @@ $this->breadcrumbs = array(
                         'align' => 'center'
                     )
                 ),
-                /*                 
-                  'price',
-                  'wholesale_price',
-                  'bought',                  
-                  'sale_promotion',
-                  'like',
-                  'subscripbe',
-                  'description',
-                  'detail',                  
-                  'create',
-                  'update',
-                 */
                 array(
                     'class' => 'bootstrap.widgets.TbButtonColumn',
-                    'template' => '{gallery}{view} {update} {delete}',
+                    'template' => '{gallery} {update} {delete}',
                     'buttons' => array(
                         'gallery' => array(
                             'label' => 'Gallery',
@@ -161,23 +149,23 @@ $this->breadcrumbs = array(
          });*/
 
         // CREATE, VIEW, UPDATE
-        $.bind_data = function () {
-            $('#create, a.view, a.update').each(function (index) {
-                $(this).bind('click', function () {
-                    $.fancybox.open({
-                        href: $(this).attr('href') + '?ajax=1&t=<?php echo date('Ymdh'); ?>',
-                        type: 'iframe',
-                        width: 760,
-                        helpers: {overlay: {closeClick: false}},
-                        afterClose: function () {
-                            $.fn.yiiGridView.update('product-grid');
-                        }
-                    });
-                    return false;
-                });
-            });
-        };
-        $.bind_data();
+//        $.bind_data = function () {
+//            $('#create, a.view, a.update').each(function (index) {
+//                $(this).bind('click', function () {
+//                    $.fancybox.open({
+//                        href: $(this).attr('href') + '?ajax=1&t=<?php echo date('Ymdh'); ?>',
+//                        type: 'iframe',
+//                        width: 760,
+//                        helpers: {overlay: {closeClick: false}},
+//                        afterClose: function () {
+//                            $.fn.yiiGridView.update('product-grid');
+//                        }
+//                    });
+//                    return false;
+//                });
+//            });
+//        };
+//        $.bind_data();
 
         //UPDATE STATUS
         $('a.update-status').live('click', function() {
