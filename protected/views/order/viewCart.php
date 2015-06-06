@@ -2,6 +2,12 @@
     #msg{display:  none}
 </style>
 <?php scriptFile(themeUrl() . "/js/jquery.number.js", CClientScript::POS_BEGIN); ?>
+<?php 
+$this->pageTitle = 'View Cart';
+$this->breadcrumbs = array(
+    'Order' => array('/order/viewCart'),
+);
+?>
 
 <section id="cart_items">
     <div class="container">
@@ -80,7 +86,7 @@
         
         <div id="msg">
             <div class="alert alert-info" role="alert">
-                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                
                 <strong>Gio hang</strong> cua ban dang trong.
             </div>                                                
         </div>
@@ -100,16 +106,16 @@
         var newQuantity = parseInt($("#quantity-" + itemID).val()) + 1;
         if (newQuantity > 20)
             newQuantity--;
-//        var newTotalPrice = parseFloat($("#price-" + itemID).text()) * newQuantity;
         var newTotalPrice = priceFormat($("#price-" + itemID).text()) * newQuantity;
         
-        console.log(parseFloat($("#price-" + itemID).text()) + " * " + newQuantity);
-        console.log(newTotalPrice);
+//        console.log(parseFloat($("#price-" + itemID).text()) + " * " + newQuantity);
+//        console.log(newTotalPrice);
 
         //set new quanity and total price
         $("#quantity-" + itemID).val(newQuantity);
         $("#total-" + itemID).text($.number(newTotalPrice));
         reCalculateTotalPrice();
+        updateProductQuantity(itemID, newQuantity);        
     });
 
     //reduce product
@@ -122,7 +128,18 @@
         $("#quantity-" + itemID).val(newQuantity);
         $("#total-" + itemID).text($.number(newTotalPrice));
         reCalculateTotalPrice();
+        updateProductQuantity(itemID, newQuantity); 
     });
+    
+    //update product's quantity in shopping cart
+    function updateProductQuantity(pid, qty){
+        var url = "<?php echo App()->controller->createUrl('order/ajaxUpdateProductCartQty'); ?>/pid/"+pid+"/qty/"+qty;
+        $.ajax({
+            url: url,
+            type: "post",
+            success: function(){}
+        });
+    }
 
     $(".cart_quantity_input").keyup(function () {
         var itemID = $(this).attr('id').substring(9, 10);
@@ -162,7 +179,8 @@
     
     //check out
     $("#checkout").on('click', function(){
-        $(location).attr('href', "<?php echo App()->controller->createUrl("/order/checkOut"); ?>"); 
+        Cookies.set('returnUrl', $(location).attr('href'));
+        $(location).attr('href', "<?php echo App()->controller->createUrl("/order/checkOut"); ?>");
     })
 
 
@@ -173,13 +191,12 @@
     }
     
     function reCalculateTotalPrice() {
-        var prices = $("p.cart_total_price"); console.log(prices);
+        var prices = $("p.cart_total_price"); 
+//        console.log(prices);
         var total = 0;
         prices.each(function () {
-//            total += parseFloat($(this).text().replace(',', ''));
             total += priceFormat($(this).text());
         });
-//        console.log(total);
 
         $("#total-without-tax").html($.number(total) + "<sup>đ</sup>");
         $("#final-total span").html("<strong>" + $.number(total) + "<sup>đ</sup></strong>");

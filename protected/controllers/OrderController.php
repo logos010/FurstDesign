@@ -14,9 +14,7 @@ class OrderController extends ControllerBase {
         Yii::app()->shoppingCart->remove($product->getId());
     }
     
-    public function actionViewCart() {
-        cssFile(App()->theme->baseUrl . '/css/font-awesome.min.css');
-        
+    public function actionViewCart() {        
         $shopping = App()->shoppingCart;
 
         $this->render('viewCart', array(
@@ -140,5 +138,12 @@ class OrderController extends ControllerBase {
             $option .= CHtml::tag('option', array('value' => $v - ward_id), $v->ward_name, true);
         }
         echo $option;
+    }
+    
+    public function actionAjaxUpdateProductCartQty($pid, $qty){
+        $shopping = App()->shoppingCart;
+        
+        $product = Product::model()->findByPk($pid);
+        $shopping->update($product, $qty);
     }
 }

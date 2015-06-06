@@ -26,11 +26,12 @@ class LoginController extends ControllerBase {
                 if ($model->validate()) {
                     $this->lastViset();
                     if (strpos(Yii::app()->user->returnUrl, '/index.php') !== false){
-                        $this->redirect(Yii::app()->controller->module->returnUrl);
-                        $this->redirect(App()->controller->createUrl('order/viewCart'));
-                    }else
-                        $this->redirect(Yii::app()->user->returnUrl);
-//                        $this->redirect(Yii::app()->session['userView'.App()->user->id.'returnURL']);      
+                        $returnUrl = isset(Yii::app()->request->cookies['returnUrl']) ? Yii::app()->request->cookies['returnUrl']->value : '';
+                        $this->redirect($returnUrl);
+                    }else{
+                        $returnUrl = isset(Yii::app()->request->cookies['returnUrl']) ? Yii::app()->request->cookies['returnUrl']->value : '';
+                        $this->redirect($returnUrl);
+                    }
                 }
             }
 //            echo Yii::app()->session['userView'.App()->user->id.'returnURL'];

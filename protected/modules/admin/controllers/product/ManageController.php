@@ -46,13 +46,13 @@ class ManageController extends ControllerBase {
 
         if (isset($_POST['Product'])) {
             $model->attributes = $_POST['Product'];
-            
+
             $model->price = floatval(str_replace(',', '', $_POST['Product']['price']));
-            $model->quantity = floatval(str_replace(',', '', $_POST['Product']['quantity']));          
+            $model->quantity = floatval(str_replace(',', '', $_POST['Product']['quantity']));
             $model->sku = 'SKU';
             $model->create_time = UDate::getCurrentDate('full');
             $model->detail = $_POST['Product']['detail'];
-            
+
             if ($model->save()) {
                 $this->setFlash('Product has been created.');
                 $this->refresh();
@@ -72,7 +72,7 @@ class ManageController extends ControllerBase {
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
         $term = Term::buildDataForList(Term::buildTree(1));
-
+        $model->cate = CHtml::listData($model->pTerm, 'id', 'id');
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
@@ -85,7 +85,7 @@ class ManageController extends ControllerBase {
                 $this->setFlash('Product has been updated.');
 //                var_dump($_POST['Product']['detail']);
 //                echo '<pre>'; print_r($model->attributes); echo '</pre>';
-//                $this->refresh();
+                $this->refresh();
 //                $this->redirect(array('view', 'id' => $id));
             }
         }

@@ -4,12 +4,12 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <td>No.</td>
-                    <td>Order Number</td>
-                    <td>Date</td>
-                    <td>Total (VND)</td>
-                    <td>Status</td>
-                    <td></td>
+                    <th>No.</th>
+                    <th>Mã đơn hàng</th>
+                    <th>Ngày mua hàng</th>
+                    <th>Tổng (VND)</th>
+                    <th>Trạng thái</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>                

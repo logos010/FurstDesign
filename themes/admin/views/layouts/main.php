@@ -21,7 +21,7 @@
                 <?php
                 $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
                     'homeLink' => CHtml::link('Home', array('//admin/menu/index/Menu[vid]/1')),
-                    'links' => $this->breadcrumbs,
+                    'links' => App()->controller->breadcrumbs,
                 ));
                 ?><!-- breadcrumbs -->
                 <?php App()->controller->renderFlash(); ?>

@@ -73,12 +73,7 @@
 
 
         <!-- START OF BUTTON HOLDER -->
-        <div class="product-navigator">
-            <a href="http://www.charleskeith.com/INTLStore/CK/product-category-sale?dest=ASM" class="back-to-thumb" title="Back to product catalogue"></a>
-            <div class="spacer"></div>
-            <a href="../../../../../Shoes/Heels/Basic-Slingback-Heels/Pink/CK1-60010259/Product.html" class="next-item" title="Next product"></a> 
-            <a href="../../../../../Shoes/Heels/Dorsay-Heels/Black/CK1-60580072/Product.html" class="previous-item" title="Previous product"></a>
-            <div class="spacer"></div>                
+        <div class="product-navigator">                           
         </div>
         <!-- END OF BUTTON HOLDER --> 
         <div class="spacer"></div>
@@ -86,16 +81,7 @@
         <!-- START Main Info in Collapsible -->
         <div id="accordion-maininfo">
             <?php echo $product->detail; ?>
-            <!-- Product detail block -->
-            
-
-            <!-- Product detail block -->
-            
-
-            <!-- Product detail block -->
-            
-
-            <!-- Product detail block -->            
+            <!-- Product detail block --> 
         </div>
         <div class="spacer"></div>
         <!-- END Main Info in Collapsible -->
@@ -150,19 +136,21 @@
         <div class="spacer2"></div>
         <h2>Last Viewed Products</h2>
         <script type="text/javascript">
-            var lastViewed = $.parseJSON($.cookie('lastViewedProucts'));
-            var baseUrl = '<?php echo BASE_URL . "/"; ?>';
-            var count = lastViewed['items'].length;
-            var productLink = "<?php echo App()->controller->createUrl('/product/detail/pid/'); ?>";
+            if (Cookies.get('lastViewedProucts').length != 0) {
+                var lastViewed = $.parseJSON(Cookies.get('lastViewedProucts'));
+                var baseUrl = '<?php echo BASE_URL . "/"; ?>';
+                var count = lastViewed['items'].length;
+                var productLink = "<?php echo App()->controller->createUrl('/product/detail/pid/'); ?>";
 
-            for (i = 0; i < count; i++) {
-                document.write('<div class="catalogue-itembox">');
-                document.write('<div class="item-product-img">');
-                document.write('<a href="' + productLink + '/' + lastViewed['items'][i]['id'] + '">');
-                document.write('<img src="' + baseUrl + lastViewed['items'][i]['image'] + '" border="0" class="product-img" alt="' + lastViewed['items'][i]['name'] + '" title="' + lastViewed['items'][i]['name'] + '" />');
-                document.write('</a>');
-                document.write('</div>');
-                document.write('</div>');
+                for (i = 0; i < count; i++) {
+                    document.write('<div class="catalogue-itembox">');
+                    document.write('<div class="item-product-img">');
+                    document.write('<a href="' + productLink + '/' + lastViewed['items'][i]['id'] + '">');
+                    document.write('<img src="' + baseUrl + lastViewed['items'][i]['image'] + '" border="0" class="product-img" alt="' + lastViewed['items'][i]['name'] + '" title="' + lastViewed['items'][i]['name'] + '" />');
+                    document.write('</a>');
+                    document.write('</div>');
+                    document.write('</div>');
+                }
             }
 //            console.log("Remove cookie - " + $.removeCookie('lastViewedProucts')); 
         </script>
@@ -271,23 +259,20 @@
     });
 
     //set lastest viwwed products    
-    $.cookie.json = true;
-    $.cookie('lastViewedProucts', '',
-            {
-                expires: 7,
-            });
+    
+    Cookies.set ('lastViewedProucts', '', { expires: 7 });
 
-    if ($.cookie('lastViewedProucts') === undefined || $.cookie('lastViewedProucts') === '') {
+    if (Cookies.get('lastViewedProucts') === undefined || Cookies.get('lastViewedProucts') === '') {
         var productID = "<?php echo $product->id ?>";
         var productName = "<?php echo $product->name ?>";
         var productImg = "<?php echo $product->image ?>";
         var last = new Object();
         last = {"items": [{"id": productID, "name": productName, "image": productImg}]};
-        $.cookie('lastViewedProucts', last);
+        Cookies.set('lastViewedProucts', last);
     }
     else {
         var currentProductID = "<?php echo $product->id; ?>";
-        var cookie = $.cookie('lastViewedProucts');
+        var cookie = Cookies.get('lastViewedProucts');
         var existed = 0;
         for (var i = 0; i < count; i++) {
 //            console.log("last viewed: " + lastViewed['items'][i]['id'] + " Current: " + currentProductID);
@@ -300,7 +285,7 @@
     }
 
     //Add cookie when the product was viewed did not exist
-    if (!existed) { 
+    if (!existed) {
         if (cookie) {
             cookie.items.push({"id": currentProductID, "name": "<?php echo $product->name ?>", "image": "<?php echo $product->image ?>"});
 
@@ -313,6 +298,6 @@
             console.log($.cookie('lastViewedProucts'));
         }
     }
-//    $.removeCookie('lastViewedProucts', {path: '/'});
+//    Cookies.remove('lastViewedProucts', {path: '/'});
 
 </script>

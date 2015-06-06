@@ -26,7 +26,7 @@
         <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/supersized.3.2.7.js"></script>
         <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/jScrollPane.js"></script>
         <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/browserDetect.js"></script>
-        <script type='text/javascript' src='<?php echo App()->theme->baseUrl; ?>/js/jquery.cookie.js'></script>
+        <script type='text/javascript' src='<?php echo App()->theme->baseUrl; ?>/js/js.cookie.js'></script>
         <script type='text/javascript' src='<?php echo App()->theme->baseUrl; ?>/js/jquery.dcjqaccordion.2.7.js'></script>
         <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/jquery.dd.js"></script>
         <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/bootstrap.js"></script>
@@ -115,12 +115,14 @@
 
                 <?php if (App()->user->isGuest): ?>
                     <a href="<?php echo App()->controller->createUrl('/user/login'); ?>" id="signIn">Sign In</a>
-                <?php else: ?>
+                <?php else: ?>  
                     <a href="<?php echo App()->controller->createUrl('/user/logout'); ?>" id="signIn">LOG OUT</a>
+                    <span id="signInSpan">|</span>
+                    <a href="">Đơn hàng của bạn</a>
+                    <span id="signInSpan">|</span>
+                    <a href="" >Tài khoản</a>     
+                    <span id="signInSpan">|</span>
                 <?php endif; ?>
-
-                <span id="signInSpan">|</span>
-                <a href="#" id="signInName" class="myaccount-username"></a><span id="signInNameSpan">|</span>
                 <a href="javascript:void(0);" id="init-search-dd">Search</a>
 
                 <div class="clear"></div>
@@ -168,6 +170,15 @@
         <div class="mainnav_arr"><img src="<?php echo App()->theme->baseUrl ?>/images/icon-mainnav-arr-indicator.png" border="0"></div>
         <div class="clear"></div>
         <!-- END OF MAIN MENU -->
+        
+        <div>
+            <?php
+                $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
+                    'homeLink' => CHtml::link('Home', BASE_URL),
+                    'links' => $this->breadcrumbs,
+                ));
+                ?>
+        </div>
 
         <!--   START OF MAIN CONTENT AREA -->
         <div style="padding-top: 80px; margin-left: 230px;">            
@@ -437,113 +448,112 @@
                 if (param2 == 'CHN') {
                     window.location.href = param1;
                 }
-
             }
 
             function authentication() {
-                if ($.cookie("CKAuthenticationID") != null) {
-                    if ($.cookie("CKAuthenticationFN") != null) {
-                        if ($.cookie("CKAuthenticationLN") != null) {
-                            SmallShoppingBagController.decodeInputName($.cookie("CKAuthenticationFN"), $.cookie("CKEncode_FN"), $.cookie("CKAuthenticationLN"), $.cookie("CKEncode_LN"), {
-                                callback: function (dataFromServer) {
-                                    signinname = dataFromServer;
-                                    signinname = signinname.replace(/"/g, "");
-                                    document.getElementById("signInName").innerHTML = signinname;
-
-                                }
-                            });
-
-                        } else {
-                            SmallShoppingBagController.decodeInputName($.cookie("CKAuthenticationFN"), $.cookie("CKEncode_FN"), $.cookie("CKAuthenticationLN"), '0', {
-                                callback: function (dataFromServer) {
-                                    signinname = dataFromServer;
-                                    signinname = signinname.replace(/"/g, "");
-                                    document.getElementById("signInName").innerHTML = signinname;
-
-                                }
-                            });
-                        }
-                    }
-
-                }
-
-                if ($.cookie("CKAuthenticationID") != null) {
-                    if ($.cookie("CKAuthenticationFN") != null) {
-                        if ($.cookie("CKAuthenticationLN") != null) {
-                            $("#signIn").css("display", "none");
-                            $("#signInSpan").css("display", "none");
-                        } else {
-                            $("#signIn").css("display", "none");
-                            $("#signInSpan").css("display", "none");
-                        }
-                    }
-
-                    var PB = "0";
-                    var currPB = "";
-
-                    SmallShoppingBagController.getOSC({
-                        callback: function (dataFromServer) {
-                            var splits = dataFromServer.split(' ');
-                            currPB = splits[0];
-                            PB = splits[1];
-
-                            if (currPB != "") {
-                                if (currPB == "USD")
-                                    currPB = "US$";
-                                else if (currPB == "JPY")
-                                    currPB = "¥";
-                                else if (currPB == "GBP")
-                                    currPB = "£";
-                                else if (currPB == "SGD")
-                                    currPB = "S$";
-                                else if (currPB == "TWD")
-                                    currPB = "NT$";
-                                else if (currPB == "AUD")
-                                    currPB = "AU$";
-                                else if (currPB == "NZD")
-                                    currPB = "NZ$";
-                                else if (currPB == "INR")
-                                    currPB = "\u20B9";
-                                else if (currPB == "MYR")
-                                    currPB = "RM";
-                                else if (currPB == "HKD")
-                                    currPB = "HK$";
-                                else if (currPB == "THB")
-                                    currPB = "\u0E3F";
-                                else if (currPB == "KRW")
-                                    currPB = "\u20A9";
-                                else if (currPB == "ZAR")
-                                    currPB = "R";
-                                else if (currPB == "LKR")
-                                    currPB = "Rs";
-                                else if (currPB == "IDR")
-                                    currPB = " <font style='text-transform:none !important;'>Rp.</font>";
-                            }
-
-                            if (PB == "") {
-                                PB = "0";
-                            }
-
-                            if (PB == "0" || PB == "0.00") {
-                                $("#lOnlineCreditBalance").css("display", "none");
-                                $("#lOnlineCreditBalanceSpan").css("display", "none");
-                            } else {
-                                $("#lOnlineCreditBalance").css("display", "inline");
-                                $("#lOnlineCreditBalanceSpan").css("display", "inline");
-                                document.getElementById("lOnlineCreditBalance").innerHTML = "Online Store Credits :" + currPB + PB;
-                            }
-                        }
-                    });
-                } else {
-                    $("#signOut").css("display", "none");
-                    $("#signOutSpan").css("display", "none");
-                    $("#signInName").css("display", "none");
-                    $("#signInNameSpan").css("display", "none");
-                    $("#lOnlineCreditBalance").css("display", "none");
-                    $("#lOnlineCreditBalanceSpan").css("display", "none");
-                }
-
-                //smallshoppingbagitems();
+//                if (Cookies.get("CKAuthenticationID") != null) {
+//                    if ($.cookie("CKAuthenticationFN") != null) {
+//                        if ($.cookie("CKAuthenticationLN") != null) {
+//                            SmallShoppingBagController.decodeInputName($.cookie("CKAuthenticationFN"), $.cookie("CKEncode_FN"), $.cookie("CKAuthenticationLN"), $.cookie("CKEncode_LN"), {
+//                                callback: function (dataFromServer) {
+//                                    signinname = dataFromServer;
+//                                    signinname = signinname.replace(/"/g, "");
+//                                    document.getElementById("signInName").innerHTML = signinname;
+//
+//                                }
+//                            });
+//
+//                        } else {
+//                            SmallShoppingBagController.decodeInputName($.cookie("CKAuthenticationFN"), $.cookie("CKEncode_FN"), $.cookie("CKAuthenticationLN"), '0', {
+//                                callback: function (dataFromServer) {
+//                                    signinname = dataFromServer;
+//                                    signinname = signinname.replace(/"/g, "");
+//                                    document.getElementById("signInName").innerHTML = signinname;
+//
+//                                }
+//                            });
+//                        }
+//                    }
+//
+//                }
+//
+//                if ($.cookie("CKAuthenticationID") != null) {
+//                    if ($.cookie("CKAuthenticationFN") != null) {
+//                        if ($.cookie("CKAuthenticationLN") != null) {
+//                            $("#signIn").css("display", "none");
+//                            $("#signInSpan").css("display", "none");
+//                        } else {
+//                            $("#signIn").css("display", "none");
+//                            $("#signInSpan").css("display", "none");
+//                        }
+//                    }
+//
+//                    var PB = "0";
+//                    var currPB = "";
+//
+//                    SmallShoppingBagController.getOSC({
+//                        callback: function (dataFromServer) {
+//                            var splits = dataFromServer.split(' ');
+//                            currPB = splits[0];
+//                            PB = splits[1];
+//
+//                            if (currPB != "") {
+//                                if (currPB == "USD")
+//                                    currPB = "US$";
+//                                else if (currPB == "JPY")
+//                                    currPB = "¥";
+//                                else if (currPB == "GBP")
+//                                    currPB = "£";
+//                                else if (currPB == "SGD")
+//                                    currPB = "S$";
+//                                else if (currPB == "TWD")
+//                                    currPB = "NT$";
+//                                else if (currPB == "AUD")
+//                                    currPB = "AU$";
+//                                else if (currPB == "NZD")
+//                                    currPB = "NZ$";
+//                                else if (currPB == "INR")
+//                                    currPB = "\u20B9";
+//                                else if (currPB == "MYR")
+//                                    currPB = "RM";
+//                                else if (currPB == "HKD")
+//                                    currPB = "HK$";
+//                                else if (currPB == "THB")
+//                                    currPB = "\u0E3F";
+//                                else if (currPB == "KRW")
+//                                    currPB = "\u20A9";
+//                                else if (currPB == "ZAR")
+//                                    currPB = "R";
+//                                else if (currPB == "LKR")
+//                                    currPB = "Rs";
+//                                else if (currPB == "IDR")
+//                                    currPB = " <font style='text-transform:none !important;'>Rp.</font>";
+//                            }
+//
+//                            if (PB == "") {
+//                                PB = "0";
+//                            }
+//
+//                            if (PB == "0" || PB == "0.00") {
+//                                $("#lOnlineCreditBalance").css("display", "none");
+//                                $("#lOnlineCreditBalanceSpan").css("display", "none");
+//                            } else {
+//                                $("#lOnlineCreditBalance").css("display", "inline");
+//                                $("#lOnlineCreditBalanceSpan").css("display", "inline");
+//                                document.getElementById("lOnlineCreditBalance").innerHTML = "Online Store Credits :" + currPB + PB;
+//                            }
+//                        }
+//                    });
+//                } else {
+//                    $("#signOut").css("display", "none");
+//                    $("#signOutSpan").css("display", "none");
+//                    $("#signInName").css("display", "none");
+//                    $("#signInNameSpan").css("display", "none");
+//                    $("#lOnlineCreditBalance").css("display", "none");
+//                    $("#lOnlineCreditBalanceSpan").css("display", "none");
+//                }
+//
+//                //smallshoppingbagitems();
             }
 
             function smallshoppingbagitems() {
@@ -675,12 +685,12 @@
                             className: "btn-success",
                             callback: function () {
                                 var kw = $('#keywords').val();
+                                var url = "<?php echo App()->controller->createUrl('/search/searchInBasic');  ?>/search/"+kw;
                                 $.ajax({
-                                    url: "<?php echo App()->controller->createUrl('/search/searchInBasic'); ?>",
+                                    url: url,
                                     type: "post",
-                                    data: "search='" + kw + "'",
                                     success: function (data) {
-                                        console.log(data);
+                                        $("").html(data);
                                     }
                                 });
                             }

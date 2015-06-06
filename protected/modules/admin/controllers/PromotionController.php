@@ -44,6 +44,8 @@ class PromotionController extends ControllerBase {
      */
     public function actionCreate() {
         $model = new Promotion;
+        $term = Term::buildDataForList(Term::buildTree(1)); // Category
+        $model->cate = array();
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
@@ -64,6 +66,7 @@ class PromotionController extends ControllerBase {
 
         $this->render('create', array(
             'model' => $model,
+            'term' => $term
         ));
     }
     
@@ -94,6 +97,9 @@ class PromotionController extends ControllerBase {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
+        $term = Term::buildDataForList(Term::buildTree(1)); // Category
+        $model->cate = CHtml::listData($model->pTerm, 'id', 'id');
+        
         $img = $model->image;
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
@@ -112,6 +118,7 @@ class PromotionController extends ControllerBase {
 
         $this->render('update', array(
             'model' => $model,
+            'term' => $term
         ));
     }
 

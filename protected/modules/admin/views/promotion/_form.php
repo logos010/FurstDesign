@@ -22,7 +22,7 @@
 
                 <?php echo $form->errorSummary($model); ?>
 
-                <div class="pull-left span6">                    
+                <div class="pull-left span4">                    
                     <?php
                     echo $form->textFieldRow($model, 'name', array('class' => 'span10', 'maxlength' => 150,
                         'onkeyup' => CHtml::ajax(
@@ -51,10 +51,14 @@
                     <?php echo $form->dropDownlistRow($model, 'status', array(1 => 'Active', 0 => 'Inactive')); ?>
                 </div>
 
-                <div class="pull-left span5">
+                <div class="pull-left span3">
                     <?php if($model->image !== ''): ?>
                     <img src="<?php echo BASE_URL . "/" . $model->image; ?>" alt="<?php echo $model->name; ?>" />
                     <?php endif; ?>
+                </div>
+                
+                <div class="pull-left span5"  style="height: 500px">
+                    <?php echo $form->checkBoxListRow($model, 'cate', $term, array()) ?>
                 </div>
 
 

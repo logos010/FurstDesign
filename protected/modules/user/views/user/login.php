@@ -1,3 +1,12 @@
+<?php if(Yii::app()->user->hasFlash('loginMessage')): ?>
+
+<div class="success">
+	<?php echo Yii::app()->user->getFlash('loginMessage'); ?>
+</div>
+
+<?php endif; ?>
+<?php var_dump($model->getErrors()); ?>
+
 <section><!--form-->
     <div class="container">
         <div class="row"> <!-- login -->

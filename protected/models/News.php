@@ -114,10 +114,10 @@ class News extends NewsBase {
         parent::afterSave();
 
         if ($this->uri == '') {
-			$model = self::model()->findByPk($this->id);
+            $model = self::model()->findByPk($this->id);
             $params = array('cate' => $model->term[0]->alias, 'id' => $this->id, 'alias' => $this->alias);
             $this->uri = url('/site/view', ($model->term[1]->alias != '') ? array_merge($params, array('sub' => $model->term[1]->alias)) : $params);
-			
+
             self::model()->updateByPk($this->id, array('uri' => $this->uri));
         }
 

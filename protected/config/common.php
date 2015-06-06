@@ -30,7 +30,7 @@ return array(
             # allow access for non-activated users
             'loginNotActiv' => false,
             # activate user on registration (only sendActivationMail = false)
-            'activeAfterRegister' => true,
+            'activeAfterRegister' => false,
             # automatically login from registration
             'autoLogin' => true,
             # registration path
@@ -52,7 +52,7 @@ return array(
             'debug' => YII_DEBUG ? true : false,
             'pageSize' => 15,
             'superUser' => 'Admin',
-            'css' => false,
+            'css' => true,
             'layout' => 'srbac.views.authitem.0',
             'notAuthorizedView' => 'srbac.views.authitem.unauthorized',
             'alwaysAllowed' => array(

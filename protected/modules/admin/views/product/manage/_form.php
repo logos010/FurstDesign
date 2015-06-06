@@ -57,7 +57,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
                 ?>                
             </div>
             <div class="pull-left span6" style="height: 500px; border: 1px solid #4b4b4b; padding: 5px; overflow-y: scroll">
-                <?php echo $form->checkBoxListRow($model, 'pTerm', $term, array()); ?>
+                <?php echo $form->checkBoxListRow($model, 'cate', $term); ?>
             </div>
             <div class="pull-left span12">
                 <?php

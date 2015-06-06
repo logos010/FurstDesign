@@ -4,19 +4,15 @@ Yii::import('application.modules.admiin.model.*');
 class SearchController extends ControllerBase{
     
     public function actionSearchInBasic(){
-        if (isset($_POST)){
-            $prodModel = new Product;
+        if (isset($_REQUEST['search'])){
+            var_dump($_REQUEST['search']);  
             $criteria = new CDbCriteria();
-            $criteria->compare('name', $_POST['search'], true, 'AND');
-//            $criteria->compare('image', $_POST['search'], FALSE);
-//            $criteria->compare('description', $_POST['search'], FALSE);
-//            $criteria->compare('detail', $_POST['search'], FALSE); 
+            $criteria->compare('name', $_REQUEST['search'], true);
+            $criteria->compare('price', $_REQUEST, true, 'OR');
+            $criteria->compare('description', $_POST['search'], true, 'OR');
+            $criteria->compare('detail', $_POST['search'], true, 'OR'); 
             
-            $dataProvider = new CActiveDataProvider(Product::model(), array(
-                'criteria' => $criteria
-            ));
-//            echo $dataProvider->getItemCount();
-//            echo '<pre>'; print_r($dataProvider->getCriteria()); echo '</pre>';
+            $products = Product::model()->findAll($criteria);            
             if (count($products)){
                 $prodSearch = null;
                 foreach ($products as $k => $v){
@@ -44,9 +40,8 @@ class SearchController extends ControllerBase{
                         $prodSearch .= '<div class="clear"></div>';                        
                     $prodSearch .= "</div>";
                 } //end foreach
-            } // end if
-            
+            } // end if            
             echo $prodSearch;
         }
-    }    
+    }
 }

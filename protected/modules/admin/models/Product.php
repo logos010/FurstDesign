@@ -7,6 +7,8 @@
  */
 class Product extends ProductBase {
 
+    public $cate;
+    
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
@@ -41,6 +43,7 @@ class Product extends ProductBase {
     }
 
     public function beforeSave() {
+        $this->pTerm = $this->cate;
         $this->uploadImage();
         return true;
     }
@@ -77,7 +80,7 @@ class Product extends ProductBase {
 
     public function rules() {
         return array(
-            array('name, price, description, pTerm', 'required'),
+            array('name, price, description, cate', 'required'),
             array('quantity, bought, like, subscripbe, status', 'numerical', 'integerOnly' => true),
             array('price, wholesale_price, discount, sale_promotion', 'numerical'),
             array('name, alias', 'length', 'max' => 150),
