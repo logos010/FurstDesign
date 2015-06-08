@@ -10,6 +10,11 @@ $this->breadcrumbs = array(
         <h3>
             <?php echo $this->pageTitle; ?>
             <span class="pull-right">
+<!--                <select id="admin-menu-type">
+                    <option value="0">All menu</option>
+                    <option value="1">Frond-end menu</option>
+                    <option value="2">Back-end menu</option>
+                </select>-->
                 <?php echo CHtml::link('Create', array('create'), array('class' => 'btn btn-default', 'id' => 'create', 'title' => 'Create New')); ?>
                 <?php //echo CHtml::tag('button', array('id' => 'delete', 'class' => 'btn btn-default'), '<i class="icon-trash"></i> Delete', true); ?>
             </span>
@@ -83,7 +88,7 @@ $this->breadcrumbs = array(
 <?php
 ?>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         /*
          $('.search-button').click(function(){
          $('.search-form').toggle();
@@ -98,15 +103,15 @@ $this->breadcrumbs = array(
          */
 
         // CREATE, VIEW, UPDATE
-        $.bind_data = function() {
-            $('#create, a.view, a.update').each(function(index) {
-                $(this).bind('click', function() {
+        $.bind_data = function () {
+            $('#create, a.view, a.update').each(function (index) {
+                $(this).bind('click', function () {
                     $.fancybox.open({
                         href: $(this).attr('href') + '?ajax=1&t=<?php echo date('Ymdhs'); ?>',
                         type: 'iframe',
                         width: 500,
                         helpers: {overlay: {closeClick: false}},
-                        afterClose: function() {
+                        afterClose: function () {
                             $.fn.yiiGridView.update('menu-grid');
                         }
                     });
@@ -116,15 +121,27 @@ $this->breadcrumbs = array(
         };
         $.bind_data();
 
-		$('a.update-status').live('click', function() {
+        $('a.update-status').live('click', function () {
             $.fn.yiiGridView.update('menu-grid', {
                 type: 'POST',
                 url: $(this).attr('href'),
-                success: function() {
+                success: function () {
                     $.fn.yiiGridView.update('menu-grid');
                 }
             });
             return false;
+        });        
+    });
+    
+    $("#admin-menu-type").change(function(){
+        var menu = $(this).val();
+        console.log(menu);
+        $.fn.yiiGridView.update('menu-grid', {
+            type: 'POST',
+            url: '',
+            success: function(){
+                $.fn.yiiGridView.update('menu-grid');
+            }
         });
     });
 </script>

@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs = array(
-    'Products',
+    'Sản phẩm'
 );
 
 $this->menu = array(

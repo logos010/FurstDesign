@@ -1,3 +1,10 @@
+<?php
+$br = UtiService::loadBreadcrumbs($_GET['tid']);
+$this->breadcrumbs = array(
+    $br
+);
+?>
+
 <section>
     <div class="container">
         <h3><?php echo UtiService::loadCategoryNameById($_GET['tid']); ?></h3>

@@ -1,13 +1,14 @@
+<?php
+$this->pageTitle = 'Xem đơn hàng';
+$this->breadcrumbs = array(
+    'Đơn hàng - Xem đơn hàng'
+);
+?>
+
 <style>
     #msg{display:  none}
 </style>
 <?php scriptFile(themeUrl() . "/js/jquery.number.js", CClientScript::POS_BEGIN); ?>
-<?php 
-$this->pageTitle = 'View Cart';
-$this->breadcrumbs = array(
-    'Order' => array('/order/viewCart'),
-);
-?>
 
 <section id="cart_items">
     <div class="container">
@@ -31,7 +32,7 @@ $this->breadcrumbs = array(
                                 <a href="<?php echo App()->controller->createUrl('product/detail', array('pid' => $item->id)); ?>"><img src="<?php echo BASE_URL . "/" . $item->image;  ?>" width="80" alt="<?php echo $item->name ?>"></a>
                             </td>
                             <td class="cart_description">
-                                <h4><a href=""><?php echo $item->name ?></a></h4>
+                                <h4><a href="<?php echo App()->controller->createUrl('product/detail', array('pid' => $item->id)); ?>"><?php echo $item->name ?></a></h4>
                                 <p>Web ID: 1089772</p>
                             </td>
                             <td class="cart_price">
@@ -85,8 +86,7 @@ $this->breadcrumbs = array(
         <?php endif; ?>
         
         <div id="msg">
-            <div class="alert alert-info" role="alert">
-                
+            <div class="alert alert-info" role="alert">                
                 <strong>Gio hang</strong> cua ban dang trong.
             </div>                                                
         </div>

@@ -6,6 +6,7 @@
 	'upload/2015/04/orginal/tshirtdogjpg-1429416666.jpg',
 	'upload/2015/04/orginal/fontbtopbfontdesignermentravelmessengermenhandbagbriefcaseipadbagoxfordjpg-1429416742.jpg',
 	'upload/2015/04/orginal/imagesjpg-1429416750.jpg',
-	'upload/news/2015/06/orginal/1433340823.jpg'
+	'upload/news/2015/06/orginal/1433340823.jpg',
+	'upload/news/2015/06/orginal/1433680055.jpg'
 );
 ?>

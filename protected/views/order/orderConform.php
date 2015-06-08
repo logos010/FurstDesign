@@ -1,4 +1,10 @@
 <?php
+$this->breadcrumbs = array(
+    'Đơn hàng - Kiểm tra thông tin'
+);
+?>
+
+<?php
 scriptFile(themeUrl() . "/js/validator.min.js", CClientScript::POS_BEGIN);
 ?>
 

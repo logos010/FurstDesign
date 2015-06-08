@@ -49,57 +49,8 @@
         <script type="text/javascript" src="<?php echo App()->theme->baseUrl; ?>/js/jQuery.equalHeights.js"></script>    
     </head>
 
-    <body id="top">
-        <!--
-        <div class="overlay_container">
-            <div id="backtobranding" class="overlay_style">
-                <div class="ckform_top">
-                    <div class="ckform_top_left"></div>
-                    <div class="ckform_top_middle"></div>
-                    <div class="ckform_top_right"></div>
-                </div>
-                <div class="ckform_middle clear"> You are about to leave Charleskeith.com online shopping site and will be redirecting to Charleskeith.com branding site.
-                    <br/>
-                    <br/>
-                    <input type="image" src="<?php echo App()->theme->baseUrl; ?>/images/buttons/continue.gif" onclick="javascript:window.location = 'http://www.charleskeith.com/';" /> &nbsp;&nbsp;&nbsp;
-                    <input type="image" src="<?php echo App()->theme->baseUrl; ?>/images/buttons/cancel.gif" onclick="javascript:hideOverlay();" />
-                    <br/>
-                    <br/>
-                </div>
-                <div class="ckform_bottom">
-                    <div class="ckform_bottom_left"></div>
-                    <div class="ckform_bottom_middle"></div>
-                    <div class="ckform_bottom_right"></div>
-                </div>
-            </div>
-        <!--end of ckform-->
-
-        <!-- start NEW changecountry overlay design -->
-        <div id="changecountry" class="overlay_style_new_country">
-            <div class="overlaybox_top_country">
-                <a href='javascript:void(0);' onclick='javascript:hideOverlay_new();'>
-                    <div class='btn_close_new' style="margin-right:-20px;"></div>
-                </a>
-            </div>
-            <div class="overlaybox_mid_country">
-                <h2>Change Country</h2> You will lose the contents of your shopping bag when changing sites.
-                <br/>
-                <br/>
-                <br/>
-                <input name="" type="image" value="SUBMIT" src="<?php echo App()->theme->baseUrl; ?>/images/buttons/yes_white_EN.gif" onclick="javascript:window.location = 'http://www.charleskeith.com/INTLStore/CK/landingpage?cid=true';" /> &nbsp;&nbsp;
-                <input name="" type="image" value="CANCEL" src="<?php echo App()->theme->baseUrl; ?>/images/buttons/no_white_EN.gif" onclick="javascript:hideOverlay_new();" />
-            </div>
-            <div class="overlaybox_btm_country"></div>
-        </div>
-        <!-- end NEW changecountry overlay design -->
-
-    </div>
-    -->
-    <!--end of overlay_container-->
-
-
+    <body id="top">        
     <div id="landing-catalogue">
-
         <!-- START OF HEADER -->
         <div id="header-container">
             <!-- START OF LOGO -->
@@ -124,17 +75,15 @@
                     <span id="signInSpan">|</span>
                 <?php endif; ?>
                 <a href="javascript:void(0);" id="init-search-dd">Search</a>
-
                 <div class="clear"></div>
-
                 <!--Start of search-ddbox -->
-                <div id="search-box" style="display:none;">
-                    <div class="search-menu">
-                        <div class="spacer"></div>
-                        <input id="search" name="search" type="text" value="" class="searchtxt" onfocus="clearText(this)" onblur="clearText(this)" onkeydown="searchCaller(event, 'en');" /><a href="#" onclick="searchCaller(event, 'en');">></a>
-                        <div class="spacer"></div>
-                    </div>
-                </div>
+                <!--                <div id="search-box" style="display:none;">
+                                    <div class="search-menu">
+                                        <div class="spacer"></div>
+                                        <input id="search" name="search" type="text" value="" class="searchtxt" onfocus="clearText(this)" onblur="clearText(this)" onkeydown="searchCaller(event, 'en');" /><a href="#" onclick="searchCaller(event, 'en');">></a>
+                                        <div class="spacer"></div>
+                                    </div>
+                                </div>-->
                 <!--End of search-ddbox -->
             </div>
             <!-- END OF TOP RIGHT MENU -->
@@ -170,19 +119,20 @@
         <div class="mainnav_arr"><img src="<?php echo App()->theme->baseUrl ?>/images/icon-mainnav-arr-indicator.png" border="0"></div>
         <div class="clear"></div>
         <!-- END OF MAIN MENU -->
-        
-        <div>
-            <?php
-                $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
-                    'homeLink' => CHtml::link('Home', BASE_URL),
-                    'links' => $this->breadcrumbs,
-                ));
-                ?>
-        </div>
+
 
         <!--   START OF MAIN CONTENT AREA -->
         <div style="padding-top: 80px; margin-left: 230px;">            
-            <div id="main-content-container">               
+            <div id="main-content-container">
+                <!-- BREADCRUMS NAV-->
+                <div class="breadcrmbs-nav">
+                    <?php
+                    $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
+                        'homeLink' => CHtml::link(UTranslate::t('Trang Chủ'), BASE_URL),
+                        'links' => $this->breadcrumbs
+                    ));
+                    ?>
+                </div>
                 <?php echo $content; ?>
                 <!--End of static-content -->
             </div>
@@ -192,14 +142,8 @@
 
         <div id="footer-home">
             <div class="copyright">
-                <a href="https://www.facebook.com/pages/Charles-Keith/157130102253?ref=ts" target="_blank" class="socialmedia">Facebook</a>
-                <a href="http://www.twitter.com/Charles_Keith" target="_blank" class="socialmedia">Twitter</a>
-                <a href="https://plus.google.com/101066707796671335057/posts?ref=ts#101066707796671335057/posts?ref=ts" target="_blank" class="socialmedia">Google+</a>
-                <a href="http://charleskeith.tumblr.com/?ref=ts" target="_blank" class="socialmedia">Tumblr</a>
-                <a href="http://www.pinterest.com/charleskeith/" target="_blank" class="socialmedia">Pinterest</a>
-                <a href="http://charleskeithsays.com/" target="_blank" class="socialmedia">Blog</a>
-                <a href="http://statigr.am/charleskeithofficial" target="_blank" class="socialmedia">Instagram</a>
-                <a href="http://www.youtube.com/user/CharlesKeithChannel#p/c/4D814D67E7562346" target="_blank" class="socialmedia">YouTube</a>
+                <a href="" target="_blank" class="socialmedia">Facebook</a>
+                <a href="" target="_blank" class="socialmedia">Instagram</a>
 
             </div>
         </div>
@@ -590,49 +534,6 @@
 
             }
 
-            function checkOutSubmit(dest) {
-                SmallShoppingBagController.checkOutValidation({
-                    callback: function (dataFromServer) {
-                        if (dataFromServer == 'true') {
-                            goTo('/INTLStore/CK/checkout' + dest);
-                        } else if (dataFromServer == 'quantity') {
-                            goTo('/INTLStore/CK/shopping-bag' + dest);
-                        } else if (dataFromServer == 'NoLogin') {
-                            location.href = '/INTLStore/CK/sign in ' + dest;
-                        } else if (dataFromServer == 'SystemFailure') {
-                            alert('Checkout is Under-Maintenance. Please Try Again Later.');
-                        } else if (dataFromServer == 'checkoutBlackListed') {
-
-                            //document.getElementById('checkoutBlackListedError').style.display = "block";
-                            var url = document.location.href;
-                            //alert(url);
-                            if (url.indexOf('INTLStore') > 0) {
-                                //alert ('Your account has been blocked for security reason. Please contact us at customer@charleskeith.com');
-                                //checkoutBlackListedError
-                                //	document.getElementById('SGcheckoutBlackListedError').style.display = "none";
-                                //alert(document.getElementById('checkoutBlackListedError').value);
-                                document.getElementById("checkoutBlackListedError").innerHTML = "Your purchase has been blocked for security reasons.<br/>Please contact us at customer@charleskeith.com";
-                            }
-
-                            if (url.indexOf('SGStore') > 0) {
-                                //	document.getElementById('INTLcheckoutBlackListedError').style.display = "none";
-                                //	document.getElementById('SGcheckoutBlackListedError').style.display = "block";
-                                //	document.getElementById('checkoutBlackListedError').value = 'Your account has been blocked for security reason. Please contact us at +65 6488 2688 or customer@charleskeith.com';
-                                document.getElementById("checkoutBlackListedError").innerHTML = "Your purchase has been blocked for security reasons.<br/>Please contact us at +65 6488 2688 or customer@charleskeith.com";
-                            }
-                            if (url.indexOf('JPStore') > 0) {
-                                //	document.getElementById('INTLcheckoutBlackListedError').style.display = "none";
-                                //	document.getElementById('SGcheckoutBlackListedError').style.display = "block";
-                                //	document.getElementById('checkoutBlackListedError').value = 'Your account has been blocked for security reason. Please contact us at +65 6488 2688 or customer@charleskeith.com';
-                                document.getElementById("checkoutBlackListedError").innerHTML = "Your purchase has been blocked for security reasons.<br/>Please contact us at customer@charleskeith.com";
-                            }
-                        } else {
-                            alert('Please complete your previous checkout.');
-                        }
-                    }
-                });
-            }
-
             //load menu by category
             $("#menu-type").change(function () {
                 var menuType = ($(this).prop('checked') === 1) ? '31' : '32';  //in menu table, Nam stands for 31 and Nu stands for 32
@@ -666,17 +567,21 @@
 
             //search
             $("#init-search-dd").click(function () {
+                $('#keywords').keypress(function (event) {
+                    if (event.which == 13) {
+                        event.preventDefault();
+                    }
+                });
+
                 bootbox.dialog({
                     title: "Bạn muốn tìm ...",
                     message: '<div class="row">  ' +
                             '<div class="col-md-12"> ' +
-                            '<form class="form-horizontal">' +
                             '<div class="form-group"> ' +
                             '<div class="col-md-12"> ' +
                             '<input id="keywords" name="keywords" type="text" placeholder="Từ khóa .... " class="form-control input-md"> ' +
                             '</div>' +
                             '</div>' +
-                            '</form>' +
                             '</div>' +
                             '</div>',
                     buttons: {
@@ -685,14 +590,8 @@
                             className: "btn-success",
                             callback: function () {
                                 var kw = $('#keywords').val();
-                                var url = "<?php echo App()->controller->createUrl('/search/searchInBasic');  ?>/search/"+kw;
-                                $.ajax({
-                                    url: url,
-                                    type: "post",
-                                    success: function (data) {
-                                        $("").html(data);
-                                    }
-                                });
+                                var url = "<?php echo App()->controller->createUrl('/search/searchInBasic'); ?>/keyword/" + kw;
+                                $(location).attr('href', url);
                             }
 
                         }

@@ -1,3 +1,8 @@
+<?php
+$this->breadcrumbs = array(
+    'Hoạt động - Fashion Show'
+);
+?>
 <div class="container">
     <div class="row">
         <div class="col-lg-10 news-title">

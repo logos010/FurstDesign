@@ -1,3 +1,8 @@
+<?php
+$this->breadcrumbs = array(
+    'Sản phẩm'
+);
+?>
 <div class="product-details-container">
     <div class="product-details-column-left">
         <!-- START OF MAIN PRODUCT IMAGE -->

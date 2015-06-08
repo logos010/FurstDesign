@@ -1,11 +1,13 @@
 <?php if(Yii::app()->user->hasFlash('loginMessage')): ?>
 
 <div class="success">
-	<?php echo Yii::app()->user->getFlash('loginMessage'); ?>
+    <?php echo Yii::app()->user->getFlash('loginMessage'); ?>
 </div>
 
 <?php endif; ?>
-<?php var_dump($model->getErrors()); ?>
+<div class="alert alert-danger" role="alert">
+    <?php echo CHtml::errorSummary($model); ?>
+</div>
 
 <section><!--form-->
     <div class="container">
@@ -16,7 +18,7 @@
                     <div class="clear"><br/><br/></div>
                     <?php echo CHtml::beginForm('', 'post', array('class' => 'form-horizontal')); ?> 
                     <div class="form-group">
-                        <label for="username" class="col-sm-2 control-label">Username: </label>
+                        <label for="username" class="col-sm-2 control-label">Username: </label>                        
                         <input type="text" name="UserLogin[username]" placeholder="" size="60"/>
                     </div>
                     <div class="form-group">

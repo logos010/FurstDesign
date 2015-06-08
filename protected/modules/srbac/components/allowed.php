@@ -1,3 +1,29 @@
 <?php 
- return array();
+ return array(
+	'MenuGenerateMenu',
+	'NewsCate',
+	'NewsDetail',
+	'OrderRemoveItems',
+	'OrderRemoveItem',
+	'OrderViewCart',
+	'OrderAddToCart',
+	'OrderCheckOut',
+	'OrderOrderConform',
+	'OrderMyOrders',
+	'OrderLoadWard',
+	'OrderAjaxUpdateProductCartQty',
+	'ProductView',
+	'ProductIndex',
+	'ProductDetail',
+	'ProductCate',
+	'ProductProductReview',
+	'ProductLoadProductByPrice',
+	'ProductSearchProduct',
+	'SearchSearchInBasic',
+	'SiteIndex',
+	'SiteAbout',
+	'SiteError',
+	'user@LoginLogin',
+	'user@LogoutLogout'
+);
 ?>

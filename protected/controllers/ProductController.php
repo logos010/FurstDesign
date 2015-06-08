@@ -132,7 +132,6 @@ class ProductController extends ControllerBase {
         $criteria->group = "t.id";
         $criteria->having = "t.id <> " . $pid;
                     
-        //print_r($criteria);
         $recommendProducts = Product::model()->with('pTerm')->findAll($criteria);
                         
         $this->render('detail', array(

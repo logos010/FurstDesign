@@ -38,7 +38,11 @@
                     ?>
                     <?php echo $form->textFieldRow($model, 'alias', array('class' => 'span10', 'maxlength' => 150)); ?>
                     <?php echo $form->fileFieldRow($model, 'image', array('class' => 'span10', 'maxlength' => 255)); ?>
-                    <?php echo $form->textFieldRow($model, 'url', array('class' => 'span10', 'maxlength' => 150)); ?>
+                    <?php echo $form->textFieldRow($model, 'url', array(
+                        'class' => 'span10',
+                        'maxlength' => 150,
+                        'readonly' => true
+                        )); ?>
                     <?php
                     echo $form->dropDownlistRow($model, 'position', array(
                         1 => 'Position 1',
@@ -57,8 +61,10 @@
                     <?php endif; ?>
                 </div>
                 
-                <div class="pull-left span5"  style="height: 500px">
-                    <?php echo $form->checkBoxListRow($model, 'cate', $term, array()) ?>
+                <div class="pull-left span4" style="height: 500px; border: 1px solid #4b4b4b; padding: 5px; overflow-y: scroll">
+                    <?php echo $form->checkBoxListRow($model, 'cate', $term, array(
+                        'click' => 'alert(1)'
+                    )) ?>
                 </div>
 
 
@@ -70,3 +76,14 @@
     </div>
     <?php $this->endWidget(); ?>
 </div><!-- form -->
+
+<script type="text/javascript">
+    $("input[type='checkbox']").change(function(){
+        if ($(this).is(':checked')){
+            $("#Promotion_url").val('/product/cate/tid/'+$(this).val());
+        }
+        else{
+            $("#Promotion_url").val('');
+        }
+    });
+</script>

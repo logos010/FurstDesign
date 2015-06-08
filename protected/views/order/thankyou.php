@@ -1,3 +1,9 @@
+<?php
+$this->breadcrumbs = array(
+    'Đơn hàng - Hoàn tất mua hàng'
+);
+?>
+
 <div class="container">
     <div class="row">
         <div class="col-lg-10 alert alert-success" role="alert">
