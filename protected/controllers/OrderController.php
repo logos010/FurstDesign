@@ -28,6 +28,7 @@ class OrderController extends ControllerBase {
         $size = $_POST['size'];
         $quantity = $_POST['quantity'];
         $product = Product::model()->findByPk($pid);
+        count($product);
         App()->shoppingCart->put($product, $quantity);
         echo App()->shoppingCart->getCount();
     }
