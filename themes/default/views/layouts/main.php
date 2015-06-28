@@ -593,7 +593,6 @@
                                 var url = "<?php echo App()->controller->createUrl('/search/searchInBasic'); ?>/keyword/" + kw;
                                 $(location).attr('href', url);
                             }
-
                         }
                     }
                 });
