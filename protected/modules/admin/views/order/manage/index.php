@@ -6,7 +6,7 @@
     <div class="row">
         <?php
         $this->widget('zii.widgets.grid.CGridView', array(
-            'id' => 'product-grid',
+            'id' => 'order-grid',
             'dataProvider' => $dataProvider,
             'cssFile' => App()->theme->baseUrl . '/css/yii.css',
             'pager' => array('cssFile' => false),
@@ -34,7 +34,11 @@
                 array(
                     'name' => 'grand_total',
                     'htmlOptions' => array('align' => 'center', 'width' => 120)
-                ),                
+                ),
+                array(
+                    'class' => 'bootstrap.widgets.TbButtonColumn',
+                    'template' => '{view}'                    
+                )
             )
         ));  
         ?>

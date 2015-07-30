@@ -28,12 +28,34 @@ class ManageController extends ControllerBase {
         $dataProvider = new CActiveDataProvider('Order', array(
             'criteria' => $criteria,
             'pagination' => array(
-                'pageSize' => 20,
+                'pageSize' => 15,
             ),
         ));
 
         $this->render('index', array(
             'dataProvider' => $dataProvider
+        ));
+    }
+    
+    public function actionView($id){
+        $criteria = new CDbCriteria();
+        $criteria->condition = "order_id=:oid";
+        $criteria->params = array(
+            ':oid' => $id,
+        );
+        
+        $orderDetail = new CActiveDataProvider('OrderDetail', array(
+            'criteria' => $criteria,
+            'pagination' => array(
+                'pageSize' => 15,
+            )            
+        ));
+        
+        $order = Order::model()->findByPk($id);
+        
+        $this->render('view', array(
+            'dataProvider' => $orderDetail,
+            'order' => $order
         ));
     }
 
